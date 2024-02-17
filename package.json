@@ -2,11 +2,13 @@
   "name": "ayeonmin.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://aktyu101.github.io/ayeon_portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "export": "next export",
     "predeploy": "npm run build",
     "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
