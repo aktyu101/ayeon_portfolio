@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function Navigation() {
   return (
@@ -8,7 +9,7 @@ export default function Navigation() {
       </NavGrid>
       <ul>
         <NavOneDepth>
-          <a href="/information">INFORMATION</a>
+          <Link href="/information">INFORMATION</Link>
           <NavTwoDepthul>
             <NavDepth02>SKILLS</NavDepth02>
             <NavDepth02>EDUCATION & CAREER</NavDepth02>
