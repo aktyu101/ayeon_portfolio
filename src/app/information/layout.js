@@ -1,9 +1,7 @@
-import styled from "styled-components";
+// export const metadata = {
+//   title: "information",
+// };
 
-export default function info() {
-  return (
-    <>
-      <div>info</div>
-    </>
-  );
+export default function InformationLayout({ children }) {
+  return <section>{children}</section>;
 }

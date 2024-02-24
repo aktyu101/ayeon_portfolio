@@ -1,6 +1,8 @@
-import Main from "@/components/main";
-import { Children } from "react";
-
+import Main from "@/app/components/main";
 export default function Home() {
-  return <Main></Main>;
+  return (
+    <>
+      <Main />
+    </>
+  );
 }
