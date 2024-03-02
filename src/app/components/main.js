@@ -2,26 +2,26 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { ConfigContext } from "@/app/config-provider";
-// import Navigation from "./navigation";
 import styled from "styled-components";
-import Navigation from "./navigation";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext); //
   return (
     <>
-      <Navigation />
-      <ContentAreaWrap width="100%">
+      <ContentAreaWrap>
         <ContentArea>content</ContentArea>
       </ContentAreaWrap>
     </>
   );
 }
-
 const ContentAreaWrap = styled.div`
-  width: 100%;
+  width: 1260px;
   display: flex;
   justify-content: center;
+  background-color: #666;
+  height: 6000px;
+  text-align: center;
+  margin: 0 auto;
 `;
 
 const ContentArea = styled.div`

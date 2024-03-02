@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import ConfigProvider from "./config-provider";
 import "./globals.css";
+import Navigation from "@/app/components/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <ConfigProvider>{children}</ConfigProvider>
+        <ConfigProvider>
+          <div>
+            <Navigation />
+          </div>
+          <div>{children}</div>
+        </ConfigProvider>
       </body>
     </html>
   );
