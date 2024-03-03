@@ -1,84 +1,72 @@
 "use client";
 import styled from "styled-components";
 import Link from "next/link";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+import CloseBtn from "./close-btn";
+import Menu from "./menu";
+import { routes } from "../constants/route";
 
 export default function Navigation() {
+  const [onModal, setOnModal] = useState("");
+  const [isOpenNav, setIsOpenNav] = useState(true);
+
+  const closeNav = () => {
+    setOnModal(onModal === null ? "block" : "none");
+  };
+  const openNav = () => {
+    setOnModal(onModal === null ? "none" : "block");
+  };
+
+  const wrapperStyles = twMerge(
+    "block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white",
+    isOpenNav ? "block" : "hidden"
+  );
+
   return (
-    <HeaderWrapBox>
-      <NavGrid>
-        <HeaderCloseBtnWrap></HeaderCloseBtnWrap>
-      </NavGrid>
-      <ul>
-        <NavOneDepth>
-          <Link href="/information">INFORMATION</Link>
-          <NavTwoDepthul>
-            <NavDepth02>SKILLS</NavDepth02>
-            <NavDepth02>EDUCATION & CAREER</NavDepth02>
-            <NavDepth02>CAREER</NavDepth02>
-          </NavTwoDepthul>
-        </NavOneDepth>
-        <NavOneDepth>
-          <a>PORTFOLIO</a>
-          <NavTwoDepthul>
-            <NavDepth02>
-              DEVELOP PROJECT
-              <NavDepth03>
-                <NavThreeDepthli>01</NavThreeDepthli>
-                <NavThreeDepthli>02</NavThreeDepthli>
-                <NavThreeDepthli>03</NavThreeDepthli>
-                <NavThreeDepthli>04</NavThreeDepthli>
-              </NavDepth03>
-            </NavDepth02>
-            <NavDepth02>PROJECT MANAGER</NavDepth02>
-          </NavTwoDepthul>
-        </NavOneDepth>
-      </ul>
-    </HeaderWrapBox>
+    <>
+      <div className={wrapperStyles}>
+        <div className="flex flex-col">
+          <div className="flex justify-end">
+            <CloseBtn onClick={() => setIsOpenNav(false)} />
+          </div>
+          <div>
+            <Menu routes={routes}></Menu>
+          </div>
+        </div>
+
+        <Link href="/">main</Link>
+        {/* <ul>
+          <NavOneDepth>
+            <Link href="/information">INFORMATION</Link>
+            <NavTwoDepthul>
+              <NavDepth02>SKILLS</NavDepth02>
+              <NavDepth02>EDUCATION & CAREER</NavDepth02>
+              <NavDepth02>CAREER</NavDepth02>
+            </NavTwoDepthul>
+          </NavOneDepth>
+          <NavOneDepth>
+            <Link href="/portfolio">PORTFOLIO</Link>
+            <NavTwoDepthul>
+              <NavDepth02>
+                DEVELOP PROJECT
+                <NavDepth03>
+                  <NavThreeDepthli>01</NavThreeDepthli>
+                  <NavThreeDepthli>02</NavThreeDepthli>
+                  <NavThreeDepthli>03</NavThreeDepthli>
+                  <NavThreeDepthli>04</NavThreeDepthli>
+                </NavDepth03>
+              </NavDepth02>
+              <NavDepth02>PROJECT MANAGER</NavDepth02>
+            </NavTwoDepthul>
+          </NavOneDepth>
+        </ul> */}
+      </div>
+      {/* <OpenNav onClick={openNav}>d</OpenNav> */}
+    </>
   );
 }
 
-const HeaderWrapBox = styled.div`
-  width: 300px;
-  height: 100vh;
-  color: #fff;
-  background-color: #111;
-  position: fixed;
-  top: 0;
-  padding: 20px;
-  box-sizing: border-box;
-`;
-const HeaderCloseBtnWrap = styled.div`
-  width: 22px;
-  height: 22px;
-  margin: 0;
-  position: relative;
-  padding: 0;
-  margin-bottom: 27px;
-  &:before,
-  &:after {
-    position: absolute;
-    left: 15px;
-    top: -2px;
-    content: " ";
-    height: 22px;
-    width: 2px;
-    background-color: #fff;
-  }
-  &:before {
-    transform: rotate(-45deg);
-  }
-  &:after {
-    transform: rotate(45deg);
-  }
-`;
-const NavGrid = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-`;
-// const Test = styled.div`
-//   color: ${(props) => props.bgColor};
-// `;
 const NavOneDepth = styled.li`
   font-size: 22px;
   font-weight: 500;
@@ -111,4 +99,14 @@ const NavThreeDepthli = styled.li`
   font-size: 12px;
   margin-bottom: 5px;
   text-indent: 5px;
+`;
+const OpenNav = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  right: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: ${(props) => props.onModal};
 `;

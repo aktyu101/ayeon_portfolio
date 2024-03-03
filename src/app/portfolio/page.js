@@ -8,4 +8,7 @@ export default function Portfolio() {
 const ContentGrid = styled.div`
   width: 1260px;
   text-align: center;
+  margin: 0 auto;
+  backgrouond-color: #000;
+  z-index: -1;
 `;
