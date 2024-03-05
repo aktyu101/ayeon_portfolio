@@ -34,7 +34,7 @@ export default function Menu({ routes }) {
 
 function MenuLink({ depth = 1, route }) {
   const styleMap = new Map([
-    [1, "text-[22px] font-medium text-white"],
+    [1, "text-[22px] font-medium text-white "],
     // `[&:nth-child(odd)]:bg-gray-400`
     [2, "text-[16px] font-extraLight text-white"],
     [3, "text-[12px] text-[#eee]"],
