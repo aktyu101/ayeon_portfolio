@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import CloseBtn from "./close-btn";
+import OpenBtn from "./open-btn";
 import Menu from "./menu";
 import { routes } from "../constants/route";
 
@@ -19,7 +20,7 @@ export default function Navigation() {
   };
 
   const wrapperStyles = twMerge(
-    "block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white",
+    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white",
     isOpenNav ? "block" : "hidden"
   );
 
@@ -34,7 +35,6 @@ export default function Navigation() {
             <Menu routes={routes}></Menu>
           </div>
         </div>
-
         <Link href="/">main</Link>
         {/* <ul>
           <NavOneDepth>
@@ -63,6 +63,7 @@ export default function Navigation() {
         </ul> */}
       </div>
       {/* <OpenNav onClick={openNav}>d</OpenNav> */}
+      <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
     </>
   );
 }

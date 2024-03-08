@@ -7,7 +7,7 @@ export default function Menu({ routes }) {
         <li key={index}>
           <MenuLink route={route} />
           {route.children && (
-            <div className="flex flex-col gap-y-[5px] mt-[10px]">
+            <div className="flex flex-col gap-y-[5px] mt-[10px] ">
               {route.children.map((route) => (
                 <div key={index}>
                   <div>
