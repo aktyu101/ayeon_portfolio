@@ -24,14 +24,10 @@ export default function Navigation() {
   };
   return (
     <>
-      {/* <div className="text-[#fff absolute right-[0] bottom-[30px] w-[40px] h-[40px] box-border border-2">
-        top
-      </div> */}
-
       <motion.div
         initial={{ x: -300 }}
         animate={{ x: isOpenNav ? 0 : -300 }}
-        // 모션조정!
+        transition={{ ease: "easeOut", duration: 0.2 }}
         className={wrapperStyles}
       >
         <div className="flex flex-col">

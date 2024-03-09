@@ -14,10 +14,10 @@ export const information = new RouteItem("Information", "/information", [
 
 export const portfolio = new RouteItem("Portfolio", "/portfolio", [
   new RouteItem("Develop Project", "/portfolio/project", [
-    new RouteItem("1", "/portfolio/project/1"),
-    new RouteItem("2", "/portfolio/project/2"),
-    new RouteItem("3", "/portfolio/project/3"),
-    new RouteItem("4", "/portfolio/project/4"),
+    new RouteItem("01", "/portfolio/project/1"),
+    new RouteItem("02", "/portfolio/project/2"),
+    new RouteItem("03", "/portfolio/project/3"),
+    new RouteItem("04", "/portfolio/project/4"),
   ]),
   new RouteItem("Project Manager", ""),
 ]);

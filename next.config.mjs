@@ -5,7 +5,7 @@ const repository = "ayeon_portfolio";
 
 const nextConfig = {
   output: "export",
-  basePath: !debug ? `/${repository}` : "/",
+  basePath: !debug ? `/${repository}` : "",
   assetPrefix: !debug ? `/${repository}/` : "", // production 일때 prefix 경로
 };
 
