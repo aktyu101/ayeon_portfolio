@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/Breadcrumbs";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 export default function PortfolioLayout({ children }) {
   return (
