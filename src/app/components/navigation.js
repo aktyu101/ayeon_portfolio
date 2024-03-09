@@ -1,5 +1,4 @@
 "use client";
-import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -20,7 +19,7 @@ export default function Navigation() {
   };
 
   const wrapperStyles = twMerge(
-    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white",
+    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen",
     isOpenNav ? "block" : "hidden"
   );
 
@@ -36,78 +35,18 @@ export default function Navigation() {
           </div>
         </div>
         <Link href="/">main</Link>
-        {/* <ul>
-          <NavOneDepth>
-            <Link href="/information">INFORMATION</Link>
-            <NavTwoDepthul>
-              <NavDepth02>SKILLS</NavDepth02>
-              <NavDepth02>EDUCATION & CAREER</NavDepth02>
-              <NavDepth02>CAREER</NavDepth02>
-            </NavTwoDepthul>
-          </NavOneDepth>
-          <NavOneDepth>
-            <Link href="/portfolio">PORTFOLIO</Link>
-            <NavTwoDepthul>
-              <NavDepth02>
-                DEVELOP PROJECT
-                <NavDepth03>
-                  <NavThreeDepthli>01</NavThreeDepthli>
-                  <NavThreeDepthli>02</NavThreeDepthli>
-                  <NavThreeDepthli>03</NavThreeDepthli>
-                  <NavThreeDepthli>04</NavThreeDepthli>
-                </NavDepth03>
-              </NavDepth02>
-              <NavDepth02>PROJECT MANAGER</NavDepth02>
-            </NavTwoDepthul>
-          </NavOneDepth>
-        </ul> */}
+        {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
+        <div className="flex gap-x-[4px] fixed bottom-[30px]">
+          <button className="border-[#fff] border-2 w-[200px] h-[54px] text-[#fff] bg-[#111] text-center leading-[53px] border-solid hover:bg-[#fff] hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium pointer-events-auto">
+            Contact
+          </button>
+          <div className="text-[#fff] w-[54px] h-[54px] border-[#fff] border-solid border-2 text-center leading-[53px] hover:bg-[#fff] hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium pointer-events-auto">
+            down
+          </div>
+        </div>
       </div>
-      {/* <OpenNav onClick={openNav}>d</OpenNav> */}
+
       <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
     </>
   );
 }
-
-const NavOneDepth = styled.li`
-  font-size: 22px;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 50px;
-`;
-const NavTwoDepthul = styled.ul`
-  font-size: 16px;
-  font-weight: 200;
-  color: #fff;
-  margin-bottom: 8px;
-  &:nth-child(1) {
-    margin-top: 20px;
-  }
-`;
-const NavDepth02 = styled.li`
-  font-size: 16px;
-  font-weight: 200;
-  color: #fff;
-  margin-bottom: 8px;
-  &:nth-child(1) {
-    margin-top: 20px;
-  }
-`;
-const NavDepth03 = styled.ul`
-  margin-top: 5px;
-`;
-const NavThreeDepthli = styled.li`
-  color: #eee;
-  font-size: 12px;
-  margin-bottom: 5px;
-  text-indent: 5px;
-`;
-const OpenNav = styled.div`
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  right: 0;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: ${(props) => props.onModal};
-`;
