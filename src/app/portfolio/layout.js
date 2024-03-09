@@ -1,7 +1,10 @@
-export const metadata = {
-  title: "PortFolio",
-};
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function PortfolioLayout({ children }) {
-  return <section>{children}</section>;
+  return (
+    <section className="flex flex-col w-full">
+      <Breadcrumbs />
+      {children}
+    </section>
+  );
 }

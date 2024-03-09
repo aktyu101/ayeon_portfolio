@@ -1,27 +1,25 @@
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
-export default function Menu({ routes }) {
+export default function Menu({ routes, onClick: handleClick }) {
   return (
-    <ul className="flex flex-col gap-y-[20px]">
+    <ul className="flex flex-col gap-y-[20px]" onClick={handleClick}>
       {routes.map((route, index) => (
         <li key={index}>
           <MenuLink route={route} />
           {route.children && (
             <div className="flex flex-col gap-y-[5px] mt-[10px] ">
-              {route.children.map((route) => (
+              {route.children.map((route, index) => (
                 <div key={index}>
-                  <div>
-                    <MenuLink depth={2} route={route} />
-                    {route.children && (
-                      <div>
-                        {route.children.map((route) => (
-                          <div key={index}>
-                            <MenuLink depth={3} route={route} />
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <MenuLink depth={2} route={route} />
+                  {route.children && (
+                    <div>
+                      {route.children.map((route, index) => (
+                        <div key={index}>
+                          <MenuLink depth={3} route={route} />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

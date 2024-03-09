@@ -1,9 +1,7 @@
-import { Inter } from "next/font/google";
 import ConfigProvider from "./config-provider";
 import "./globals.css";
-import Navigation from "@/app/components/navigation";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navigation from "@/components/navigation";
+import { notoSansKr } from "./font";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,12 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
+      <body className={notoSansKr.className}>
         <ConfigProvider>
-          <div>
-            <Navigation />
-          </div>
-          <div>{children}</div>
+          <Navigation />
+
+          <div className="w-[1280px] mx-auto">{children}</div>
         </ConfigProvider>
       </body>
     </html>
