@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
         <ConfigProvider>
           <Navigation />
           <div className="w-[1280px] mx-auto">{children}</div>
-          <div className="text-[#000 absolute right-[0] bottom-[30px] w-[40px] h-[40px] box-border border-2">
+          <button className="text-[#000 absolute right-[0] bottom-[30px] w-[40px] h-[40px] box-border border-2">
             top
-          </div>
+          </button>
         </ConfigProvider>
       </body>
     </html>
