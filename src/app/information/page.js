@@ -1,3 +1,5 @@
+import InformationTemplate from "@/components/information/InformationTemplate";
+
 export default function Info() {
-  return <div>information</div>;
+  return <InformationTemplate />;
 }

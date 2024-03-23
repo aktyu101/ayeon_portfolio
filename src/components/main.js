@@ -5,7 +5,7 @@ import { ConfigContext } from "@/app/config-provider";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext); //
-  return <>content</>;
+  return <>main</>;
 }
 
 // <Image

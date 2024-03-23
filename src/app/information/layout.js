@@ -1,3 +1,10 @@
+import Breadcrumbs from "@/components/breadcrumbs";
+
 export default function InformationLayout({ children }) {
-  return <section>{children}</section>;
+  return (
+    <section>
+      <Breadcrumbs />
+      {children}
+    </section>
+  );
 }

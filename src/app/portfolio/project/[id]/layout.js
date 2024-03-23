@@ -1,3 +1,4 @@
 export default function ProjectByIdLayout({ children }) {
-  return <>ProjectByidPage{children}</>;
+  return <></>;
 }
+//ProjectByidPage{children}
