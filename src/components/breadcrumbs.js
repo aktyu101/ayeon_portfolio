@@ -18,7 +18,7 @@ export default function Breadcrumbs() {
 
   return (
     <>
-      <div className="size-full flex justify-end mt-[35px] text-[#666] pt-[14px]">
+      <div className="size-full flex justify-end text-[#666] pt-[49px]">
         <Link href="/">home</Link>
         {/* depth가 깊어져도 계속 추가되게 변경 */}
         {segments.map((segment, index) => (

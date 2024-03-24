@@ -12,7 +12,7 @@ export default function Navigation() {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   const wrapperStyles = twMerge(
-    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen"
+    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen z-[51]"
   );
   const hoverStyle = twMerge(
     "hover:bg-[#fff] hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
@@ -60,8 +60,16 @@ export default function Navigation() {
           </button>
         </div>
       </motion.div>
-
-      <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
+      {/* header */}
+      <div className="w-[100%] h-[80px] bg-[#fff] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.06)]">
+        <div className="w-[1280px] z-[51] mx-auto flex justify-between items-center">
+          <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
+          <div className="flex gap-5">
+            <span>INFORMATION</span>
+            <span>PORTFOLIO</span>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

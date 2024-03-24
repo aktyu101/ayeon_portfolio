@@ -1,7 +1,7 @@
 export default function OpenBtn({ onClick: handleClick }) {
   return (
     <button
-      className=" w-[44px] h-[49px] bg-[#2742BE] left-[35px] top-[35px] gap-y-[10px] items-center flex box-border px-[11px] py-[14px] flex-wrap fixed"
+      className=" w-[30px] h-[49px] left-0 top-0 gap-y-[5px] items-center flex box-border py-[14px] flex-wrap"
       onClick={handleClick}
     >
       <Line />
@@ -12,5 +12,5 @@ export default function OpenBtn({ onClick: handleClick }) {
 }
 
 function Line() {
-  return <div className="w-[22px] h-[1.5px] bg-white"></div>;
+  return <div className="w-[50px] h-[3px] bg-[#2742BE]"></div>;
 }

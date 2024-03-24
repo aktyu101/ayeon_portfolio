@@ -2,6 +2,7 @@ import ConfigProvider from "./config-provider";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import { notoSansKr } from "./font";
+import Link from "next/link";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,9 +16,11 @@ export default function RootLayout({ children }) {
         <ConfigProvider>
           <Navigation />
           <div className="w-[1280px] mx-auto">{children}</div>
-          <button className="text-[#000 absolute right-[0] bottom-[30px] w-[40px] h-[40px] box-border border-2">
-            top
-          </button>
+          <Link href={"#"}>
+            <button className="text-[#000 fixed right-[20px] bottom-[30px] w-[50px] h-[50px] box-border rounded-full bg-[#2742BE] text-white">
+              TOP
+            </button>
+          </Link>
         </ConfigProvider>
       </body>
     </html>

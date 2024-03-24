@@ -59,8 +59,10 @@ export default function InformationTemplate() {
 
   return (
     <div>
-      <div className="sticky top-0 h-[80px] bg-white pt-[30px] pb-[20px]">
-        <div>안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다</div>
+      <div className="sticky top-0 h-[120px] bg-white pt-[30px] pb-[20px]">
+        <div className="text-[28px]">
+          안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다
+        </div>
         <ul className="flex gap-8 ">
           {contents.map((content, index) => (
             <button
@@ -75,7 +77,7 @@ export default function InformationTemplate() {
       </div>
 
       <div className="flex">
-        <div className=" top-[80px] w-[325px] h-[calc(100vh-80px)] bg-[#eee] sticky">
+        <div className=" top-[100px] w-[325px] h-[calc(100vh-80px)] bg-[#eee] sticky">
           프로필
         </div>
         <div className="w-[940px] bg-[#eee] gap-y-[30px] wrap flex-wrap flex">
