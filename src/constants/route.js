@@ -6,13 +6,13 @@ class RouteItem {
   }
 }
 
-export const information = new RouteItem("Information", "/information", [
+export const information = new RouteItem("INFORMATION", "/information", [
   new RouteItem("Skills", "/information"),
   new RouteItem("Education & Career", "/information"),
   new RouteItem("Licence", "/information"),
 ]);
 
-export const portfolio = new RouteItem("Portfolio", "/portfolio", [
+export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
   new RouteItem("Develop Project", "/portfolio/project", [
     new RouteItem("01", "/portfolio/project/1"),
     new RouteItem("02", "/portfolio/project/2"),

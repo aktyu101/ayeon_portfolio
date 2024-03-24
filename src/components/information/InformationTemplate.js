@@ -34,24 +34,28 @@ export default function InformationTemplate() {
     const target = contentRef.current[index];
     setSelectedContentIndex(index);
 
-    window.scroll({
-      top: target.offsetTop - 80,
-      left: 0,
-      behavior: "smooth",
-    });
+    if (target) {
+      window.scroll({
+        top: target.offsetTop - 80,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   const buttonActiveClassName = (index) =>
-    twMerge(index === selectedContentIndex && "text-[#2299]");
+    twMerge(index === selectedContentIndex && "text-[#2299] font-semibold");
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-
+      // 각 컨텐츠 영역의 위치 확인 후 현재 보여지는 영역 설정
       contentRef.current.forEach((ref, index) => {
-        const offsetY = ref.offsetTop - 80;
-        if (scrollY >= offsetY) {
-          setSelectedContentIndex(index);
+        if (ref) {
+          const offsetY = ref.offsetTop - 300;
+          if (scrollY >= offsetY) {
+            setSelectedContentIndex(index);
+          }
         }
       });
     });
@@ -59,11 +63,11 @@ export default function InformationTemplate() {
 
   return (
     <div>
-      <div className="sticky top-0 h-[120px] bg-white pt-[30px] pb-[20px]">
+      <div className="sticky top-[80px] h-[150px] bg-white pt-[60px] pb-[20px]">
         <div className="text-[28px]">
           안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다
         </div>
-        <ul className="flex gap-8 ">
+        <ul className="flex gap-[15px] pt-[10px] text-[16px] font-light">
           {contents.map((content, index) => (
             <button
               key={content.name}
@@ -71,16 +75,20 @@ export default function InformationTemplate() {
               className={buttonActiveClassName(index)}
             >
               {content.name}
+              {/* content name 사이에 '|' 추가 */}
+              {index !== contents.length - 1 && (
+                <span className="ml-[15px]">|</span>
+              )}
             </button>
           ))}
         </ul>
       </div>
 
       <div className="flex">
-        <div className=" top-[100px] w-[325px] h-[calc(100vh-80px)] bg-[#eee] sticky">
+        <div className=" top-[220px] w-[325px] h-[calc(100vh-220px)] bg-[#eee] sticky">
           프로필
         </div>
-        <div className="w-[940px] bg-[#eee] gap-y-[30px] wrap flex-wrap flex">
+        <div className="w-[100%] ml-5 bg-[#eee] gap-y-[30px] wrap flex-wrap flex">
           {contents.map((content, index) => (
             <div
               ref={addContentRef(index)}

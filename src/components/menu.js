@@ -32,10 +32,16 @@ export default function Menu({ routes, onClick: handleClick }) {
 
 function MenuLink({ depth = 1, route }) {
   const styleMap = new Map([
-    [1, "text-[22px] font-medium text-white "],
+    [
+      1,
+      "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer",
+    ],
     // `[&:nth-child(odd)]:bg-gray-400`
-    [2, "text-[16px] font-extraLight text-white"],
-    [3, "text-[12px] text-[#eee]"],
+    [
+      2,
+      "text-[16px] font-extraLight text-white hover:text-[#ffffff8a] cursor-pointer",
+    ],
+    [3, "text-[12px] text-[#eee] hover:text-[#ffffff8a] cursor-pointer"],
   ]);
   const linkStyles = twMerge(styleMap.get(depth));
   return (
