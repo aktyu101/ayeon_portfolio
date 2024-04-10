@@ -2,7 +2,9 @@ import ConfigProvider from "./config-provider";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import { notoSansKr } from "./font";
-import Link from "next/link";
+// import Link from "next/link";
+import BackToTopButton from "@/components/backToTopBtn";
+// import ScrollContainer from "@/components/ SmoothContainer.component";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,13 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className={notoSansKr.className}>
         <ConfigProvider>
+          {/* <ScrollContainer> */}
           <Navigation />
           <div className="w-[1280px] mx-auto">{children}</div>
-          <Link href={"#"}>
-            <button className="text-[#000 fixed right-[20px] bottom-[30px] w-[50px] h-[50px] box-border rounded-full bg-[#2742BE] text-white">
-              TOP
-            </button>
-          </Link>
+          <BackToTopButton />
+          {/* </ScrollContainer> */}
         </ConfigProvider>
       </body>
     </html>

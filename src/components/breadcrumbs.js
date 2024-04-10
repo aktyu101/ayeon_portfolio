@@ -23,7 +23,7 @@ export default function Breadcrumbs() {
         {/* depth가 깊어져도 계속 추가되게 변경 */}
         {segments.map((segment, index) => (
           <React.Fragment key={segment}>
-            {" > "}
+            <span className="mx-[8px]">{" > "}</span>
             <Link href={`/${segments.slice(0, index + 1).join("/")}`}>
               <span>{segment}</span>
             </Link>
