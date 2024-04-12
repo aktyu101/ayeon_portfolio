@@ -16,7 +16,7 @@ export default function InformationTemplate() {
     {
       name: "SKILLS",
       className: "w-[100%] bg-[#ab9696] h-[800px]",
-      Element: <>1</>,
+      Element: <></>,
     },
     {
       name: "EDUCATION&CAREER",
