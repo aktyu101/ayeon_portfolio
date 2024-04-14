@@ -15,7 +15,7 @@ export default function ProjectItem({ item }) {
         onClick={handleClick}
       >
         <header className="relative w-[406px] h-[280px]">
-          <Image src={item.url} fill alt={item.name} />
+          <Image className="" src={item.url} fill alt={item.name} />
         </header>
         <section className="flex flex-col gap-y-[15px] text-center">
           <span>{item.name}</span>
