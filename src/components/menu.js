@@ -10,7 +10,7 @@ export default function Menu({ routes, onClick: handleClick }) {
             <div className="flex flex-col gap-y-[5px] mt-[10px] ">
               {route.children.map((route, index) => (
                 <div key={index}>
-                  <MenuLink depth={2} route={route} />
+                  {/* <MenuLink depth={2} route={route} /> */}
                   {route.children && (
                     <div>
                       {route.children.map((route, index) => (

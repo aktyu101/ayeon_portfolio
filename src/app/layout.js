@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={notoSansKr.className}>
         <ConfigProvider>
           <Navigation />
-          <div className="w-[1280px] mx-auto">{children}</div>
+          <div className="w-[100%] mx-auto">{children}</div>
           <BackToTopButton />
         </ConfigProvider>
       </body>

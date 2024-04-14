@@ -16,7 +16,7 @@ export default function InformationTemplate() {
   const contents = [
     {
       name: "SKILLS",
-      className: "w-[100%] h-[auto]",
+      className: "w-[100%] mb-[80px]",
       Element: (
         <>
           <h2>Lorem ipsum</h2>
@@ -41,7 +41,7 @@ export default function InformationTemplate() {
     },
     {
       name: "EDUCATION&CAREER",
-      className: "w-[100% h-[auto]",
+      className: "w-[100% h-[auto] mb-[80px]",
       Element: (
         <>
           {" "}
@@ -83,7 +83,7 @@ export default function InformationTemplate() {
     },
     {
       name: "LICENCE",
-      className: "w-[100%] h-[auto]",
+      className: "w-[100%] h-[auto] mb-[150px]",
       Element: (
         <>
           {" "}
@@ -104,6 +104,20 @@ export default function InformationTemplate() {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt
             </div>
           </>
         </>
@@ -117,7 +131,7 @@ export default function InformationTemplate() {
 
     if (target) {
       window.scroll({
-        top: target.offsetTop - 80,
+        top: target.offsetTop - 300,
         left: 0,
         behavior: "smooth",
       });
@@ -144,11 +158,11 @@ export default function InformationTemplate() {
 
   return (
     <div>
-      <div className="sticky top-[80px] h-[150px] bg-white pt-[60px] pb-[20px]">
+      <div className="sticky bg-white top-[60px] h-[180px] pt-[60px] pb-[20px]">
         <div className="text-[28px]">
           안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다
         </div>
-        <ul className="flex gap-[15px] pt-[10px] text-[16px] font-light">
+        <ul className="flex gap-[15px] pt-[10px] text-[16px] font-light my-[15px]">
           {contents.map((content, index) => (
             <button
               key={content.name}
@@ -163,10 +177,11 @@ export default function InformationTemplate() {
             </button>
           ))}
         </ul>
+        <p className="h-[1px] bg-black"></p>
       </div>
 
       <div className="flex">
-        <div className=" top-[220px] w-[325px] h-[calc(100vh-220px)] sticky">
+        <div className="bg-[#eee] top-[240px] w-[325px] h-[calc(100vh-260px)] sticky">
           프로필
         </div>
         <div className="w-[100%] ml-5 gap-y-[30px] wrap flex-wrap flex">

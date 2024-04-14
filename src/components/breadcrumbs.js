@@ -13,6 +13,7 @@ export default function Breadcrumbs() {
 
   const segments = pathname.split("/").filter((path) => path);
   console.log("segments", segments);
+  const visibleSegments = segments.slice(0, 2);
 
   // console.log("pathnameArray", pathnameArray);
 
@@ -21,10 +22,10 @@ export default function Breadcrumbs() {
       <div className="size-full flex justify-end text-[#666] pt-[20px]">
         <Link href="/">home</Link>
         {/* depth가 깊어져도 계속 추가되게 변경 */}
-        {segments.map((segment, index) => (
+        {visibleSegments.map((segment, index) => (
           <React.Fragment key={segment}>
             <span className="mx-[8px]">{" > "}</span>
-            <Link href={`/${segments.slice(0, index + 1).join("/")}`}>
+            <Link href={`/${visibleSegments.slice(0, index + 1).join("/")}`}>
               <span>{segment}</span>
             </Link>
           </React.Fragment>

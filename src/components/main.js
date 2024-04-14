@@ -5,7 +5,13 @@ import { ConfigContext } from "@/app/config-provider";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext); //
-  return <>main</>;
+  return (
+    <>
+      <div className="bg-slate-400 h-screen">
+        <div className="w-[1280px] mx-auto">main</div>
+      </div>
+    </>
+  );
 }
 
 // <Image

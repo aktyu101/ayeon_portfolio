@@ -7,6 +7,7 @@ import OpenBtn from "./open-btn";
 import Menu from "./menu";
 import { routes } from "../constants/route";
 import { motion } from "framer-motion";
+import ContactPopup from "./ContactPopup";
 
 export default function Navigation() {
   const [isOpenNav, setIsOpenNav] = useState(false);
@@ -45,14 +46,7 @@ export default function Navigation() {
         </div>
         {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
         <div className="flex gap-x-[4px] fixed bottom-[30px]">
-          <button
-            className={
-              "border-[#fff] border-2 w-[200px] h-[54px] text-[#fff] bg-[#111] text-center leading-[53px] border-solid " +
-              hoverStyle
-            }
-          >
-            Contact
-          </button>
+          <ContactPopup />
           <button
             className={
               "border-[#fff] border-2 w-[54px] h-[54px] text-[#fff] bg-[#111] text-center leading-[53px] border-solid " +
@@ -64,7 +58,7 @@ export default function Navigation() {
         </div>
       </motion.div>
       {/* header */}
-      <div className="w-[100%] h-[80px] bg-[#fff] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)]">
+      <div className="w-[100%] h-[80px] bg-[#ffffff] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)]">
         <div className="w-[1280px] z-[51] mx-auto flex justify-between items-center">
           <div className="flex gap-5 items-center text-[20px] font-medium">
             <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
@@ -75,7 +69,7 @@ export default function Navigation() {
           <div className="flex gap-5">
             {routes.map((route, index) => (
               <Link key={index} href={route.link}>
-                <span>{route.name}</span>
+                <span className="hover:text-[#2742BE]">{route.name}</span>
               </Link>
             ))}
           </div>
