@@ -39,7 +39,14 @@ class ProjectItem {
 }
 
 export const projectList = new ProjectItemList([
-  new ProjectItem(1, "1", "vercel.svg", "2024.04.04", "2024.04.05", "HTML&CSS"),
+  new ProjectItem(
+    1,
+    "1",
+    "images/portfolio/vercel.svg",
+    "2024.04.04",
+    "2024.04.05",
+    "HTML&CSS"
+  ),
   new ProjectItem(
     2,
     "2",
