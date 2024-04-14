@@ -7,7 +7,6 @@ import OpenBtn from "./open-btn";
 import Menu from "./menu";
 import { routes } from "../constants/route";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const [isOpenNav, setIsOpenNav] = useState(false);

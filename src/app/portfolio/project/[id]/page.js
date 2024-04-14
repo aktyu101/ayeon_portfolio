@@ -1,9 +1,13 @@
+import { projectList } from "@/constants/projectList";
+
 export function generateStaticParams() {
-  return Array.from({ length: 4 }).map((_, index) => ({
-    id: String(index + 1),
+  return projectList.listSortedByDate.map(({ id }) => ({
+    id: String(id),
   }));
 }
 export default function ProjectByIdPage({ params }) {
   const { id } = params;
   return <>ProjectByIdPage{id}</>;
 }
+
+//0414

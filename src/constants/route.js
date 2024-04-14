@@ -1,3 +1,5 @@
+import { projectList } from "./projectList";
+
 class RouteItem {
   constructor(name, link = null, children = null) {
     this.name = name;
@@ -13,12 +15,22 @@ export const information = new RouteItem("INFORMATION", "/information", [
 ]);
 
 export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
-  new RouteItem("Develop Project", "/portfolio/project", [
-    new RouteItem("01", "/portfolio/project/1"),
-    new RouteItem("02", "/portfolio/project/2"),
-    new RouteItem("03", "/portfolio/project/3"),
-    new RouteItem("04", "/portfolio/project/4"),
-  ]),
+  new RouteItem(
+    "Develop Project",
+    "/portfolio/project",
+    projectList.listSortedByDate.map(
+      ({ id }, index) =>
+        new RouteItem(`${index + 1}`, `/portfolio/project/${id}`)
+      // portfolio link
+    )
+  ),
+  // new RouteItem("Develop Project", "/portfolio/project",  [
+  //   new RouteItem("01", "/portfolio/project/1"),
+  //   new RouteItem("02", "/portfolio/project/2"),
+  //   new RouteItem("03", "/portfolio/project/3"),
+  //   new RouteItem("04", "/portfolio/project/4"),
+
+  // ]),
   new RouteItem(
     "Project Manager",
     "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
