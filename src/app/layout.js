@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation";
 import { notoSansKr } from "./font";
 // import Link from "next/link";
 import BackToTopButton from "@/components/backToTopBtn";
-// import ScrollContainer from "@/components/ SmoothContainer.component";
+import React from "react";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,11 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className={notoSansKr.className}>
         <ConfigProvider>
-          {/* <ScrollContainer> */}
           <Navigation />
           <div className="w-[1280px] mx-auto">{children}</div>
           <BackToTopButton />
-          {/* </ScrollContainer> */}
         </ConfigProvider>
       </body>
     </html>
