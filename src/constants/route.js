@@ -21,8 +21,6 @@ export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
     projectList.listSortedByDate.map(
       ({ id, name }, index) =>
         new RouteItem(`${index + 1}` + `. ${name}`, `/portfolio/project/${id}`)
-      // portfolio link
-      //
     )
   ),
   // new RouteItem("Develop Project", "/portfolio/project",  [

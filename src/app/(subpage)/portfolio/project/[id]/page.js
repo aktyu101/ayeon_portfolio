@@ -1,3 +1,4 @@
+import DetailById from "@/components/portfolio/DetailById";
 import { projectList } from "@/constants/projectList";
 
 export function generateStaticParams() {
@@ -7,7 +8,7 @@ export function generateStaticParams() {
 }
 export default function ProjectByIdPage({ params }) {
   const { id } = params;
-  return <>ProjectByIdPage{id}</>;
+  return <DetailById id={id} />;
 }
 
 //0414

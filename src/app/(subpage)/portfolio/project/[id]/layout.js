@@ -1,4 +1,4 @@
 export default function ProjectByIdLayout({ children }) {
-  return <></>;
+  return <section>{children}</section>;
 }
 //ProjectByidPage{children}

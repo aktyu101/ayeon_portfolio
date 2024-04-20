@@ -1,8 +1,8 @@
 import Breadcrumbs from "@/components/breadcrumbs";
 
-export default function PortfolioLayout({ children }) {
+export default function InformationLayout({ children }) {
   return (
-    <section className="flex flex-col w-[1280px] mx-auto">
+    <section className="">
       <Breadcrumbs />
       {children}
     </section>

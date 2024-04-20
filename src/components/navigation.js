@@ -9,6 +9,8 @@ import { routes } from "../constants/route";
 import { motion } from "framer-motion";
 import ContactPopup from "./ContactPopup";
 
+//header main 구분 0420, props(main, sub)
+
 export default function Navigation() {
   const [isOpenNav, setIsOpenNav] = useState(false);
 

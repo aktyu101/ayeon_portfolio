@@ -7,6 +7,9 @@ const nextConfig = {
   output: "export",
   basePath: !debug ? `/${repository}` : "",
   assetPrefix: !debug ? `/${repository}/` : "", // production 일때 prefix 경로
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
