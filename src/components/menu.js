@@ -2,17 +2,17 @@ import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 export default function Menu({ routes, onClick: handleClick }) {
   return (
-    <ul className="flex flex-col gap-y-[20px]" onClick={handleClick}>
+    <ul className="flex flex-col" onClick={handleClick}>
       {routes.map((route, index) => (
-        <li key={index}>
+        <li className="border-b-[1px] last:border-none mb-[20px]" key={index}>
           <MenuLink route={route} />
           {route.children && (
-            <div className="flex flex-col gap-y-[5px] mt-[10px] ">
+            <div className="flex flex-col mb-[20px]">
               {route.children.map((route, index) => (
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
                   {route.children && (
-                    <div>
+                    <div className="first: mt-[15px]">
                       {route.children.map((route, index) => (
                         <div key={index}>
                           <MenuLink depth={3} route={route} />
@@ -41,7 +41,10 @@ function MenuLink({ depth = 1, route }) {
       2,
       "text-[16px] font-extraLight text-white hover:text-[#ffffff8a] cursor-pointer",
     ],
-    [3, "text-[12px] text-[#eee] hover:text-[#ffffff8a] cursor-pointer"],
+    [
+      3,
+      "text-[16px] block mb-[7px] text-[#eee] hover:text-[#ffffff4a] cursor-pointer",
+    ],
   ]);
   const linkStyles = twMerge(styleMap.get(depth));
   return (

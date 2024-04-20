@@ -41,22 +41,50 @@ class ProjectItem {
 export const projectList = new ProjectItemList([
   new ProjectItem(
     1,
-    "test",
-    "versel.svg",
+    "project01",
+    "portfolio01.png",
     "2024.04.04",
     "2024.04.05",
     "HTML&CSS"
   ),
   new ProjectItem(
     2,
-    "test2",
+    "project02",
     "vercel.svg",
     "2024.01.01",
     "2024.04.05",
     "JAVASCRIPT"
   ),
-  new ProjectItem(3, "3", "vercel.svg", "2024.04.05", "2024.04.05", "HTML&CSS"),
-  new ProjectItem(4, "4", "vercel.svg", "2024.04.02", "2024.04.05", "HTML&CSS"),
-  new ProjectItem(5, "5", "vercel.svg", "2024.04.03", "2024.04.05", "HTML&CSS"),
-  new ProjectItem(6, "6", "vercel.svg", "2023.12.04", "2024.04.05", "HTML&CSS"),
+  new ProjectItem(
+    3,
+    "project03",
+    "vercel.svg",
+    "2024.04.05",
+    "2024.04.05",
+    "HTML&CSS"
+  ),
+  new ProjectItem(
+    4,
+    "project04",
+    "vercel.svg",
+    "2024.04.02",
+    "2024.04.05",
+    "HTML&CSS"
+  ),
+  new ProjectItem(
+    5,
+    "project05",
+    "vercel.svg",
+    "2024.04.03",
+    "2024.04.05",
+    "HTML&CSS"
+  ),
+  new ProjectItem(
+    6,
+    "project06",
+    "vercel.svg",
+    "2023.12.04",
+    "2024.04.05",
+    "HTML&CSS"
+  ),
 ]);

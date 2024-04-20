@@ -16,7 +16,7 @@ export default function Navigation() {
     "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen z-[51]"
   );
   const hoverStyle = twMerge(
-    "hover:bg-[#fff] hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
+    "hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
   );
 
   const handleClickMenu = (event) => {
