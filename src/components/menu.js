@@ -14,6 +14,18 @@ export default function Menu({ routes, onClick: handleClick }) {
   const oneDepthTextStyle = twMerge(
     "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer"
   );
+  // 노션 접속 불가 처리
+  const handleLinkClick = () => {
+    const password = prompt("비밀번호를 입력하세요:");
+    if (password === "0903") {
+      window.open(
+        "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4",
+        "_blank"
+      );
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
+  };
 
   return (
     <ul className="flex flex-col" onClick={handleClick}>
@@ -55,15 +67,9 @@ export default function Menu({ routes, onClick: handleClick }) {
         </li>
       ))}
       <li className={oneDepthStyle}>
-        <Link
-          className={oneDepthTextStyle}
-          target="_blank"
-          href={
-            "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
-          }
-        >
+        <a className={oneDepthTextStyle} onClick={handleLinkClick} href="#">
           NOTION
-        </Link>
+        </a>
       </li>
     </ul>
   );
