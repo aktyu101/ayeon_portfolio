@@ -1,18 +1,46 @@
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
 export default function Menu({ routes, onClick: handleClick }) {
+  const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
+  const handleToggleSubmenu = () => {
+    setIsOpenSubmenu(!isOpenSubmenu); // 토글 기능 추가
+  };
+  const oneDepthStyle = twMerge(
+    "border-b-[1px] pb-[10px] mb-[15px] box-border flex justify-between items-center"
+  );
+  const oneDepthTextStyle = twMerge(
+    "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer"
+  );
+
   return (
     <ul className="flex flex-col" onClick={handleClick}>
       {routes.map((route, index) => (
-        <li className="border-b-[1px] last:border-none mb-[20px]" key={index}>
-          <MenuLink route={route} />
+        <li key={index}>
+          <div className={oneDepthStyle} onClick={handleToggleSubmenu}>
+            <MenuLink route={route} />
+            {/* toggle */}
+            {route.children && (
+              <Image
+                className={`cursor-pointer ${
+                  isOpenSubmenu ? "rotate-0" : "rotate-180"
+                }`}
+                src="/images/toggle.png"
+                alt="toggleBtn"
+                width={20}
+                height={10}
+              />
+            )}
+          </div>
           {route.children && (
-            <div className="flex flex-col mb-[20px]">
+            <div className="flex flex-col">
               {route.children.map((route, index) => (
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
-                  {route.children && (
-                    <div className="first: mt-[15px]">
+                  {route.children && isOpenSubmenu && (
+                    <div className="pb-[10px]">
                       {route.children.map((route, index) => (
                         <div key={index}>
                           <MenuLink depth={3} route={route} />
@@ -26,6 +54,17 @@ export default function Menu({ routes, onClick: handleClick }) {
           )}
         </li>
       ))}
+      <li className={oneDepthStyle}>
+        <Link
+          className={oneDepthTextStyle}
+          target="_blank"
+          href={
+            "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
+          }
+        >
+          NOTION
+        </Link>
+      </li>
     </ul>
   );
 }

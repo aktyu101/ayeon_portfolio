@@ -99,4 +99,58 @@ export const projectList = new ProjectItemList([
     "HTML&CSS",
     "des"
   ),
+  new ProjectItem(
+    1,
+    "project01",
+    "portfolio01.png",
+    "2024.04.04",
+    "2024.04.05",
+    "HTML&CSS",
+    "des"
+  ),
+  new ProjectItem(
+    2,
+    "project02",
+    "portfolio01.png",
+    "2024.01.01",
+    "2024.04.05",
+    "JAVASCRIPT",
+    "des"
+  ),
+  new ProjectItem(
+    3,
+    "project03",
+    "portfolio01.png",
+    "2024.04.05",
+    "2024.04.05",
+    "HTML&CSS",
+    "des"
+  ),
+  new ProjectItem(
+    4,
+    "project04",
+    "portfolio01.png",
+    "2024.04.02",
+    "2024.04.05",
+    "HTML&CSS",
+    "des"
+  ),
+  new ProjectItem(
+    5,
+    "project05",
+    "portfolio01.png",
+    "2024.04.03",
+    "2024.04.05",
+    "HTML&CSS",
+    "des"
+  ),
+  new ProjectItem(
+    6,
+    "project06",
+    "portfolio01.png",
+    "2023.12.04",
+    "2024.04.05",
+    "HTML&CSS",
+    "des"
+  ),
 ]);

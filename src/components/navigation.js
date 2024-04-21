@@ -14,6 +14,7 @@ import ContactPopup from "./ContactPopup";
 export default function Navigation() {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
+  // 경로별 배경색 처리
   const wrapperStyles = twMerge(
     "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen z-[51]"
   );
@@ -39,10 +40,10 @@ export default function Navigation() {
         className={wrapperStyles}
       >
         <div className="flex flex-col">
-          <div className="flex justify-end">
+          <div className="flex justify-end mb-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <div>
+          <div className="overflow-scroll h-[600px]">
             <Menu routes={routes} onClick={handleClickMenu} />
           </div>
         </div>
@@ -59,8 +60,9 @@ export default function Navigation() {
           </button>
         </div>
       </motion.div>
+
       {/* header */}
-      <div className="w-[100%] h-[80px] bg-[#ffffff] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)]">
+      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)] bg-white">
         <div className="w-[1280px] z-[51] mx-auto flex justify-between items-center">
           <div className="flex gap-5 items-center text-[20px] font-medium">
             <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>

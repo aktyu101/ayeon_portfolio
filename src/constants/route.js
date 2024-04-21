@@ -8,11 +8,15 @@ class RouteItem {
   }
 }
 
-export const information = new RouteItem("INFORMATION", "/information", [
-  new RouteItem("Skills", "/information"),
-  new RouteItem("Education & Career", "/information"),
-  new RouteItem("Licence", "/information"),
-]);
+export const information = new RouteItem(
+  "INFORMATION",
+  "/information"
+  // [
+  //   new RouteItem("Skills", "/information"),
+  //   new RouteItem("Education & Career", "/information"),
+  //   new RouteItem("Licence", "/information"),
+  // ]
+);
 
 export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
   new RouteItem(
@@ -31,8 +35,8 @@ export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
 
   // ]),
 ]);
-export const projectManager = new RouteItem(
-  "PROJECT MANAGER",
-  "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
-);
-export const routes = [information, portfolio, projectManager];
+// export const projectManager = new RouteItem(
+//   "PROJECT MANAGER",
+//   "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
+// );
+export const routes = [information, portfolio];
