@@ -1,4 +1,5 @@
 import { projectList } from "./projectList";
+import { studyList } from "./studyList";
 
 class RouteItem {
   constructor(name, link = null, children = null) {
@@ -19,24 +20,23 @@ export const information = new RouteItem(
 );
 
 export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
-  new RouteItem(
-    "Develop Project",
-    "/portfolio/project",
-    projectList.listSortedByDate.map(
-      ({ id, name }, index) =>
-        new RouteItem(`${index + 1}` + `. ${name}`, `/portfolio/project/${id}`)
-    )
+  projectList.listSortedByDate.map(
+    ({ id, name }, index) =>
+      new RouteItem(`project` + `. ${name}`, `/portfolio/${id}`)
   ),
-  // new RouteItem("Develop Project", "/portfolio/project",  [
-  //   new RouteItem("01", "/portfolio/project/1"),
-  //   new RouteItem("02", "/portfolio/project/2"),
-  //   new RouteItem("03", "/portfolio/project/3"),
-  //   new RouteItem("04", "/portfolio/project/4"),
-
-  // ]),
 ]);
 // export const projectManager = new RouteItem(
 //   "PROJECT MANAGER",
 //   "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
 // );
-export const routes = [information, portfolio];
+
+export const study = new RouteItem(
+  "STUDY",
+  "/study",
+  studyList.listSortedByDate.map(
+    ({ id, name }, index) =>
+      new RouteItem(`${index + 1}` + `. ${name}`, `//${id}`)
+  )
+);
+
+export const routes = [information, portfolio, study];

@@ -36,8 +36,6 @@ const ContactPopup = () => {
               maxWidth: "400px",
               width: "80vw",
               height: "300px",
-              maxHeight: "600px",
-              overflowY: "auto",
             }}
           >
             {/* 팝업 내용 */}

@@ -23,6 +23,7 @@ export default function Navigation() {
   );
 
   const handleClickMenu = (event) => {
+    if (!event || !event.target) return;
     const hasHref = event.target.hasAttribute("href");
     if (!hasHref) return;
     setIsOpenNav(false);
@@ -43,7 +44,7 @@ export default function Navigation() {
           <div className="flex justify-end mb-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <div className="h-[600px]">
+          <div className="h-[600px] overflow-scroll">
             <Menu routes={routes} onClick={handleClickMenu} />
           </div>
         </div>

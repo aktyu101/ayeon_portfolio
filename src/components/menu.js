@@ -4,10 +4,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Menu({ routes, onClick: handleClick }) {
-  const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
-  const handleToggleSubmenu = () => {
-    setIsOpenSubmenu(!isOpenSubmenu); // 토글 기능 추가
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+
+  const handleToggleSubmenu = (index) => {
+    setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
   };
+
+  const handleMenuClick = (index) => {
+    handleToggleSubmenu(index);
+    handleClick();
+  };
+
   const oneDepthStyle = twMerge(
     "border-b-[1px] pb-[10px] mb-[15px] box-border flex justify-between items-center"
   );
@@ -15,7 +22,8 @@ export default function Menu({ routes, onClick: handleClick }) {
     "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer"
   );
   // 노션 접속 불가 처리
-  const handleLinkClick = () => {
+  const handleLinkClick = (event) => {
+    event.preventDefault(); // 기본 동작 방지
     const password = prompt("비밀번호를 입력하세요:");
     if (password === "0903") {
       window.open(
@@ -28,16 +36,16 @@ export default function Menu({ routes, onClick: handleClick }) {
   };
 
   return (
-    <ul className="flex flex-col" onClick={handleClick}>
+    <ul className="flex flex-col">
       {routes.map((route, index) => (
         <li key={index}>
-          <div className={oneDepthStyle} onClick={handleToggleSubmenu}>
+          <div className={oneDepthStyle} onClick={() => handleMenuClick(index)}>
             <MenuLink route={route} />
             {/* toggle */}
             {route.children && (
               <Image
                 className={`cursor-pointer ${
-                  isOpenSubmenu ? "rotate-0" : "rotate-180"
+                  openSubmenuIndex === index ? "rotate-0" : "rotate-180"
                 }`}
                 src="/images/toggle.png"
                 alt="toggleBtn"
@@ -46,12 +54,12 @@ export default function Menu({ routes, onClick: handleClick }) {
               />
             )}
           </div>
-          {route.children && (
+          {route.children && openSubmenuIndex === index && (
             <div className="flex flex-col">
               {route.children.map((route, index) => (
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
-                  {route.children && isOpenSubmenu && (
+                  {route.children && (
                     <div className="pb-[10px]">
                       {route.children.map((route, index) => (
                         <div key={index}>
