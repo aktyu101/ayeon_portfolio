@@ -60,6 +60,7 @@ export default function Menu({ routes, onClick: handleClick }) {
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
                   {route.children && (
+                    //&& openSubmenuIndex === index &&
                     <div className="pb-[10px]">
                       {route.children.map((route, index) => (
                         <div key={index}>
