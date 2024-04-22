@@ -2,6 +2,6 @@
 //   title: "PortFolio_Project",
 // };
 
-export default function ProjectLayout({ children }) {
+export default function StudyLayout({ children }) {
   return <section>{children}</section>;
 }

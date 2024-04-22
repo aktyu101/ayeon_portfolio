@@ -6,7 +6,7 @@ export default function StudyItem({ item }) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`study/${item.id}`);
+    router.push(`study/project/${item.id}`);
   };
 
   return (

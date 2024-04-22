@@ -1,8 +1,8 @@
-import { projectList } from "@/constants/projectList";
 import DetailById from "@/components/study/DetailById";
+import { studyList } from "@/constants/studyList";
 
 export function generateStaticParams() {
-  return projectList.listSortedByDate.map(({ id }) => ({
+  return studyList.listSortedByDate.map(({ id }) => ({
     id: String(id),
   }));
 }
@@ -11,4 +11,4 @@ export default function StudyByIdPage({ params }) {
   return <DetailById id={id} />;
 }
 
-//0414
+//study

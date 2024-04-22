@@ -1,6 +1,7 @@
 "use client";
-import StudyItem from "./StudyItem";
+
 import { studyList } from "@/constants/studyList";
+import StudyItem from "./StudyItem";
 
 export default function StudyTemplate() {
   return (

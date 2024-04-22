@@ -1,3 +1,3 @@
-export default function Project() {
+export default function Study() {
   return <></>;
 }

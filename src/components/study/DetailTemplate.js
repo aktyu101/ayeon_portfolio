@@ -1,9 +1,9 @@
 "use client";
 
-import { StudyList } from "@/constants/studyList";
+import { studyList } from "@/constants/studyList";
 
 export default function DetailTemplate({ id, contents }) {
-  const item = StudyList.findListById(id);
+  const item = studyList.findListById(id);
 
   return (
     <article>
