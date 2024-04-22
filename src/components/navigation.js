@@ -43,7 +43,7 @@ export default function Navigation() {
           <div className="flex justify-end mb-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <div className="overflow-scroll h-[600px]">
+          <div className="h-[600px]">
             <Menu routes={routes} onClick={handleClickMenu} />
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Navigation() {
 
       {/* header */}
       <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)] bg-white">
-        <div className="w-[1280px] z-[51] mx-auto flex justify-between items-center">
+        <div className="w-[100%] mx-[50px] z-[51] flex justify-between items-center">
           <div className="flex gap-5 items-center text-[20px] font-medium">
             <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
             <Link href={"/"}>

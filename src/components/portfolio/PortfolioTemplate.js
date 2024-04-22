@@ -10,7 +10,7 @@ export default function PortfolioTemplate() {
         <p className="text-[28px] text-center">PORTFOLIO</p>
       </div>
 
-      <ul className="grid grid-cols-3 gap-y-[50px]">
+      <ul className=" flex flex-wrap gap-y-[50px] justify-between">
         {projectList.listSortedByDate.map((list) => (
           <ProjectItem key={list.name} item={list} />
         ))}
