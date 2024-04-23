@@ -47,12 +47,12 @@ class StudyItem {
 export const studyList = new StudyItemList([
   new StudyItem(
     1,
-    "study01",
+    "SQLD 요점 정리",
     "portfolio01.png",
-    "2024.04.04",
-    "2024.04.05",
-    "HTML&CSS",
-    "des"
+    "2024.04.23",
+    "2024.04.28",
+    "SQL",
+    "1장. 데이터 모델링의 이해"
   ),
   new StudyItem(
     2,
