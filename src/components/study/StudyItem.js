@@ -19,8 +19,11 @@ export default function StudyItem({ item }) {
           <Image className="" src={item.url} fill alt={item.name} />
         </header>
         <section className="flex flex-col gap-y-[15px] text-center">
-          <span>{item.name}</span>
-          <span>{item.period}</span>
+          <div>
+            <p className="text-[22px] pb-[5px]">{item.name}</p>
+            <p className="text-zinc-600">{item.description}</p>
+          </div>
+          <p className="text-zinc-600">{item.period}</p>
         </section>
       </article>
     </li>
