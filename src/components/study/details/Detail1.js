@@ -12,7 +12,7 @@ const Contents = () => {
     "text-[20px] mb-[30px] leading-[40px] indent-5 bg-slate-200"
   );
   const listTitleStyle = twMerge("text-[18px] leading-[40px] text-[#2742BE] ");
-  const descriptionStyle = twMerge("text-[#333] indent-5 leading-[25px]");
+  const descriptionStyle = twMerge("text-[#333] pl-[10px] leading-[25px]");
   const numberingSrtyle = twMerge("text-[17px] pb-[5px]");
   const groupListStyle = twMerge("pb-[30px]");
   const pointTextStyle = twMerge("text-[red]");
@@ -21,6 +21,7 @@ const Contents = () => {
   return (
     <>
       <ul>
+        {/* part1 : 데이터 모델의 이해 */}
         <li>
           <p className={titleStyle}>PART1. 데이터 모델의 이해</p>
           <ul className="pl-[10px]">
@@ -242,7 +243,13 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 8 */}
+          </ul>
+        </li>
+        {/* part2 : 엔터티 */}
+        <li>
+          <p className={titleStyle}>PART2. 엔터티</p>
+          <ul className="pl-[10px]">
+            {/* 1 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>엔터티의 개념</h2>
               <ul>
@@ -275,7 +282,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 9 */}
+            {/* 2 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>엔터티의 특징</h2>
               <ul>
@@ -367,7 +374,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 10 */}
+            {/* 3 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>엔터티의 분류</h2>
               <h2 className={listTitleStyle + "block text-[red]"}>
@@ -460,7 +467,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 11 */}
+            {/* 4 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>엔터티의 명명</h2>
               <ul>
@@ -481,10 +488,37 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 12 */}
+          </ul>
+        </li>
+        {/* part3 : 속성 */}
+        <li>
+          <p className={titleStyle}>PART3. 속성</p>
+          <ul className="pl-[10px]">
+            {/* 1 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>속성의 개념</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -속성은 업무에서 필요로 하는 고유한 성질, 특징을 의미(관찰
+                    대상) -{">"}컬럼으로 표현할 수 있는 단위
+                  </p>
+                  <p className={descriptionStyle}>
+                    -업무상 인스턴스로 관리하고자 하는 더 이상 분리되지 않는
+                    최소의 데이터 단위
+                  </p>
+                  <p className={descriptionStyle}>-인스턴스의 구성 요소</p>
+                  <p className={descriptionStyle}>
+                    {""}ex. 학생 엔터티에 이름, 학번, 학과번호 등이 속성이 될 수
+                    있음
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 2 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>
-                엔터티, 인스턴스, 속성값의 관계
+                엔터티, 인스턴스, 속성 속성값의 관계
               </h2>
               <ul>
                 <li className={sgroupListStyle}>
@@ -507,7 +541,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 13 */}
+            {/* 3 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>속성의 특징</h2>
               <ul>
@@ -537,7 +571,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 14 */}
+            {/* 4 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>함수적 종속성</h2>
               <ul>
@@ -587,7 +621,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 15 */}
+            {/* 5 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>속성의 분류</h2>
               <h2 className={listTitleStyle + "block text-[red]"}>
@@ -710,7 +744,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 16 */}
+            {/* 6 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>속성의 명명규칙</h2>
               <ul>
@@ -730,7 +764,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 17 */}
+            {/* 7 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>도메인(Domain)</h2>
               <ul>
@@ -745,7 +779,13 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 18 */}
+          </ul>
+        </li>
+        {/* part4 : 관계 */}
+        <li>
+          <p className={titleStyle}>PART4. 관계</p>
+          <ul className="pl-[10px]">
+            {/* 1 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>관계의 개념</h2>
               <ul>
@@ -763,7 +803,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 19 */}
+            {/* 2 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>관계의 종류</h2>
               <ul>
@@ -796,7 +836,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 20 */}
+            {/* 3 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>관계의 구성</h2>
               <ul>
@@ -808,7 +848,7 @@ const Contents = () => {
                 </li>
               </ul>
             </li>
-            {/* 21 */}
+            {/* 4 */}
             <li className={groupListStyle}>
               <h2 className={listTitleStyle}>관계의 차수(Cardinality)</h2>
               <ul>
@@ -887,6 +927,871 @@ const Contents = () => {
               </ul>
               {/* 관계의 페어링 : 31*/}
             </li>
+            {/* 5 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>관계의 페어링</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -엔터티 안에 인스턴스가 개별적으로 관계를 가지는 것
+                  </p>
+                  <p className={descriptionStyle}>
+                    -관계란 폐어링의 집합을 의미함
+                  </p>
+                  {/* M대 N 관계 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>
+                      **관계와 차수, 폐어링 차이
+                    </p>
+                    <p className={descriptionStyle}>
+                      -학생과 강의 엔터티는 관계를 가짐
+                    </p>
+                    <p className={descriptionStyle}>
+                      -한 학생은 여러 강의를 수강할 수 있고, 한 강의도 여러
+                      학생에게 수강될 수 있으므로 M 대 N 관계이며, 이 때 차수는
+                      M:N가 됨
+                    </p>
+                    <p className={descriptionStyle}>
+                      -인스턴스의 관계를 보면 "학생 A가 강의 B를 2023년 1학기에
+                      수강했고 성적은 A+를 받았다와 같은 특정한 페어링이 형성"
+                    </p>
+                    <p className={descriptionStyle}>
+                      -이런식으로 관계의 차수는 하나의 엔터티와 다른 엔터티 간의
+                      레코드 연결 방식을 나타내는 반면 관계의 페어링은 두 엔터티
+                      간의 특정 연결을 설명하고 추가 정보를 제공하는 용도로 사용
+                    </p>
+                  </p>
+                </li>
+              </ul>
+              {/* 관계의 페어링 : 31*/}
+            </li>
+          </ul>
+        </li>
+        {/* part5 : 식별자 */}
+        <li>
+          <p className={titleStyle}>PART5. 식별자</p>
+          <ul className="pl-[10px]">
+            {/* 1 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>식별자 개념</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -하나의 엔터티에 구성된 여러 개의 속성 중에 엔터티를 대표할
+                    수 있는 속성을 나타냄
+                  </p>
+                  <p className={descriptionStyle}>
+                    -하나의 유일한 식별자가 존재해야 함
+                  </p>
+                  <p className={descriptionStyle}>
+                    -식별자는 논리 모델링에서 사용하는 용어, 물리 모델링에서는
+                    키(key)라고 표현
+                  </p>
+                  <p className={descriptionStyle}>
+                    {""}ex. 학생 엔터티의 주식별자는 학생번호 속성(논리 모델링)
+                    ={">"}학생 테이블의 기본키믄 학생번호 컬럼(물리 모델링)
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 2 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>주식별자 특징</h2>
+              <ul>
+                {/* 유일성 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    1. 유일성 : 주식별자에 의해 모든 인스턴스를 유일하게 구분함
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 학생 엔터티에서 이름 속성은 동명이인이 발생할 수
+                    있으므로 모든 인스턴스를 완벽하게 구불할 수 없어 학생번호와
+                    같은 유일한 식별자를 주식별자로 사용
+                  </p>
+                </li>
+                {/* 최소성 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    2. 최소성 : 주식별자를 구성하는 속성은 유일성을 만족하는
+                    최소한의 속성으로 구성
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 학생 엔터티의 주식별자는 학생번호만으로 충분한데,
+                    학생번호 + 이름으로 구성할 필요 없음
+                  </p>
+                </li>
+                {/* 불변성 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    3. 불변성 : 주식별자가 한번 특정 엔터티에 지정되면 그
+                    식별자의 값은 변하지 않아야 함(항상 고유값으로 존재해야 함)
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 학생 엔터티에 주식별자인 학생번호가 때에 따라 변경되서는
+                    안됨
+                  </p>
+                </li>
+                {/* 존재성 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    4. 존재성 : 주식별자가 지정되면 반드시 값이 존재해야 하며
+                    NULL은 허용 안 됨
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 3 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>식별자 분류</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    1) 대표성 여부에 따른 식별자의 종류
+                  </p>
+                  {/* 주식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>주식별자</p>
+                    <p className={descriptionStyle}>
+                      -유일성과 최소성을 만족하면서 엔터티를 대표하는 식별자
+                    </p>
+                    <p className={descriptionStyle}>
+                      -엔터티 내에서 각 인스턴스를 유일하게 구불할 수 있는
+                      식별자
+                    </p>
+                    <p className={descriptionStyle}>
+                      -타 엔터티와 참조관계를 연결할 수 있는 식별자
+                    </p>
+                  </p>
+                  {/* 보조식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>보조식별자</p>
+                    <p className={descriptionStyle}>
+                      -엔터티 내에서 각 인스턴스를 구분할 수 있는 구분자지만,
+                      대표성을 가지지 못해 참조 관계를 연결할 수 없는 식별자
+                    </p>
+                    <p className={descriptionStyle}>
+                      -유일성과 최소성은 만족하지만 대표성을 만족하지 못하는
+                      식별자
+                    </p>
+                  </p>
+                </li>
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    2) 생성 여부에 따른 식별자의 종류
+                  </p>
+                  {/* 내부식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>내부식별자</p>
+                    <p className={descriptionStyle}>
+                      -다른 엔터티 참조 없이 엔터티 내부에서 스스로 생성되는
+                      식별자
+                    </p>
+                  </p>
+                  {/* 외부식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>외부식별자</p>
+                    <p className={descriptionStyle}>
+                      -다른 엔터티와 관계로 인하여 만들어지는 식별자(외래키)
+                      ex.우
+                    </p>
+                  </p>
+                </li>
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    3) 속성 수에 따른 식별자 종류
+                  </p>
+                  {/* 단일식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>단일식별자</p>
+                    <p className={descriptionStyle}>-하나의 속성으로 구성</p>
+                  </p>
+                  {/* 복합식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>복합식별자</p>
+                    <p className={descriptionStyle}>
+                      -2개 이상의 속성으로 구성
+                    </p>
+                  </p>
+                </li>
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    4) 대체 여부에 따른 식별자의 종류
+                  </p>
+                  {/* 본질식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>본질식별자</p>
+                    <p className={descriptionStyle}>
+                      -비즈니스 프로세스에서 만들어지는 식별자
+                    </p>
+                  </p>
+                  {/* 인조식별자 */}
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto">
+                    <p className={descriptionStyle}>인조식별자</p>
+                    <p className={descriptionStyle}>
+                      -인위적으로 만들어지는 식별자
+                    </p>
+                    <p className={descriptionStyle}>
+                      -자동 증가하는 일련번호 같은 형태
+                    </p>
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 4 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>주식별자 도출기준</h2>
+              <ul>
+                {/* 01  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    1) 해당 업무에서 자주 이용되는 속성을 주식별자로 지정한다.
+                  </p>
+                  <p className={descriptionStyle}>
+                    -같은 식별자 조건을 만족하더라도 업무적으로 더 많이 사용되는
+                    속성을 주식별자로 지정
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 학생번호와 주민번호 중에 학생번하고 주식별자, 주민번호는
+                    보조식별자
+                  </p>
+                </li>
+                {/* 02 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    2) 명칭이나 내역등과 같은 이름은 피함
+                  </p>
+                  <p className={descriptionStyle}>
+                    -이름 자체를 주식별자로 사용하는 행위를 피함
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 부서명 보다는 부서코드를 부여하여 부서코드로 주식별자로
+                    사용
+                  </p>
+                </li>
+                {/* 03 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    3) 속성의 수를 최대한 적게 구성
+                  </p>
+                  <p className={descriptionStyle}>
+                    -주식별자를 너무 많은 속성으로 구성 시, 조인으로 인한
+                    성능저하 발생 우려
+                  </p>
+                  <p className={descriptionStyle}>
+                    -일반적으로 7~8개 이상의 주식별자 구성은 새로운 인조식별자를
+                    생성하여 모델을 단순화 시키는 것이 좋음
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 주문 엔터티에 대해 주문일자 + 주문상품코드 + 고객번호 +
+                    ... 등으로 구성 ={">"}주문번호 속성 추가
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 5 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>관계간 엔터티 구분</h2>
+              <ul>
+                {/* 01  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>1) 강한 개체</p>
+                  <p className={descriptionStyle}>
+                    -독립적으로 존재할 수 있는 엔터티
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 고객과 계좌 엔터티 중, 고객은 독립적으로 존재할 수 있음
+                  </p>
+                </li>
+                {/* 02 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>2) 약한 개체</p>
+                  <p className={descriptionStyle}>
+                    -독립적으로 존재할 수 없는 엔터티
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 고객과 계좌 엔터티 중, 계좌는 독립적으로 존재할 수
+                    없음(고객에 의해 파생되는 엔터티)
+                  </p>
+                </li>
+                {/* 03 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    3) 속성의 수를 최대한 적게 구성
+                  </p>
+                  <p className={descriptionStyle}>
+                    -주식별자를 너무 많은 속성으로 구성 시, 조인으로 인한
+                    성능저하 발생 우려
+                  </p>
+                  <p className={descriptionStyle}>
+                    -일반적으로 7~8개 이상의 주식별자 구성은 새로운 인조식별자를
+                    생성하여 모델을 단순화 시키는 것이 좋음
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 주문 엔터티에 대해 주문일자 + 주문상품코드 + 고객번호 +
+                    ... 등으로 구성 ={">"}주문번호 속성 추가
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 6 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>식별 관계와 비식별관계</h2>
+              <ul>
+                {/* 01  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    1) 식별관계(Identification Relationship)
+                  </p>
+                  <p className={descriptionStyle}>
+                    -하나의 엔터티의 기본키를 다룬 엔터티가 기본키의 하나로
+                    공유하는 관계
+                  </p>
+                  <p className={descriptionStyle}>
+                    -식별관계는 ERD에서 실선으로 표시
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 사원과 교육이력 엔터티에서 양쪽 모두 기본키 중 일부가
+                    사원번호임
+                  </p>
+                </li>
+                {/* 02 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    1) 비식별관계(Non-Identification Relationship)
+                  </p>
+                  <p className={descriptionStyle}>
+                    -강한 개체의 기본키를 다른 엔터티의 기본키가 아닌 일반
+                    속성으로 관계를 가지는 것
+                  </p>
+                  <p className={descriptionStyle}>
+                    -비식별관계는 ERD에서 점선으로 표시
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 부서와 사원의 관계에서 부서의 부서번호(기본키)를 사원
+                    엔터티에서는 일반키로 가짐(사원에서는 사원번호가 기본키)
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        {/* part6 : 정규화 */}
+        <li>
+          <p className={titleStyle}>PART5. 정규화</p>
+          <ul className="pl-[10px]">
+            {/* 1 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>정규화의 개념</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -하나의 엔터티에 많은 속성을 넣게 되면, 해당 엔터티를 조회할
+                    때 마다 많은 양의 데이터가 조회될 것이므로 최소한의
+                    데이터만을 하나의 엔터티에 넣는식으로 데이터를 분해하는
+                    과정을 정규화라고 한다.
+                  </p>
+                  <p className={descriptionStyle}>
+                    -데이터의 일관성, 최소한의 데이터 중복, 최대한의 데이터
+                    유연성 위한 과정이라고 볼 수 있음
+                  </p>
+                  <p className={descriptionStyle}>
+                    -데이터의 중복을 제거하고 데이터 모델의 독립성을 확보
+                  </p>
+                  <p className={descriptionStyle}>
+                    -데이터 이상현상을 줄이기 위한 데이텉 베이스 설계 기법
+                  </p>
+                  <p className={descriptionStyle}>
+                    -엔터티를 상세화하는 과정으로 논리 데이터 모델링 수행
+                    시점에서 고려됨
+                  </p>
+                  <p className={descriptionStyle}>
+                    -제 1 정규화부터 제 5 정규화까지 존재, 실질적으로는 제 3
+                    정규화까지만 수행
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 2 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>이상현상</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -그룹화를 하지 않아 발생하는 현상(삽입이상, 갱신이상,
+                    삭제이상)
+                  </p>
+                  <p className={descriptionStyle}>
+                    -특정 인스턴스가 삽입 될 때 정의되지 않아도 될 속성까지도
+                    반드시 입력되어야 하는(삽입이상) 현상이 발생함
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 만약 사원 + 부서 엔터티를 합쳐 놓고 사원번호, 사원이름,
+                    전화번호, 부서번호, 부서명, 부서위치의 속성이 존재할 때
+                    새로운 사원 값이 추가될 때 정해지지 않은 부서정보(부서번호,
+                    붓명, 부서위치) 모두 임의값 또는 NULL 삽입되야 함. 반대로
+                    부서가 새로 추가 될 경우 소속 사원이 없어도 사원과 관련된
+                    모든 속성이 불필요하게 값이 입력되어야 함
+                  </p>
+                  <p className={descriptionStyle}>
+                    -불필요한 값까지 입력해야 되는 현상을 삽입이상, 그 외
+                    갱신이상, 삭제이상이 발생할 수 있음
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 부서 정보만 삭제하면 되는데 관련된 사원 정보까지도 함께
+                    삭제되는 현상(삭제이상)
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 3 */}
+            <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>정규화 단계</h2>
+              <ul>
+                {/* 01  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>1. 제 1 정규화(1NF)</p>
+                  <p className={descriptionStyle}>
+                    -테이블이 컬럼의 원자성(한 속성이 하나의 값을 갖는 특성)을
+                    갖도록 테이블을 분해하는 단계
+                  </p>
+                  <p className={descriptionStyle}>
+                    -쉽게 말해 하나의 행과 컬럼의 값이 반드시 한 값만 입력되도록
+                    행을 분리하는 단계
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 구매 테이블의 제 1정규화(상품에 여러 값이 있으므로 이를
+                    여러 인스턴스로 분해)
+                  </p>
+
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto flex gap-x-[10px] items-center">
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">이름</th>
+                          <th scope="col border-[1px]">구매상품</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">홍길동</td>
+                          <td className="border-[1px] p-[20px]">샴푸, 린스</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">박길동</td>
+                          <td className="border-[1px] p-[20px]">우유, 치즈</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">최길동</td>
+                          <td className="border-[1px] p-[20px]">세제</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>{"->"}</p>
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px] p-[20px]">이름</th>
+                          <th scope="col border-[1px] p-[20px]">구매상품</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">홍길동</td>
+                          <td className="border-[1px] p-[20px]">샴푸</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">홍길동</td>
+                          <td className="border-[1px] p-[20px]">린스</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">박길동</td>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">박길동</td>
+                          <td className="border-[1px] p-[20px]">치즈</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">최길동</td>
+                          <td className="border-[1px] p-[20px]">세제</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                </li>
+                {/* 02  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>2. 제 2 정규화(2NF)</p>
+                  <p className={descriptionStyle}>
+                    -제 1 정규화를 진행한 테이블에 대해 완전 함수 종속을
+                    만들도록 테이블을 분해
+                  </p>
+                  <p className={descriptionStyle}>
+                    -완전 함수 종속이란, 기본키를 구성하는 모든 컬럼의 값이 다른
+                    컬럼을 결정짓는 상태
+                  </p>
+                  <p className={descriptionStyle}>
+                    -기본키의 부분 집합이 다른 컬럼과 1:1 대응 관계를 갖지 않는
+                    상태를 의미
+                  </p>
+                  <p className={descriptionStyle}>
+                    -즉 PK(Primary key)가 2개 이상일 때 발생하며, PK의 일부와
+                    종속되는 관계가 있다면 분리한다.
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 수강이력 테이블의 제 2정규화
+                  </p>
+                  <p className={descriptionStyle}>
+                    기본키(학생번호 + 강의명)중, 강의명에 의해 강의실이 결정 -
+                    {">"}완전 함수 종속성 위배(부분 함수 종속성을 가짐)
+                  </p>
+                  <p className={descriptionStyle}>
+                    -{">"}PK와 부분 함수 종속성을 갖는 컬럼을 각각 다른 테이블로
+                    분해
+                  </p>
+
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto flex gap-x-[10px] items-center">
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">학생번호</th>
+                          <th scope="col border-[1px]">강의명</th>
+                          <th scope="col border-[1px]">강의실</th>
+                          <th scope="col border-[1px]">성적</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1000</td>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                          <td className="border-[1px] p-[20px]">A</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                          <td className="border-[1px] p-[20px]">B</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1002</td>
+                          <td className="border-[1px] p-[20px]">기초통계</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                          <td className="border-[1px] p-[20px]">A+</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1000</td>
+                          <td className="border-[1px] p-[20px]">
+                            데이터베이스
+                          </td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                          <td className="border-[1px] p-[20px]">B+</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                          <td className="border-[1px] p-[20px]">C</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1003</td>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                          <td className="border-[1px] p-[20px]">A</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>{"->"}</p>
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">학생번호</th>
+                          <th scope="col border-[1px]">강의명</th>
+                          <th scope="col border-[1px]">성적</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1000</td>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">A</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">B</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1002</td>
+                          <td className="border-[1px] p-[20px]">기초통계</td>
+                          <td className="border-[1px] p-[20px]">A+</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1000</td>
+                          <td className="border-[1px] p-[20px]">
+                            데이터베이스
+                          </td>
+                          <td className="border-[1px] p-[20px]">B+</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">C</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1003</td>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">A</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">강의명</th>
+                          <th scope="col border-[1px]">강의실</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">컴퓨터공학</td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">기초통계</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">
+                            데이터베이스
+                          </td>
+                          <td className="border-[1px] p-[20px]">자연관</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">경영학</td>
+                          <td className="border-[1px] p-[20px]">본관</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                  <p className={descriptionStyle}>
+                    -수강이력에서는 한 학생이 여러 강의를 수강할 수 있기 때문에
+                    주식별자는 학생번호로만은 불가능(유일성 불만족 때문) 따라서
+                    학생번호와 강의명이 결합되어 주식별자가 되어야 한다(한
+                    학생이 같은 강의는 수강할 수 없다고 가정) 이 때, 주식별자의
+                    부분집합인 강의명에 의해 강의실이 달라지는 1대 1 대응관계를
+                    갖는것을 완전 함수 종속성 위배, 같은 말로 부분 함수 종속
+                    관계라고 하는데 제 2 정규화는 이러한 함수 종속성을 깨는 것을
+                    목표로 한다. 따라서 주식별자를 분리할 수 없으니 주식별자는
+                    그대로 있고, 문제가 되는 강의실 컬럼을 주식별자와 분리
+                  </p>
+                </li>
+                {/* 03  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>3. 제 3 정규화(2NF)</p>
+                  <p className={descriptionStyle}>
+                    -제 2 정규화를 진행한 테이블에 대해 이행적 종속을 없애도록
+                    테이블을 분리
+                  </p>
+                  <p className={descriptionStyle}>
+                    -이행적 종속성이란 A{"->"}B, B{"->"}C의 관계가 성립할 때, A
+                    {"->"}C가 성립되는 것을 말함
+                  </p>
+                  <p className={descriptionStyle}>
+                    -(A,B)와 (B,C)로 분리하는 것이 제 3 정규화
+                  </p>
+                  <p className={descriptionStyle}>
+                    ex. 구매 테이블 제 3 정규화
+                  </p>
+                  <p className={descriptionStyle}>
+                    고객번호에 의해 상품명이 결정, 상품명에 의해 가격이
+                    결정되는데 고객번호에 의해서도 구매 가격이 결정됨(고객이
+                    상품을 결정하면 그때 매칭되는 가격이 결정되는 구조이므로)
+                    따라서 (고객번호+상품명)과 (상품명+가격)으로 분리하는 것이
+                    제 3 정규화
+                  </p>
+
+                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto flex gap-x-[10px] items-center">
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">고객번호</th>
+                          <th scope="col border-[1px]">상품명</th>
+                          <th scope="col border-[1px]">가격</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                          <td className="border-[1px] p-[20px]">2500</td>{" "}
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1002</td>
+                          <td className="border-[1px] p-[20px]">치즈</td>
+                          <td className="border-[1px] p-[20px]">3500</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1003</td>
+                          <td className="border-[1px] p-[20px]">소시지</td>
+                          <td className="border-[1px] p-[20px]">4000</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1004</td>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                          <td className="border-[1px] p-[20px]">2500</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>{"->"}</p>
+                    {/* table */}
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">고객번호</th>
+                          <th scope="col border-[1px]">상품명</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1001</td>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1002</td>
+                          <td className="border-[1px] p-[20px]">치즈</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1003</td>
+                          <td className="border-[1px] p-[20px]">소시지</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">1004</td>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table className="bg-white block text-center">
+                      <thead className="border-[1px]">
+                        <tr>
+                          <th scope="col border-[1px]">상품명</th>
+                          <th scope="col border-[1px]">가격</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                          <td className="border-[1px] p-[20px]">2500</td>{" "}
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">치즈</td>
+                          <td className="border-[1px] p-[20px]">3500</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">소시지</td>
+                          <td className="border-[1px] p-[20px]">4000</td>
+                        </tr>
+                        <tr>
+                          <td className="border-[1px] p-[20px]">우유</td>
+                          <td className="border-[1px] p-[20px]">2500</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                  <p className={descriptionStyle}>
+                    -이 경우 테이블을 분리하지 않으면, 구매 테이블에서 상품명을
+                    변경해야 하는 상황이 발생할 경우 그 때마다 구매 테이블에서도
+                    가격을 변경해야 한다. 하지만 제 3 정규화를 진행하여 테이블을
+                    분리하게 되면, 구매 테이블에서의 상품명만 변경하면 되므로
+                    업데이트에 비효율성이 줄어든다.
+                  </p>
+                </li>
+                {/* 04  */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>
+                    4. BCNF(Boyce-C odd Normal Form) 정규화
+                  </p>
+                  <p className={descriptionStyle}>
+                    -모든 결정자가 후보키가 되도록 테이블을 분해하는 것(결정자가
+                    후보키가 아닌 다른 컬럼에 종속되면 안 됨)
+                  </p>
+                </li>
+                {/* 05 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>5. 제 4 정규화</p>
+                  <p className={descriptionStyle}>
+                    -여러 컬럼들이 하나의 컬럼을 종속시키는 경우 분해하여 다중값
+                    종속성을 제거
+                  </p>
+                </li>
+                {/* 06 */}
+                <li className={sgroupListStyle}>
+                  <p className={numberingSrtyle}>6. 제 5 정규화</p>
+                  <p className={descriptionStyle}>
+                    -조인에 의해서 종속성이 발생되는 경우 분해
+                  </p>
+                </li>
+              </ul>
+            </li>
+            {/* 4 */}
+            {/* <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>
+                반정규화=역정규화(De-Normalization)의 개념
+              </h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -데이터베이스의 성능 향상을 위해 데이터 중복을 허용하고
+                    조인을 줄이는 데이터베이스 성능 향상 방법
+                  </p>
+                  <p className={descriptionStyle}>
+                    -시스템의 성능 향상, 개발 및 운영의 단순화를 위해 정규화된
+                    데이터 모델을 중복, 통합, 분리하는 데이터 모델링 기법
+                  </p>
+                  <p className={descriptionStyle}>
+                    -조회(SELECT) 속도를 향상시키지만, 데이터 모델의 유연성은
+                    낮아짐
+                  </p>
+                  <p className={descriptionStyle}>
+                    *비정규화는 정규화를 수행하지 않음을 의미
+                  </p>
+                </li>
+              </ul>
+            </li> */}
+            {/* 5 : 시험에는 안나올 확률 높음 */}
+            {/* <li className={groupListStyle}>
+              <h2 className={listTitleStyle}>반정규화 수행 케이스</h2>
+              <ul>
+                <li className={sgroupListStyle}>
+                  <p className={descriptionStyle}>
+                    -정규화에 충실하여 종속성, 활용성은 향상되지만 수행 속도가
+                    느려지는 경우
+                  </p>
+                  <p className={descriptionStyle}>
+                    -다량의 범위를 자주 처리해야 하는 경우
+                  </p>
+                  <p className={descriptionStyle}>
+                    -특정 범위의 데이터만 자주 처리하는 경우
+                  </p>
+                  <p className={descriptionStyle}>
+                    -요약/집계 정보가 자주 요구되는 경우
+                  </p>
+                </li>
+              </ul>
+            </li> */}
           </ul>
         </li>
       </ul>
