@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { ScrollArea } from "./ui/scroll-area";
 
 export default function Menu({ routes, onClick: handleClick }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
@@ -47,7 +48,7 @@ export default function Menu({ routes, onClick: handleClick }) {
                 className={`cursor-pointer ${
                   openSubmenuIndex === index ? "rotate-0" : "rotate-180"
                 }`}
-                src="/images/toggle.png"
+                src="images/toggle.png"
                 alt="toggleBtn"
                 width={20}
                 height={10}
@@ -55,7 +56,7 @@ export default function Menu({ routes, onClick: handleClick }) {
             )}
           </div>
           {route.children && openSubmenuIndex === index && (
-            <div className="flex flex-col">
+            <ScrollArea className="flex flex-col max-h-[200px] overflow-y-auto">
               {route.children.map((route, index) => (
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
@@ -71,7 +72,7 @@ export default function Menu({ routes, onClick: handleClick }) {
                   )}
                 </div>
               ))}
-            </div>
+            </ScrollArea>
           )}
         </li>
       ))}

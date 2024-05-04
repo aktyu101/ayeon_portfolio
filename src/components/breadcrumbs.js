@@ -25,9 +25,12 @@ export default function Breadcrumbs() {
         {visibleSegments.map((segment, index) => (
           <React.Fragment key={segment}>
             <span className="mx-[8px]">{" > "}</span>
-            <Link href={`/${visibleSegments.slice(0, index + 1).join("/")}`}>
+            {/* <Link href={`/${visibleSegments.slice(0, index + 1).join("/")}`}>
               <span>{segment}</span>
-            </Link>
+            </Link> */}
+            <p>
+              <span>{segment}</span>
+            </p>
           </React.Fragment>
         ))}
       </div>

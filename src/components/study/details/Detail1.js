@@ -1363,63 +1363,72 @@ const Contents = () => {
                     여러 인스턴스로 분해)
                   </p>
 
-                  <p className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto flex gap-x-[10px] items-center">
+                  <div className="rounded-lg bg-slate-100 p-[20px] my-[10px] w-auto flex md:flex-col gap-x-[10px] items-center">
                     {/* table */}
-                    <table className="bg-white block text-center">
-                      <thead className="border-[1px]">
-                        <tr>
-                          <th scope="col border-[1px]">이름</th>
-                          <th scope="col border-[1px]">구매상품</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">홍길동</td>
-                          <td className="border-[1px] p-[20px]">샴푸, 린스</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">박길동</td>
-                          <td className="border-[1px] p-[20px]">우유, 치즈</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">최길동</td>
-                          <td className="border-[1px] p-[20px]">세제</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div>
+                      <table className="bg-white text-center">
+                        <thead className="border-[1px]">
+                          <tr>
+                            <th scope="col border-[1px]">이름</th>
+                            <th scope="col border-[1px]">구매상품</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">홍길동</td>
+                            <td className="border-[1px] p-[20px]">
+                              샴푸, 린스
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">박길동</td>
+                            <td className="border-[1px] p-[20px]">
+                              우유, 치즈
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">최길동</td>
+                            <td className="border-[1px] p-[20px]">세제</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                     <p>{"->"}</p>
+
                     {/* table */}
-                    <table className="bg-white block text-center">
-                      <thead className="border-[1px]">
-                        <tr>
-                          <th scope="col border-[1px] p-[20px]">이름</th>
-                          <th scope="col border-[1px] p-[20px]">구매상품</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">홍길동</td>
-                          <td className="border-[1px] p-[20px]">샴푸</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">홍길동</td>
-                          <td className="border-[1px] p-[20px]">린스</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">박길동</td>
-                          <td className="border-[1px] p-[20px]">우유</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">박길동</td>
-                          <td className="border-[1px] p-[20px]">치즈</td>
-                        </tr>
-                        <tr>
-                          <td className="border-[1px] p-[20px]">최길동</td>
-                          <td className="border-[1px] p-[20px]">세제</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </p>
+                    <div>
+                      <table className="bg-white text-center">
+                        <thead className="border-[1px]">
+                          <tr>
+                            <th scope="col border-[1px] p-[20px]">이름</th>
+                            <th scope="col border-[1px] p-[20px]">구매상품</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">홍길동</td>
+                            <td className="border-[1px] p-[20px]">샴푸</td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">홍길동</td>
+                            <td className="border-[1px] p-[20px]">린스</td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">박길동</td>
+                            <td className="border-[1px] p-[20px]">우유</td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">박길동</td>
+                            <td className="border-[1px] p-[20px]">치즈</td>
+                          </tr>
+                          <tr>
+                            <td className="border-[1px] p-[20px]">최길동</td>
+                            <td className="border-[1px] p-[20px]">세제</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </li>
                 {/* 02  */}
                 <li className={sgroupListStyle}>
@@ -1798,3 +1807,5 @@ const Contents = () => {
     </>
   );
 };
+
+//1366 테이블 수정

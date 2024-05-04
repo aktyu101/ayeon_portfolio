@@ -50,9 +50,9 @@ export const studyList = new StudyItemList([
     "SQLD 1과목 요점 정리",
     "portfolio01.png",
     "2024.04.23",
-    "2024.04.29",
+    "2024.04.30",
     "SQL",
-    "#데이터모델의 이해 #엔터티 #속성 #관계"
+    "PART1 ~ PART5"
   ),
   new StudyItem(
     2,

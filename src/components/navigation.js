@@ -8,6 +8,7 @@ import Menu from "./menu";
 import { routes } from "../constants/route";
 import { motion } from "framer-motion";
 import ContactPopup from "./ContactPopup";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 //header main 구분 0420, props(main, sub)
 
@@ -44,9 +45,9 @@ export default function Navigation() {
           <div className="flex justify-end mb-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <div className="h-[600px] overflow-scroll">
+          <ScrollArea className="h-[600px]">
             <Menu routes={routes} onClick={handleClickMenu} />
-          </div>
+          </ScrollArea>
         </div>
         {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
         <div className="flex gap-x-[4px] fixed bottom-[30px]">

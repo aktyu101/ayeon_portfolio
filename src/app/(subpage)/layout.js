@@ -4,7 +4,7 @@ export default function SubPageLayout({ children }) {
   return (
     <div>
       <Navigation />
-      <div className="w-[1280px] mx-auto">{children}</div>
+      <div className="max-w-[1280px] mx-auto">{children}</div>
     </div>
   );
 }
