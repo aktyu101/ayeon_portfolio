@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import CloseBtn from "./close-btn";
 import OpenBtn from "./open-btn";
@@ -13,6 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 //header main 구분 0420, props(main, sub)
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   // 경로별 배경색 처리
@@ -23,15 +25,12 @@ export default function Navigation() {
     "hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
   );
 
-  const handleClickMenu = (event) => {
-    if (!event || !event.target) return;
-    const hasHref = event.target.hasAttribute("href");
-    if (!hasHref) return;
-    setIsOpenNav(false);
-  };
-
   //1depth 카테고리 링크 받아오기
   console.log("test", routes[0].name, routes[0].link);
+
+  useEffect(() => {
+    setIsOpenNav(false);
+  }, [pathname]);
 
   return (
     <>
@@ -46,7 +45,7 @@ export default function Navigation() {
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
           <ScrollArea className="h-[600px]">
-            <Menu routes={routes} onClick={handleClickMenu} />
+            <Menu routes={routes} />
           </ScrollArea>
         </div>
         {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}

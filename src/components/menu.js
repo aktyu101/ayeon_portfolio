@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
 
-export default function Menu({ routes, onClick: handleClick }) {
+export default function Menu({ routes }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
 
   const handleToggleSubmenu = (index) => {
@@ -13,7 +13,6 @@ export default function Menu({ routes, onClick: handleClick }) {
 
   const handleMenuClick = (index) => {
     handleToggleSubmenu(index);
-    handleClick();
   };
 
   const oneDepthStyle = twMerge(
@@ -40,7 +39,7 @@ export default function Menu({ routes, onClick: handleClick }) {
     <ul className="flex flex-col">
       {routes.map((route, index) => (
         <li key={index}>
-          <div className={oneDepthStyle} onClick={() => handleMenuClick(index)}>
+          <div className={oneDepthStyle}>
             <MenuLink route={route} />
             {/* toggle */}
             {route.children && (
@@ -48,10 +47,11 @@ export default function Menu({ routes, onClick: handleClick }) {
                 className={`cursor-pointer ${
                   openSubmenuIndex === index ? "rotate-0" : "rotate-180"
                 }`}
-                src="images/toggle.png"
+                src="/images/toggle.png"
                 alt="toggleBtn"
                 width={20}
                 height={10}
+                onClick={() => handleMenuClick(index)}
               />
             )}
           </div>
