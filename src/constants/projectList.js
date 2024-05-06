@@ -36,7 +36,7 @@ class ProjectItem {
   }
 
   get url() {
-    return `/images/portfolio/${this.imageUrl}`;
+    return `images/portfolio/${this.imageUrl}`;
   }
 
   get period() {

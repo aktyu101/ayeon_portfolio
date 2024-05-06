@@ -47,7 +47,7 @@ export default function Menu({ routes }) {
                 className={`cursor-pointer ${
                   openSubmenuIndex === index ? "rotate-0" : "rotate-180"
                 }`}
-                src="/images/toggle.png"
+                src="images/toggle.png"
                 alt="toggleBtn"
                 width={20}
                 height={10}
