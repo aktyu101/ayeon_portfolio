@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
+import ContactPopup from "./ContactPopup";
 
 export default function Menu({ routes }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
@@ -36,7 +37,7 @@ export default function Menu({ routes }) {
   };
 
   return (
-    <ul className="flex flex-col">
+    <ul className="flex flex-col w-[100%]">
       {routes.map((route, index) => (
         <li key={index}>
           <div className={oneDepthStyle}>

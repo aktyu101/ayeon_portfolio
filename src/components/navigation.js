@@ -19,10 +19,10 @@ export default function Navigation() {
 
   // 경로별 배경색 처리
   const wrapperStyles = twMerge(
-    "absolute z-50 block fixed t-0 p-[20px] box-border w-[300px] h-screen bg-[#111] text-white h-screen z-[51]"
+    "absolute z-50 block fixed t-0 p-[20px] box-border w-full h-screen bg-[#352f2f] text-white h-screen z-[51] flex justify-center"
   );
   const hoverStyle = twMerge(
-    "hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
+    "hover:text-[#352f2f] hover:border-[#352f2f] hover:font-medium"
   );
 
   //1depth 카테고리 링크 받아오기
@@ -35,25 +35,24 @@ export default function Navigation() {
   return (
     <>
       <motion.div
-        initial={{ x: -300 }}
-        animate={{ x: isOpenNav ? 0 : -300 }}
-        transition={{ ease: "easeOut", duration: 0.2 }}
+        initial={{ x: "-100%" }}
+        animate={{ x: isOpenNav ? 0 : "-100%" }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         className={wrapperStyles}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col absolute top-0 left-0 w-full items-center">
           <div className="flex justify-end mb-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <ScrollArea className="h-[600px]">
+          <ScrollArea className="h-[600px] w-[600px]">
             <Menu routes={routes} />
           </ScrollArea>
         </div>
         {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
         <div className="flex gap-x-[4px] fixed bottom-[30px]">
-          <ContactPopup />
           <button
             className={
-              "border-[#fff] border-2 w-[54px] h-[54px] text-[#fff] bg-[#111] text-center leading-[53px] border-solid " +
+              "border-[#fff] border-2 w-[54px] h-[54px] text-[#fff] bg-[#352f2f] text-center leading-[53px] border-solid " +
               hoverStyle
             }
           >
@@ -63,20 +62,24 @@ export default function Navigation() {
       </motion.div>
 
       {/* header */}
-      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center shadow-[2px_3px_15px_rgba(0,0,0,0.04)] bg-white">
+      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center  ">
+        {/* shadow-[2px_3px_15px_rgba(0,0,0,0.04)] */}
         <div className="w-[100%] mx-[50px] z-[51] flex justify-between items-center">
-          <div className="flex gap-5 items-center text-[20px] font-medium">
-            <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
+          <div className="flex gap-3 items-center text-[25px] font-medium text-[#352F2F]">
             <Link href={"/"}>
               <span>AYEON</span>
             </Link>
+            <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-5 items-center">
             {routes.map((route, index) => (
               <Link key={index} href={route.link}>
-                <span className="hover:text-[#2742BE]">{route.name}</span>
+                <span className="hover:text-[#352f2f] hover:line-through">
+                  {route.name}
+                </span>
               </Link>
             ))}
+            <ContactPopup />
           </div>
         </div>
       </div>

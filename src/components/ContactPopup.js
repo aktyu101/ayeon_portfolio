@@ -10,14 +10,14 @@ const ContactPopup = () => {
   };
 
   const btnStyle = twMerge(
-    "border-[#fff] border-2 w-[200px] h-[54px] text-[#fff] bg-[#111] text-center leading-[53px] border-solid",
-    " hover:text-[#2742BE] hover:border-[#2742BE] hover:font-medium"
+    "border-[#fff] border-2 w-[128px] h-[42px] text-[#fff] bg-[#ff4b00] text-center leading-[30px] rounded-full",
+    " hover:text-[#352f2f] hover:font-medium box-border"
   );
 
   return (
     <div className="">
       <button onClick={togglePopup} className={btnStyle}>
-        Contact
+        CONTACT
       </button>
       {isOpen && (
         <>
@@ -25,13 +25,13 @@ const ContactPopup = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.35 }}
-            className="fixed top-0 left-0 w-screen h-screen bg-black"
+            className="fixed top-0 left-0 w-screen h-screen backdrop-blur-md"
           ></motion.div>
           {/* 팝업 */}
           <motion.div
             initial={{ scale: 0, opacity: 0, y: "-50%", x: "-50%" }}
             animate={{ scale: 1, opacity: 1, y: "-50%", x: "-50%" }}
-            className="fixed top-1/2 left-1/2 bg-white rounded-lg p-4 z-50 text-black border-[#2742BE] border-[1px]"
+            className="fixed top-1/2 left-1/2 bg-white rounded-lg p-4 z-50 text-black border-[1px]"
             style={{
               maxWidth: "400px",
               width: "80vw",
