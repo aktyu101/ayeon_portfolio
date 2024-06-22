@@ -37,7 +37,7 @@ export default function Navigation() {
       <motion.div
         initial={{ x: "-100%" }}
         animate={{ x: isOpenNav ? 0 : "-100%" }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
+        transition={{ ease: "easeOut", duration: 0 }}
         className={wrapperStyles}
       >
         <div className="flex flex-col absolute top-0 left-0 w-full items-center">

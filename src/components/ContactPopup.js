@@ -25,7 +25,7 @@ const ContactPopup = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.35 }}
-            className="fixed top-0 left-0 w-screen h-screen backdrop-blur-md"
+            className="fixed top-0 left-0 w-screen h-screen bg-black"
           ></motion.div>
           {/* 팝업 */}
           <motion.div

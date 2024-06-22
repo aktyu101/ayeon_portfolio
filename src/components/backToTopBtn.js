@@ -13,7 +13,7 @@ export default function BackToTopButton() {
     <>
       <button
         onClick={scrollToTop}
-        className="text-[#000 fixed right-[20px] bottom-[30px] w-[50px] h-[50px] box-border rounded-full bg-[#2742BE] text-white"
+        className="text-[#000 fixed right-[20px] bottom-[30px] w-[75px] h-[75px] box-border rounded-full bg-[#352F2F] text-white"
       >
         TOP
       </button>
