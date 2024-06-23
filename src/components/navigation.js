@@ -32,6 +32,8 @@ export default function Navigation() {
     setIsOpenNav(false);
   }, [pathname]);
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <>
       <motion.div
@@ -62,21 +64,33 @@ export default function Navigation() {
       </motion.div>
 
       {/* header */}
-      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center  ">
+      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center">
         {/* shadow-[2px_3px_15px_rgba(0,0,0,0.04)] */}
         <div className="w-[100%] mx-[50px] z-[51] flex justify-between items-center">
           <div className="flex gap-3 items-center text-[25px] font-medium text-[#352F2F]">
             <Link href={"/"}>
-              <span>AYEON</span>
+              <span className="box-border pb-[3px] block">AYEON</span>
             </Link>
             <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
           </div>
           <div className="flex gap-5 items-center">
             {routes.map((route, index) => (
               <Link key={index} href={route.link}>
-                <span className="hover:text-[#352f2f] hover:line-through">
-                  {route.name}
-                </span>
+                <div className="relative">
+                  <span
+                    className=" relative"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    {route.name}
+                  </span>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: hoveredIndex === index ? "100%" : 0 }}
+                    transition={{ ease: "easeOut", duration: 0.2 }}
+                    className="absolute bottom-0 left-0 h-[1px] bg-[#352f2f] top-[50%]"
+                  />
+                </div>
               </Link>
             ))}
             <ContactPopup />

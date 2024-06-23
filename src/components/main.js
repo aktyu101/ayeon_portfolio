@@ -1,26 +1,27 @@
 "use client";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { ConfigContext } from "@/app/config-provider";
 // import Navigation from "./navigation";
 import { motion } from "framer-motion";
 // import { useEffect } from "react";
 
 export default function Home() {
-  const { prefix } = useContext(ConfigContext); //
+  const { prefix } = useContext(ConfigContext);
 
   return (
     <>
-      {/* 흘러가는 텍스트 효과 적용 */}
-      <div className="h-screen flex items-center justify-center overflow-hidden">
+      {/* background 영역 */}
+      {/* 흘러가는 텍스트 효과 적용*/}
+      <div className="fixed z-0 flex items-center justify-center overflow-hidden h-screen">
+        {/* <div className="w-[300px] h-[200px] bg-[#352f2f] rounded-3xl"></div> */}
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{
-            duration: 600,
             repeat: Infinity,
             ease: "linear",
-            repeatType: "loop",
+            duration: 300,
           }}
           className="text-flow-container whitespace-nowrap"
         >
@@ -30,28 +31,26 @@ export default function Home() {
           <PointText />
           <PointText />
           <PointText />
-          <PointText />
-          <PointText />
-          <PointText />
-          <PointText />
-          <PointText />
-          <PointText />
-          <PointText />
         </motion.div>
       </div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus
-        pharetra odio, vel interdum enim pharetra et. Sed pharetra condimentum
-        eros. Donec nisl magna, malesuada sit amet orci iaculis, maximus porta
-        arcu. Morbi lorem elit, dapibus id odio nec, vestibulum blandit odio.
-        Duis eget cursus mauris. Integer justo tortor, convallis sit amet lacus
-        a, pretium posuere elit. Nam felis magna, molestie in lacinia at,
-        lobortis sit amet neque. Duis ullamcorper erat tortor, et venenatis
-        lectus gravida id. Phasellus congue, ipsum at pellentesque sollicitudin,
-        augue tortor egestas enim, id luctus elit urna a mauris. Mauris non nisi
-        vel neque commodo consectetur. Vivamus et mollis augue. Cras nec
-        condimentum felis. Nunc lectus enim, tempus vel elementum id, ultricies
-        consequat mi.
+      {/* contents 영역 */}
+      <div className="relative z-10">
+        <div className="w-full h-screen" />
+        <div className="h-[6000px] bg-[#f5f5f5] border-t-[1px] px-[50px]">
+          <h2>INFORMATION</h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus
+          pharetra odio, vel interdum enim pharetra et. Sed pharetra condimentum
+          eros. Donec nisl magna, malesuada sit amet orci iaculis, maximus porta
+          arcu. Morbi lorem elit, dapibus id odio nec, vestibulum blandit odio.
+          Duis eget cursus mauris. Integer justo tortor, convallis sit amet
+          lacus a, pretium posuere elit. Nam felis magna, molestie in lacinia
+          at, lobortis sit amet neque. Duis ullamcorper erat tortor, et
+          venenatis lectus gravida id. Phasellus congue, ipsum at pellentesque
+          sollicitudin, augue tortor egestas enim, id luctus elit urna a mauris.
+          Mauris non nisi vel neque commodo consectetur. Vivamus et mollis
+          augue. Cras nec condimentum felis. Nunc lectus enim, tempus vel
+          elementum id, ultricies consequat mi.
+        </div>
       </div>
     </>
   );
