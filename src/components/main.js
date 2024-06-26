@@ -5,10 +5,47 @@ import { ConfigContext } from "@/app/config-provider";
 // import Navigation from "./navigation";
 import { motion } from "framer-motion";
 // import { useEffect } from "react";
-import RotatingEllipses from "./RotatingEllipses";
+// import RotatingEllipses from "./RotatingEllipses";
+import { careerList, ricenceList } from "@/constants/informatioList";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
+  //CareerComponent
+  const CareerComponent = ({ careerList }) => (
+    <div className="flex justify-between pb-[50px]">
+      <h2 className="w-[50%]">EDUCATION & CAREER</h2>
+      <ul className="w-[50%]">
+        {careerList.list && careerList.list.length > 0 ? (
+          [...careerList.list].reverse().map((career, index) => (
+            <li key={index} className="flex justify-between flex-wrap">
+              <p>{career.title}</p>
+              <span>{career.period}</span>
+            </li>
+          ))
+        ) : (
+          <li>No career information</li>
+        )}
+      </ul>
+    </div>
+  );
+  //RicenceComponent
+  const RicenceComponent = ({ ricenceList }) => (
+    <div className="flex justify-between">
+      <h2 className="w-[50%]">LICENSES</h2>
+      <ul className="w-[50%]">
+        {ricenceList.list && ricenceList.list.length > 0 ? (
+          [...ricenceList.list].reverse().map((ricence, index) => (
+            <li key={index} className="flex justify-between flex-wrap">
+              <p>{ricence.title}</p>
+              <span>{ricence.period}</span>
+            </li>
+          ))
+        ) : (
+          <li>No license information</li>
+        )}
+      </ul>
+    </div>
+  );
 
   return (
     <>
@@ -41,13 +78,10 @@ export default function Home() {
       <div className="relative z-10">
         <div className="w-full h-screen" />
         <div className="h-[6000px] bg-[#f5f5f5] border-t-[1px] px-[50px]">
-          <h2>EDUCATION & CAREER</h2>
-          <ul>
-            <li>
-              <p>디자인위브 웹기획, PM (총 경력 : 2년 3개월)</p>
-              <span>2022년 04월 ~ 2024년 07월</span>
-            </li>
-          </ul>
+          <div>
+            <CareerComponent careerList={careerList} />
+            <RicenceComponent ricenceList={ricenceList} />
+          </div>
         </div>
       </div>
     </>

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
-import ContactPopup from "./ContactPopup";
 
 export default function Menu({ routes }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
