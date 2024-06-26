@@ -12,14 +12,14 @@ export default function Home() {
   const { prefix } = useContext(ConfigContext);
   //CareerComponent
   const CareerComponent = ({ careerList }) => (
-    <div className="flex justify-between pb-[50px]">
-      <h2 className="w-[50%]">EDUCATION & CAREER</h2>
+    <div className="flex justify-between pt-[80px]">
+      <h2 className="w-[50%] text-[25px]">EDUCATION & CAREER</h2>
       <ul className="w-[50%]">
         {careerList.list && careerList.list.length > 0 ? (
           [...careerList.list].reverse().map((career, index) => (
-            <li key={index} className="flex justify-between flex-wrap">
+            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
               <p>{career.title}</p>
-              <span>{career.period}</span>
+              <span className="text-[#888]">{career.period}</span>
             </li>
           ))
         ) : (
@@ -30,14 +30,14 @@ export default function Home() {
   );
   //RicenceComponent
   const RicenceComponent = ({ ricenceList }) => (
-    <div className="flex justify-between">
-      <h2 className="w-[50%]">LICENSES</h2>
+    <div className="flex justify-between pt-[80px]">
+      <h2 className="w-[50%] text-[25px]">LICENSES</h2>
       <ul className="w-[50%]">
         {ricenceList.list && ricenceList.list.length > 0 ? (
           [...ricenceList.list].reverse().map((ricence, index) => (
-            <li key={index} className="flex justify-between flex-wrap">
+            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
               <p>{ricence.title}</p>
-              <span>{ricence.period}</span>
+              <span className="text-[#888]">{ricence.period}</span>
             </li>
           ))
         ) : (
