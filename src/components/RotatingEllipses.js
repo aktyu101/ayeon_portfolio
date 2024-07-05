@@ -49,7 +49,7 @@ const RotatingEllipses = () => {
         animate="animate"
       />
       {/* 첫 번째 타원의 움직이는 점 */}
-      <motion.circle
+      {/* <motion.circle
         cx={initialPosition.x}
         cy={initialPosition.y}
         r={5}
@@ -59,7 +59,7 @@ const RotatingEllipses = () => {
           path: "M170,100 A70,40 0 1,1 30,100 A70,40 0 1,1 170,100",
           transition: { duration: 10, repeat: Infinity, ease: "linear" },
         }}
-      />
+      /> */}
 
       {/* 두 번째 타원 */}
       <motion.ellipse
