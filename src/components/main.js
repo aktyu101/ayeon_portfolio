@@ -86,7 +86,7 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] md:px-[50px]">
+        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] px-[15px] md:px-[50px]">
           <div>
             <CareerComponent careerList={careerList} />
             <RicenceComponent ricenceList={ricenceList} />

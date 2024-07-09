@@ -67,16 +67,19 @@ export default function Navigation() {
       </motion.div>
 
       {/* header */}
-      <div className="w-[100%] h-[80px] sticky top-0 z-50 flex items-center hover:bg-[#352f2f0a] hover:delay-150">
+      <div className="w-ful h-[80px] sticky top-0 z-50 flex items-center hover:bg-[#352f2f0a] hover:delay-150">
         {/* shadow-[2px_3px_15px_rgba(0,0,0,0.04)] */}
-        <div className="w-[100%] mx-[50px] z-[51] flex justify-between items-center">
+        <div className="w-full mx-[15px] md:mx-[50px] z-[51] flex justify-between items-center">
           <div className="flex gap-3 items-center text-[25px] font-medium text-[#352F2F]">
             <OpenBtn onClick={() => setIsOpenNav(true)}></OpenBtn>
           </div>
-          <div className="flex gap-5 items-center">
+          <div className="flex md:gap-5 items-center flex-col md:flex-row">
+            <div className="md:hidden">
+              <ContactPopup />
+            </div>
             {routes.map((route, index) => (
               <Link key={index} href={route.link}>
-                <div className="relative">
+                <div className="relative hidden md:block">
                   <span
                     className=" relative"
                     onMouseEnter={() => setHoveredIndex(index)}
@@ -93,7 +96,9 @@ export default function Navigation() {
                 </div>
               </Link>
             ))}
-            <ContactPopup />
+            <div className="hidden md:block">
+              <ContactPopup />
+            </div>
           </div>
         </div>
       </div>
