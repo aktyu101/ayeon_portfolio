@@ -12,9 +12,9 @@ export default function Home() {
   const { prefix } = useContext(ConfigContext);
   //CareerComponent
   const CareerComponent = ({ careerList }) => (
-    <div className="flex justify-between pt-[80px]">
-      <h2 className="w-[50%] text-[25px]">EDUCATION & CAREER</h2>
-      <ul className="w-[50%]">
+    <div className="flex flex-wrap justify-between pt-[80px]">
+      <h2 className="w-full md:w-[50%] text-[25px]">EDUCATION & CAREER</h2>
+      <ul className="w-full md:w-[50%]">
         {careerList.list && careerList.list.length > 0 ? (
           [...careerList.list].reverse().map((career, index) => (
             <li key={index} className="flex justify-between flex-wrap pb-[5px]">
@@ -30,9 +30,9 @@ export default function Home() {
   );
   //RicenceComponent
   const RicenceComponent = ({ ricenceList }) => (
-    <div className="flex justify-between pt-[80px]">
-      <h2 className="w-[50%] text-[25px]">LICENSES</h2>
-      <ul className="w-[50%]">
+    <div className="flex flex-wrap justify-between pt-[80px]">
+      <h2 className="w-full md:w-[50%] text-[25px]">LICENSES</h2>
+      <ul className="w-full md:w-[50%]">
         {ricenceList.list && ricenceList.list.length > 0 ? (
           [...ricenceList.list].reverse().map((ricence, index) => (
             <li key={index} className="flex justify-between flex-wrap pb-[5px]">
@@ -51,8 +51,8 @@ export default function Home() {
     <>
       {/* background 영역 */}
       {/* 흘러가는 텍스트 효과 적용*/}
-      <div className="fixed z-0 flex items-center justify-center overflow-hidden h-[100%]">
-        <div className="flex flex-wrap">
+      <div className="fixed z-0 flex items-center justify-center overflow-hidden h-full">
+        <div className="flex flex-wrap w-full">
           {/* test */}
           {/* <div className="flex justify-between w-screen pr-[50px]">
             <RotatingEllipses />
@@ -86,7 +86,7 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] px-[50px]">
+        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] md:px-[50px]">
           <div>
             <CareerComponent careerList={careerList} />
             <RicenceComponent ricenceList={ricenceList} />
