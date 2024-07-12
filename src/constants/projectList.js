@@ -38,7 +38,6 @@ class ProjectItem {
   get url() {
     return `images/portfolio/${this.imageUrl}`;
   }
-
   get period() {
     return `${this.startPeriod}~${this.endPeriod}`;
   }
@@ -46,111 +45,219 @@ class ProjectItem {
 
 export const projectList = new ProjectItemList([
   new ProjectItem(
-    1,
-    "project01",
+    6,
+    "시세이가구",
     "portfolio01.png",
-    "2024.04.04",
-    "2024.04.05",
+    "2024.03",
+    "2024.06",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    1,
+    "아로셀",
+    "portfolio01.png",
+    "2024.03",
+    "2024.04",
+    "HTML&CSS",
+    "기획&PM"
+  ),
+  new ProjectItem(
+    1,
+    "윤현몰",
+    "portfolio01.png",
+    "2023.04",
+    "2023.05",
+    "HTML&CSS",
+    "필터기능 추가 개발"
+  ),
+  new ProjectItem(
+    1,
+    "국립아시아문화전당재단",
+    "portfolio01.png",
+    "2024.04",
+    "2024.06",
+    "HTML&CSS",
+    "기획&PM"
+  ),
+  new ProjectItem(
+    2,
+    "브론테",
+    "portfolio01.png",
+    "2022.01",
+    "2024.06",
+    "JAVASCRIPT",
+    "기획&PM"
+  ),
+  new ProjectItem(
+    3,
+    "나인위시스",
+    "portfolio01.png",
+    "2024.04",
+    "2024.05",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    4,
+    "가림",
+    "portfolio01.png",
+    "2024.02",
+    "2024.04",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    5,
+    "라프리마몰",
+    "portfolio01.png",
+    "2024.03",
+    "2024.04",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "무슈제이",
+    "portfolio01.png",
+    "2024.01",
+    "2024.03",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    1,
+    "밀크바오밥",
+    "portfolio01.png",
+    "2024.01",
+    "2024.03",
     "HTML&CSS",
     "des"
   ),
   new ProjectItem(
     2,
-    "project02",
+    "굽네몰",
     "portfolio01.png",
-    "2024.01.01",
-    "2024.04.05",
+    "2023.05",
+    "2023.11",
     "JAVASCRIPT",
-    "des"
+    "기획&PM"
   ),
   new ProjectItem(
     3,
-    "project03",
+    "월드트로피",
     "portfolio01.png",
-    "2024.04.05",
-    "2024.04.05",
+    "2023.04",
+    "2023.11",
     "HTML&CSS",
-    "des"
+    "기획&PM"
   ),
   new ProjectItem(
     4,
-    "project04",
+    "나인위시스",
     "portfolio01.png",
-    "2024.04.02",
-    "2024.04.05",
+    "2023.03",
+    "2023.05",
     "HTML&CSS",
-    "des"
+    "PM"
   ),
   new ProjectItem(
     5,
-    "project05",
+    "알집매트",
     "portfolio01.png",
-    "2024.04.03",
-    "2024.04.05",
+    "2023.02",
+    "2023.05",
     "HTML&CSS",
-    "des"
+    "PM"
   ),
   new ProjectItem(
     6,
-    "project06",
+    "한국갤러리",
     "portfolio01.png",
-    "2023.12.04",
-    "2024.04.05",
+    "2023.02",
+    "2023.04",
     "HTML&CSS",
-    "des"
-  ),
-  new ProjectItem(
-    1,
-    "project01",
-    "portfolio01.png",
-    "2024.04.04",
-    "2024.04.05",
-    "HTML&CSS",
-    "des"
-  ),
-  new ProjectItem(
-    2,
-    "project02",
-    "portfolio01.png",
-    "2024.01.01",
-    "2024.04.05",
-    "JAVASCRIPT",
-    "des"
-  ),
-  new ProjectItem(
-    3,
-    "project03",
-    "portfolio01.png",
-    "2024.04.05",
-    "2024.04.05",
-    "HTML&CSS",
-    "des"
-  ),
-  new ProjectItem(
-    4,
-    "project04",
-    "portfolio01.png",
-    "2024.04.02",
-    "2024.04.05",
-    "HTML&CSS",
-    "des"
-  ),
-  new ProjectItem(
-    5,
-    "project05",
-    "portfolio01.png",
-    "2024.04.03",
-    "2024.04.05",
-    "HTML&CSS",
-    "des"
+    "PM"
   ),
   new ProjectItem(
     6,
-    "project06",
+    "엘리케이파크",
     "portfolio01.png",
-    "2023.12.04",
-    "2024.04.05",
+    "2022.12",
+    "2023.02",
     "HTML&CSS",
-    "des"
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "호호에미",
+    "portfolio01.png",
+    "2022.10",
+    "2022.12",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "셀티브코리아",
+    "portfolio01.png",
+    "2022.09",
+    "2022.12",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "바이브랩",
+    "portfolio01.png",
+    "2022.09",
+    "2022.11",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "비비드로우",
+    "portfolio01.png",
+    "2022.09",
+    "2022.12",
+    "HTML&CSS",
+    "기획&PM"
+  ),
+  new ProjectItem(
+    6,
+    "하이생",
+    "portfolio01.png",
+    "2022.08",
+    "2022.12",
+    "HTML&CSS",
+    "기획&PM"
+  ),
+  new ProjectItem(
+    6,
+    "뉴틴몰",
+    "portfolio01.png",
+    "2022.08",
+    "2022.09",
+    "HTML&CSS",
+    "PM"
+  ),
+  new ProjectItem(
+    6,
+    "로베르타피에리",
+    "portfolio01.png",
+    "2022.04",
+    "2022.05",
+    "HTML&CSS",
+    "기획"
+  ),
+  new ProjectItem(
+    6,
+    "위드한옥",
+    "portfolio01.png",
+    "2022.04",
+    "2022.05",
+    "HTML&CSS",
+    "기획"
   ),
 ]);

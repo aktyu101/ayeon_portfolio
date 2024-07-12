@@ -30,7 +30,7 @@ export const information = new RouteItem(
 //   "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
 // );
 
-export const portfolio = new RouteItem("PORTFOLIO", "/portfolio", [
+export const portfolio = new RouteItem("PROJECT", "/portfolio", [
   new RouteItem(
     "Develop Project",
     "/portfolio/project",

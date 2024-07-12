@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -16,6 +17,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpenNav, setIsOpenNav] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
 
   // 경로별 배경색 처리
   const wrapperStyles = twMerge(
@@ -31,6 +34,24 @@ export default function Navigation() {
   useEffect(() => {
     setIsOpenNav(false);
   }, [pathname]);
+
+  //header 스크롤 다운 시 숨김, 업 시 노출
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setIsScrollingUp(false);
+      } else {
+        setIsScrollingUp(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -67,7 +88,11 @@ export default function Navigation() {
       </motion.div>
 
       {/* header */}
-      <div className="w-ful h-[80px] sticky top-0 z-50 flex items-center hover:bg-[#352f2f0a] hover:delay-150">
+      <div
+        className={`w-ful h-[80px] sticky top-0 z-50 flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
+          isScrollingUp ? "transform-none" : "-translate-y-full"
+        }`}
+      >
         {/* shadow-[2px_3px_15px_rgba(0,0,0,0.04)] */}
         <div className="w-full mx-[15px] md:mx-[50px] z-[51] flex justify-between items-center">
           <div className="flex gap-3 items-center text-[25px] font-medium text-[#352F2F]">

@@ -16,7 +16,7 @@ export default function InformationTemplate() {
   const contents = [
     {
       name: "SKILLS",
-      className: "w-[100%] mb-[80px]",
+      className: "w-full mb-[80px]",
       Element: (
         <>
           <h2>Lorem ipsum</h2>
@@ -41,7 +41,7 @@ export default function InformationTemplate() {
     },
     {
       name: "EDUCATION&CAREER",
-      className: "w-[100% h-[auto] mb-[80px]",
+      className: "w-full h-[auto] mb-[80px]",
       Element: (
         <>
           {" "}
@@ -83,7 +83,7 @@ export default function InformationTemplate() {
     },
     {
       name: "LICENCE",
-      className: "w-[100%] h-[auto] mb-[150px]",
+      className: "w-full h-[auto] mb-[150px]",
       Element: (
         <>
           {" "}
@@ -158,7 +158,7 @@ export default function InformationTemplate() {
 
   return (
     <div>
-      <div className="sticky bg-white top-[60px] h-[180px] pt-[60px] pb-[20px]">
+      <div className="sticky top-[60px] h-[180px] pt-[60px] pb-[20px]">
         <div className="text-[28px]">
           안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다
         </div>

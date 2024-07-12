@@ -7,7 +7,7 @@ export default function PortfolioTemplate() {
   return (
     <div>
       <div className="top-[60px] h-[170px] pt-[60px] pb-[20px]">
-        <p className="text-[28px] text-center">PORTFOLIO</p>
+        <p className="text-[28px] text-center">PROJECT</p>
       </div>
 
       <ul className=" flex flex-wrap gap-y-[50px] justify-between">

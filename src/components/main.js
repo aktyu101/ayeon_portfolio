@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 // import { useEffect } from "react";
 import RotatingEllipses from "./RotatingEllipses";
 import { careerList, ricenceList } from "@/constants/informationList";
+import { projectList } from "@/constants/projectList";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
@@ -38,6 +39,26 @@ export default function Home() {
             <li key={index} className="flex justify-between flex-wrap pb-[5px]">
               <p>{ricence.title}</p>
               <span className="text-[#888]">{ricence.period}</span>
+            </li>
+          ))
+        ) : (
+          <li>No license information</li>
+        )}
+      </ul>
+    </div>
+  );
+  //ProjectComponent
+  const ProjectComponent = ({ projectList }) => (
+    <div className="justify-between pt-[80px]">
+      <h2 className="w-full md:w-[50%] text-[25px]">PROJECT</h2>
+      <ul className="w-full md:w-[50%]">
+        {projectList.list && projectList.list.length > 0 ? (
+          [...projectList.list].map((project, index) => (
+            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
+              <p>{project.name}</p>
+              <span className="text-[#888]">
+                {project.startPeriod}~{project.endPeriod}
+              </span>
             </li>
           ))
         ) : (
@@ -86,10 +107,61 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] px-[15px] md:px-[50px]">
+        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] px-[15px] md:px-[50px] pt-[30px] md:pt-[50px]">
+          <div>
+            {/* <p className="text-[40px]">INFORMATION</p> */}
+            {/* 01 */}
+            <ul className="h-screen flex justify-center">
+              <li className="text-center text-[80px] flex items-center">
+                "배움을 게을리하지 않는
+                <br />
+                기획자 민아연입니다"
+              </li>
+            </ul>
+            {/* 02 */}
+            <ul className="h-screen">
+              <li className="text-center text-[80px]">
+                <div className="w-full box-border h-[500px] bg-slate-400 block">
+                  {/* <Image
+                  src={`${prefix}images/portfolio/portfolio01.png`}
+                  alt="Vercel Logo"
+                  className="dark:invert"
+                  width={1280}
+                  height={300}
+                  priority
+                /> */}
+                </div>
+              </li>
+              <li>
+                <ul>
+                  <li>직무 : 웹 기획자 & PM</li>
+                  <li>나이 : 1998.09.03</li>
+                  <li>MBTI : ENTP</li>
+                  <li>전공 : 동양화</li>
+                  <li>근무가능일 : 24년 7월 29일부터</li>
+                </ul>
+              </li>
+            </ul>
+            {/* 03 */}
+            <div className="h-screen">
+              <p className="">
+                12년간 미술을 전공했습니다. 창의적으로 사고하고, 아이디어를
+                시각화하여 표현하는 일에 자신 있습니다.
+              </p>
+              <p className="">
+                중요한 정보, 결정 사항, 일정, 회의 내용 등은 상세하게 기록하는
+                습관을 가지고 있습니다.
+              </p>
+              <p className="">
+                작업의 우선순위를 명확하게 설정한 후 효율적으로 작업을 안분하여
+                낭비되는 시간이 없도록 노력합니다.
+              </p>
+            </div>
+          </div>
           <div>
             <CareerComponent careerList={careerList} />
             <RicenceComponent ricenceList={ricenceList} />
+            <ProjectComponent projectList={projectList} />
           </div>
         </div>
       </div>
@@ -114,3 +186,6 @@ export default function Home() {
 //               height={24}
 //               priority
 //             />
+
+//skill
+//포트폴리오
