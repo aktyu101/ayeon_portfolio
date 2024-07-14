@@ -38,3 +38,5 @@ export const ricenceList = new InformationItemList([
   new InformationItem(5, "문화예술교육사", "2022.10"),
   new InformationItem(6, "SQLD", "2024.06"),
 ]);
+
+//

@@ -84,7 +84,7 @@ export const projectList = new ProjectItemList([
     2,
     "브론테",
     "portfolio01.png",
-    "2022.01",
+    "2023.02",
     "2024.06",
     "JAVASCRIPT",
     "기획&PM"
@@ -261,3 +261,8 @@ export const projectList = new ProjectItemList([
     "기획"
   ),
 ]);
+
+// ■ 프로젝트명 :
+// 담당 업무 :
+// – 국/영문 스토리보드 기획, 정보구조(IA) 등 문서 작성
+// – UX 개선을 고려하여 사용자 특성별로(학생, 교수, 방문객 등) 빠른 정보를 찾을 수 있도록 구성

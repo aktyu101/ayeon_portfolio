@@ -53,7 +53,7 @@ export default function Home() {
       <h2 className="w-full md:w-[50%] text-[25px]">PROJECT</h2>
       <ul className="w-full md:w-[50%]">
         {projectList.list && projectList.list.length > 0 ? (
-          [...projectList.list].map((project, index) => (
+          projectList.listSortedByDate.map((project, index) => (
             <li key={index} className="flex justify-between flex-wrap pb-[5px]">
               <p>{project.name}</p>
               <span className="text-[#888]">
@@ -113,9 +113,11 @@ export default function Home() {
             {/* 01 */}
             <ul className="h-screen flex justify-center">
               <li className="text-center text-[80px] flex items-center">
-                "배움을 게을리하지 않는
+                안녕하세요 :{")"}
                 <br />
-                기획자 민아연입니다"
+                배움을 게을리하지 않는
+                <br />
+                기획자 민아연입니다
               </li>
             </ul>
             {/* 02 */}
@@ -162,6 +164,7 @@ export default function Home() {
             <CareerComponent careerList={careerList} />
             <RicenceComponent ricenceList={ricenceList} />
             <ProjectComponent projectList={projectList} />
+            {/* 프로젝트 더보러가기 버튼 추가*/}
           </div>
         </div>
       </div>
@@ -177,7 +180,8 @@ export default function Home() {
     );
   }
 }
-
+//strength, skills 추가
+//프로젝트 기여도 명시,
 // <Image
 //               src={`${prefix}/vercel.svg`}
 //               alt="Vercel Logo"
@@ -188,4 +192,7 @@ export default function Home() {
 //             />
 
 //skill
-//포트폴리오
+//포트폴리오 3개 브론테, 하이생, 굽네몰, 비비드로우, 셀티브코리아, 월드트로피, 위드한옥
+//브론테, 하이생, 굽네몰
+
+//이력서에도 있는 항목은 뒤로
