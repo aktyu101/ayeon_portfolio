@@ -30,13 +30,13 @@ export const information = new RouteItem(
 //   "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
 // );
 
-export const portfolio = new RouteItem("PROJECT", "/portfolio", [
+export const portfolio = new RouteItem("PROJECT", "/project", [
   new RouteItem(
     "Develop Project",
-    "/portfolio/project",
+    "/project",
     projectList.listSortedByDate.map(
       ({ id, name }, index) =>
-        new RouteItem(`${index + 1}` + `. ${name}`, `/portfolio/project/${id}`)
+        new RouteItem(`${index + 1}` + `. ${name}`, `/project/${id}`)
     )
   ),
 ]);

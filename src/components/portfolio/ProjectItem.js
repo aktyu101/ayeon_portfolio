@@ -6,7 +6,7 @@ export default function ProjectItem({ item }) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`portfolio/project/${item.id}`);
+    router.push(`project/${item.id}`);
   };
   return (
     <li className="w-[406px] bg-white">

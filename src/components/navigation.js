@@ -11,6 +11,7 @@ import { routes } from "../constants/route";
 import { motion } from "framer-motion";
 import ContactPopup from "./ContactPopup";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import dayjs from "dayjs";
 
 //header main 구분 0420, props(main, sub)
 
@@ -72,7 +73,7 @@ export default function Navigation() {
           </ScrollArea>
         </div>
         <div className="text-center text-[#fff] absolute bottom-[80px] left-0 w-full">
-          COPYRIGHT AYEON MIN 2024. ALL RIGHTS RESERVED.
+          COPYRIGHT AYEON MIN {dayjs().year()} ALL RIGHTS RESERVED.
         </div>
         {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
         <div className="flex gap-x-[4px] fixed bottom-[30px]">

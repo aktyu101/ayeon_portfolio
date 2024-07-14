@@ -15,10 +15,13 @@ export default function Home() {
   const CareerComponent = ({ careerList }) => (
     <div className="flex flex-wrap justify-between pt-[80px]">
       <h2 className="w-full md:w-[50%] text-[25px]">EDUCATION & CAREER</h2>
-      <ul className="w-full md:w-[50%]">
+      <ul className="flex flex-col md:w-[50%] max-sm:gap-y-[10px]">
         {careerList.list && careerList.list.length > 0 ? (
           [...careerList.list].reverse().map((career, index) => (
-            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
+            <li
+              key={index}
+              className="flex max-sm:flex-col justify-between flex-wrap pb-[5px]"
+            >
               <p>{career.title}</p>
               <span className="text-[#888]">{career.period}</span>
             </li>
@@ -140,7 +143,6 @@ export default function Home() {
                   <li>나이 : 1998.09.03</li>
                   <li>MBTI : ENTP</li>
                   <li>전공 : 동양화</li>
-                  <li>근무가능일 : 24년 7월 29일부터</li>
                 </ul>
               </li>
             </ul>

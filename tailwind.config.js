@@ -13,7 +13,20 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": { min: "1280px" },
+        // => @media (min-width: 1280px) { ... }
+
+        xl: { max: "1279px" },
+        // => @media (max-width: 1279px) { ... }
+
+        lg: { max: "1023px" },
+        // => @media (max-width: 1023px) { ... }
+
+        md: { max: "767px" },
+        // => @media (max-width: 767px) { ... }
+
+        sm: { max: "375px" },
+        // => @media (max-width: 375px) { ... }
       },
     },
     extend: {
