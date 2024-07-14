@@ -52,4 +52,4 @@ export const study = new RouteItem("STUDY", "/study", [
   ),
 ]);
 
-export const routes = [information, portfolio, study];
+export const routes = [portfolio, study];

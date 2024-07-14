@@ -24,7 +24,8 @@ class ProjectItem {
     startPeriod = null,
     endPeriod = null,
     type = null,
-    description
+    description,
+    siteUrl = null
   ) {
     this.id = id;
     this.name = name;
@@ -33,6 +34,7 @@ class ProjectItem {
     this.endPeriod = endPeriod;
     this.type = type;
     this.description = description;
+    this.siteUrl = siteUrl;
   }
 
   get url() {
@@ -50,8 +52,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.03",
     "2024.06",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://seesay.co.kr/"
   ),
   new ProjectItem(
     1,
@@ -59,8 +62,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.03",
     "2024.04",
-    "HTML&CSS",
-    "기획&PM"
+    "카페24",
+    "기획&PM",
+    "https://www.arocell.co.kr/"
   ),
   new ProjectItem(
     1,
@@ -68,8 +72,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.04",
     "2023.05",
-    "HTML&CSS",
-    "필터기능 추가 개발"
+    "고도몰",
+    "필터기능 추가 개발",
+    "https://www.younhyunmall.com/"
   ),
   new ProjectItem(
     1,
@@ -77,8 +82,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.04",
     "2024.06",
-    "HTML&CSS",
-    "기획&PM"
+    "카페24",
+    "기획&PM",
+    "https://accdlacshop.cafe24.com/"
   ),
   new ProjectItem(
     2,
@@ -86,17 +92,19 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.02",
     "2024.06",
-    "JAVASCRIPT",
-    "기획&PM"
+    "고도몰",
+    "기획&PM",
+    "https://bronteshop.co.kr/"
   ),
   new ProjectItem(
     3,
-    "나인위시스",
+    "나인위시스 2차",
     "portfolio01.png",
     "2024.04",
     "2024.05",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://ninewishes9.cafe24.com/"
   ),
   new ProjectItem(
     4,
@@ -104,8 +112,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.02",
     "2024.04",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://gareem.com/"
   ),
   new ProjectItem(
     5,
@@ -113,8 +122,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.03",
     "2024.04",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://laprima.co.kr/"
   ),
   new ProjectItem(
     6,
@@ -122,8 +132,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.01",
     "2024.03",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://m.monsieurj.co.kr/"
   ),
   new ProjectItem(
     1,
@@ -131,8 +142,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2024.01",
     "2024.03",
-    "HTML&CSS",
-    "des"
+    "카페24",
+    "des",
+    "https://taenamstore.com/"
   ),
   new ProjectItem(
     2,
@@ -140,8 +152,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.05",
     "2023.11",
-    "JAVASCRIPT",
-    "기획&PM"
+    "메이크샵",
+    "기획&PM",
+    "https://www.goobnemall.com/"
   ),
   new ProjectItem(
     3,
@@ -149,8 +162,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.04",
     "2023.11",
-    "HTML&CSS",
-    "기획&PM"
+    "고도몰",
+    "기획&PM",
+    "http://www.wtrophy.com/"
   ),
   new ProjectItem(
     4,
@@ -158,8 +172,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.03",
     "2023.05",
-    "HTML&CSS",
-    "PM"
+    "메이크샵",
+    "PM",
+    null
   ),
   new ProjectItem(
     5,
@@ -167,8 +182,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.02",
     "2023.05",
-    "HTML&CSS",
-    "PM"
+    "고도몰",
+    "기획&PM",
+    "alzipmat.com"
   ),
   new ProjectItem(
     6,
@@ -176,8 +192,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2023.02",
     "2023.04",
-    "HTML&CSS",
-    "PM"
+    "고도몰",
+    "PM",
+    "https://www.hankookgallery.com/"
   ),
   new ProjectItem(
     6,
@@ -185,8 +202,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.12",
     "2023.02",
-    "HTML&CSS",
-    "PM"
+    "고도몰",
+    "PM",
+    "https://www.ellikbeauty.kr/"
   ),
   new ProjectItem(
     6,
@@ -194,8 +212,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.10",
     "2022.12",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://hohoemis.com/"
   ),
   new ProjectItem(
     6,
@@ -203,8 +222,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.09",
     "2022.12",
-    "HTML&CSS",
-    "PM"
+    "고도몰",
+    "기획&PM",
+    "https://www.cellmall.co.kr/"
   ),
   new ProjectItem(
     6,
@@ -212,8 +232,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.09",
     "2022.11",
-    "HTML&CSS",
-    "PM"
+    "카페24",
+    "PM",
+    "https://vivelab.kr/"
   ),
   new ProjectItem(
     6,
@@ -221,8 +242,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.09",
     "2022.12",
-    "HTML&CSS",
-    "기획&PM"
+    "고도몰",
+    "기획&PM",
+    null
   ),
   new ProjectItem(
     6,
@@ -230,8 +252,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.08",
     "2022.12",
-    "HTML&CSS",
-    "기획&PM"
+    "카페24",
+    "기획&PM",
+    "https://www.hisaeng.co.kr/"
   ),
   new ProjectItem(
     6,
@@ -239,8 +262,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.08",
     "2022.09",
-    "HTML&CSS",
-    "PM"
+    "고도몰",
+    "PM",
+    "https://www.mynutine.com/"
   ),
   new ProjectItem(
     6,
@@ -248,8 +272,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.04",
     "2022.05",
-    "HTML&CSS",
-    "기획"
+    "고도몰",
+    "기획",
+    "https://www.robertapieri.kr/"
   ),
   new ProjectItem(
     6,
@@ -257,8 +282,9 @@ export const projectList = new ProjectItemList([
     "portfolio01.png",
     "2022.04",
     "2022.05",
-    "HTML&CSS",
-    "기획"
+    "고도몰",
+    "기획",
+    "withhanok.com"
   ),
 ]);
 
