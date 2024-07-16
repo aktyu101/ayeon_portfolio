@@ -5,7 +5,7 @@ import { careerList, ricenceList } from "@/constants/informationList";
 import { projectList } from "@/constants/projectList";
 
 const ResumePopup = () => {
-  const [resumeIsOpen, setResumeIsOpen] = useState(false);
+  const [resumeIsOpen, setResumeIsOpen] = useState(true);
 
   const resumeTogglePopup = () => {
     setResumeIsOpen(!resumeIsOpen);
