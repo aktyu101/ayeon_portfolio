@@ -6,70 +6,70 @@ import { ConfigContext } from "@/app/config-provider";
 import { motion } from "framer-motion";
 // import { useEffect } from "react";
 import RotatingEllipses from "./RotatingEllipses";
-import { careerList, ricenceList } from "@/constants/informationList";
-import { projectList } from "@/constants/projectList";
+// import { careerList, ricenceList } from "@/constants/informationList";
+// import { projectList } from "@/constants/projectList";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
-  //CareerComponent
-  const CareerComponent = ({ careerList }) => (
-    <div className="flex flex-wrap justify-between pt-[80px]">
-      <h2 className="w-full md:w-[50%] text-[25px]">EDUCATION & CAREER</h2>
-      <ul className="flex flex-col md:w-[50%] max-sm:gap-y-[10px]">
-        {careerList.list && careerList.list.length > 0 ? (
-          [...careerList.list].reverse().map((career, index) => (
-            <li
-              key={index}
-              className="flex max-sm:flex-col justify-between flex-wrap pb-[5px]"
-            >
-              <p>{career.title}</p>
-              <span className="text-[#888]">{career.period}</span>
-            </li>
-          ))
-        ) : (
-          <li>No career information</li>
-        )}
-      </ul>
-    </div>
-  );
-  //RicenceComponent
-  const RicenceComponent = ({ ricenceList }) => (
-    <div className="flex flex-wrap justify-between pt-[80px]">
-      <h2 className="w-full md:w-[50%] text-[25px]">LICENSES</h2>
-      <ul className="w-full md:w-[50%]">
-        {ricenceList.list && ricenceList.list.length > 0 ? (
-          [...ricenceList.list].reverse().map((ricence, index) => (
-            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
-              <p>{ricence.title}</p>
-              <span className="text-[#888]">{ricence.period}</span>
-            </li>
-          ))
-        ) : (
-          <li>No license information</li>
-        )}
-      </ul>
-    </div>
-  );
-  //ProjectComponent
-  const ProjectComponent = ({ projectList }) => (
-    <div className="justify-between pt-[80px]">
-      <h2 className="w-full md:w-[50%] text-[25px]">PROJECT</h2>
-      <ul className="w-full md:w-[50%]">
-        {projectList.list && projectList.list.length > 0 ? (
-          projectList.listSortedByDate.map((project, index) => (
-            <li key={index} className="flex justify-between flex-wrap pb-[5px]">
-              <p>{project.name}</p>
-              <span className="text-[#888]">
-                {project.startPeriod}~{project.endPeriod}
-              </span>
-            </li>
-          ))
-        ) : (
-          <li>No license information</li>
-        )}
-      </ul>
-    </div>
-  );
+  // //CareerComponent
+  // const CareerComponent = ({ careerList }) => (
+  //   <div className="flex flex-wrap justify-between pt-[80px]">
+  //     <h2 className="w-full md:w-[50%] text-[25px]">EDUCATION & CAREER</h2>
+  //     <ul className="flex flex-col md:w-[50%] max-sm:gap-y-[10px]">
+  //       {careerList.list && careerList.list.length > 0 ? (
+  //         [...careerList.list].reverse().map((career, index) => (
+  //           <li
+  //             key={index}
+  //             className="flex max-sm:flex-col justify-between flex-wrap pb-[5px]"
+  //           >
+  //             <p>{career.title}</p>
+  //             <span className="text-[#888]">{career.period}</span>
+  //           </li>
+  //         ))
+  //       ) : (
+  //         <li>No career information</li>
+  //       )}
+  //     </ul>
+  //   </div>
+  // );
+  // //RicenceComponent
+  // const RicenceComponent = ({ ricenceList }) => (
+  //   <div className="flex flex-wrap justify-between pt-[80px]">
+  //     <h2 className="w-full md:w-[50%] text-[25px]">LICENSES</h2>
+  //     <ul className="w-full md:w-[50%]">
+  //       {ricenceList.list && ricenceList.list.length > 0 ? (
+  //         [...ricenceList.list].reverse().map((ricence, index) => (
+  //           <li key={index} className="flex justify-between flex-wrap pb-[5px]">
+  //             <p>{ricence.title}</p>
+  //             <span className="text-[#888]">{ricence.period}</span>
+  //           </li>
+  //         ))
+  //       ) : (
+  //         <li>No license information</li>
+  //       )}
+  //     </ul>
+  //   </div>
+  // );
+  // //ProjectComponent
+  // const ProjectComponent = ({ projectList }) => (
+  //   <div className="justify-between pt-[80px]">
+  //     <h2 className="w-full md:w-[50%] text-[25px]">PROJECT</h2>
+  //     <ul className="w-full md:w-[50%]">
+  //       {projectList.list && projectList.list.length > 0 ? (
+  //         projectList.listSortedByDate.map((project, index) => (
+  //           <li key={index} className="flex justify-between flex-wrap pb-[5px]">
+  //             <p>{project.name}</p>
+  //             <span className="text-[#888]">
+  //               {project.startPeriod}~{project.endPeriod}
+  //             </span>
+  //           </li>
+  //         ))
+  //       ) : (
+  //         <li>No license information</li>
+  //       )}
+  //     </ul>
+  //   </div>
+  // );
 
   return (
     <>
@@ -114,7 +114,7 @@ export default function Home() {
           <div>
             {/* <p className="text-[40px]">INFORMATION</p> */}
             {/* 01 */}
-            <ul className="h-screen flex justify-center">
+            {/* <ul className="h-screen flex justify-center">
               <li className="text-center text-[80px] flex items-center">
                 안녕하세요 :{")"}
                 <br />
@@ -122,20 +122,11 @@ export default function Home() {
                 <br />
                 기획자 민아연입니다
               </li>
-            </ul>
+            </ul> */}
             {/* 02 */}
-            <ul className="h-screen">
+            {/* <ul className="h-screen">
               <li className="text-center text-[80px]">
-                <div className="w-full box-border h-[500px] bg-slate-400 block">
-                  {/* <Image
-                  src={`${prefix}images/portfolio/portfolio01.png`}
-                  alt="Vercel Logo"
-                  className="dark:invert"
-                  width={1280}
-                  height={300}
-                  priority
-                /> */}
-                </div>
+                <div className="w-full box-border h-[500px] bg-slate-400 block"></div>
               </li>
               <li>
                 <ul>
@@ -145,9 +136,9 @@ export default function Home() {
                   <li>전공 : 동양화</li>
                 </ul>
               </li>
-            </ul>
+            </ul> */}
             {/* 03 */}
-            <div className="h-screen">
+            {/* <div className="h-screen">
               <p className="">
                 12년간 미술을 전공했습니다. 창의적으로 사고하고, 아이디어를
                 시각화하여 표현하는 일에 자신 있습니다.
@@ -160,14 +151,13 @@ export default function Home() {
                 작업의 우선순위를 명확하게 설정한 후 효율적으로 작업을 안분하여
                 낭비되는 시간이 없도록 노력합니다.
               </p>
-            </div>
+            </div> */}
           </div>
-          <div>
+          {/* <div>
             <CareerComponent careerList={careerList} />
             <RicenceComponent ricenceList={ricenceList} />
             <ProjectComponent projectList={projectList} />
-            {/* 프로젝트 더보러가기 버튼 추가*/}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

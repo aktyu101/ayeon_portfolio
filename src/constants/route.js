@@ -10,7 +10,7 @@ class RouteItem {
 }
 
 export const information = new RouteItem(
-  "INFORMATION",
+  "scroll test",
   "/information"
   // [
   //   new RouteItem("Skills", "/information"),
@@ -52,4 +52,4 @@ export const study = new RouteItem("STUDY", "/study", [
   ),
 ]);
 
-export const routes = [portfolio, study];
+export const routes = [portfolio, study, information];

@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import ContactPopup from "./ContactPopup";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import dayjs from "dayjs";
+import ResumePopup from "./ResumePopup";
 
 //header main 구분 0420, props(main, sub)
 
@@ -103,6 +104,21 @@ export default function Navigation() {
             <div className="md:hidden">
               <ContactPopup />
             </div>
+            {/* 이력서 메뉴 추가 */}
+            <div
+              className="relative hidden md:block"
+              onMouseEnter={() => setHoveredIndex("resume")}
+              onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => setHoveredIndex(null)}
+            >
+              <ResumePopup className="relative" />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: hoveredIndex === "resume" ? "100%" : 0 }}
+                transition={{ ease: "easeOut", duration: 1 }}
+                className="absolute bottom-0 left-0 h-[1px] bg-[#352f2f] top-[50%]"
+              />
+            </div>
             {routes.map((route, index) => (
               <Link key={index} href={route.link}>
                 <div className="relative hidden md:block">
@@ -124,6 +140,7 @@ export default function Navigation() {
             ))}
             <div className="hidden md:block">
               <ContactPopup />
+              {/* <ResumePopup /> */}
             </div>
           </div>
         </div>
