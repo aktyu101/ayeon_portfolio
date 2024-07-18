@@ -135,9 +135,10 @@ const ResumePopup = () => {
                     </ul>
                   </div>
                   {/* 오른쪽 */}
+
                   <div className="max-w-[200px] rounded-full box-border h-[200px] w-[200px] block">
                     <img
-                      src={`/images/information/profile2.png`}
+                      src={images / information / profile2.png}
                       alt="프로필 이미지"
                       className="rounded-full w-full h-full object-cover"
                     />
