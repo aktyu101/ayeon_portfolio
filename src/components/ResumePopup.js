@@ -5,11 +5,19 @@ import { careerList, ricenceList } from "@/constants/informationList";
 import { projectList } from "@/constants/projectList";
 
 const ResumePopup = () => {
-  const [resumeIsOpen, setResumeIsOpen] = useState(true);
+  const [resumeIsOpen, setResumeIsOpen] = useState(false);
 
   const resumeTogglePopup = () => {
     setResumeIsOpen(!resumeIsOpen);
   };
+
+  function Line({ reverse = false }) {
+    const lineStyles = twMerge(
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-[22px] bg-[#333]",
+      reverse ? "-rotate-45" : "rotate-45"
+    );
+    return <div className={lineStyles} />;
+  }
 
   //CareerComponent
   const CareerComponent = ({ careerList }) => (
@@ -86,24 +94,26 @@ const ResumePopup = () => {
           <motion.div
             initial={{ scale: 0, opacity: 0, y: "-50%", x: "-50%" }}
             animate={{ scale: 1, opacity: 1, y: "-50%", x: "-50%" }}
-            className="fixed top-1/2 left-1/2 bg-white rounded-lg p-4 z-50 text-black border-[1px] box-border overflow-scroll h-full"
+            className="fixed top-1/2 left-1/2 bg-white rounded-lg pt-[40px] px-[50px] z-50 text-black border-[1px] box-border overflow-scroll h-full"
             style={{
               maxWidth: "full",
-              width: "90%",
+              width: "calc(100% - 100px)",
               height: "100%",
-              marginTop: "30px",
+              marginTop: "40px",
+              marginBottom: "40px",
             }}
           >
             {/* 팝업 내용 */}
-            <div className="flex justify-end border-b-2 mb-[15px] items-center pb-[15px]">
+            <div className="flex justify-end items-center">
               {/* <h2 className="text-lg font-bold text-[23px] box-border">
                 안녕하세요 :{")"} 배움을 게을리하지 않는 기획자 민아연입니다.
               </h2> */}
               <button
                 onClick={resumeTogglePopup}
-                className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg"
+                className="w-[30px] h-[30px] mb-[50px] relative"
               >
-                X
+                <Line />
+                <Line reverse />
               </button>
             </div>
             <div className="flex gap-y-[10px] flex-wrap flex-col">
@@ -111,49 +121,30 @@ const ResumePopup = () => {
                 <li className="flex justify-between">
                   {/* 왼쪽 */}
                   <div className="flex flex-col gap-y-[20px]">
-                    <div className="text-[30px]">민아연</div>
-                    <div className="flex items-center">
-                      기획자
-                      <span className="w-[1px] h-[10px] block bg-black mx-[5px]"></span>
-                      <span>창의적으로 사고하고 끊임없이 도전합니다.</span>
+                    <div>
+                      <div className="text-[40px] font-semibold">민아연</div>
+                      <div className="flex items-center text-[24px] font-normal gap-[8px]">
+                        기획자
+                        <span className="w-[2px] h-[15px] block bg-black mx-[5px]"></span>
+                        <span>창의적으로 사고하고 끊임없이 도전합니다.</span>
+                      </div>
                     </div>
                     <ul>
                       <li>010-5238-1429</li>
                       <li>aktyu101@gmail.com</li>
                     </ul>
-                    <ul>
-                      <li>나이 : 1998.09.03</li>
-                      <li>MBTI : ENTP</li>
-                      <li>전공 : 동양화</li>
-                    </ul>
                   </div>
                   {/* 오른쪽 */}
-                  <div className="w-[180px] rounded-full box-border h-[180px] bg-slate-400 block">
-                    {/* <Image
-                  src={`${prefix}images/portfolio/portfolio01.png`}
-                  alt="Vercel Logo"
-                  className="dark:invert"
-                  width={1280}
-                  height={300}
-                  priority
-                /> */}
+                  <div className="max-w-[200px] rounded-full box-border h-[200px] w-[200px] block">
+                    <img
+                      src={`/images/information/profile2.png`}
+                      alt="프로필 이미지"
+                      className="rounded-full w-full h-full object-cover"
+                    />
                   </div>
                 </li>
               </ul>
-              <div className="">
-                <p className="">
-                  12년간 미술을 전공했습니다. 창의적으로 사고하고, 아이디어를
-                  시각화하여 표현하는 일에 자신 있습니다.
-                </p>
-                <p className="">
-                  중요한 정보, 결정 사항, 일정, 회의 내용 등은 상세하게 기록하는
-                  습관을 가지고 있습니다.
-                </p>
-                <p className="">
-                  작업의 우선순위를 명확하게 설정한 후 효율적으로 작업을
-                  안분하여 낭비되는 시간이 없도록 노력합니다.
-                </p>
-              </div>
+
               <div>
                 <CareerComponent careerList={careerList} />
                 <RicenceComponent ricenceList={ricenceList} />
