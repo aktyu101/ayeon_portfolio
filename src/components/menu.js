@@ -85,6 +85,7 @@ export default function Menu({ routes }) {
       <li className={oneDepthStyle}>
         <a className={oneDepthTextStyle} href="#">
           <ResumePopup />
+          {/* onClick={() => setIsOpenNav(false)} */}
         </a>
       </li>
     </ul>
