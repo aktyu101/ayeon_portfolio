@@ -143,7 +143,7 @@ export const projectList = new ProjectItemList([
     "2024.01",
     "2024.03",
     "카페24",
-    "des",
+    "기획&PM",
     "https://taenamstore.com/"
   ),
   new ProjectItem(
@@ -281,10 +281,20 @@ export const projectList = new ProjectItemList([
     "위드한옥",
     "portfolio01.png",
     "2022.04",
-    "2022.05",
+    "2022.04",
     "고도몰",
     "기획",
     "withhanok.com"
+  ),
+  new ProjectItem(
+    6,
+    "버즈비",
+    "portfolio01.png",
+    "2024.01",
+    "2022.06",
+    "고도몰",
+    "기획&PM",
+    "buzzbetr4446.godomall.com"
   ),
 ]);
 

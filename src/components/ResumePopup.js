@@ -183,6 +183,7 @@ const ResumePopup = () => {
         <>
           {/* 딤 처리 */}
           <motion.div
+            onClick={resumeTogglePopup}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.35 }}
             className="fixed top-0 left-0 w-screen h-screen bg-black"
