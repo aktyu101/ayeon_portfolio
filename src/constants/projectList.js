@@ -25,7 +25,8 @@ class ProjectItem {
     endPeriod = null,
     type = null,
     description,
-    siteUrl = null
+    siteUrl = null,
+    mainDisplay = false
   ) {
     this.id = id;
     this.name = name;
@@ -35,6 +36,7 @@ class ProjectItem {
     this.type = type;
     this.description = description;
     this.siteUrl = siteUrl;
+    this.mainDisplay = mainDisplay;
   }
 
   get url() {
@@ -94,7 +96,8 @@ export const projectList = new ProjectItemList([
     "2024.06",
     "고도몰",
     "기획&PM",
-    "https://bronteshop.co.kr/"
+    "https://bronteshop.co.kr/",
+    true
   ),
   new ProjectItem(
     3,
@@ -154,7 +157,8 @@ export const projectList = new ProjectItemList([
     "2023.11",
     "메이크샵",
     "기획&PM",
-    "https://www.goobnemall.com/"
+    "https://www.goobnemall.com/",
+    true
   ),
   new ProjectItem(
     3,
@@ -254,7 +258,8 @@ export const projectList = new ProjectItemList([
     "2022.12",
     "카페24",
     "기획&PM",
-    "https://www.hisaeng.co.kr/"
+    "https://www.hisaeng.co.kr/",
+    true
   ),
   new ProjectItem(
     6,

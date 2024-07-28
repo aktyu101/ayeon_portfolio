@@ -11,66 +11,10 @@ import RotatingEllipses from "./RotatingEllipses";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
-  // //CareerComponent
-  // const CareerComponent = ({ careerList }) => (
-  //   <div className="flex flex-wrap justify-between pt-[80px]">
-  //     <h2 className="w-full md:w-[50%] text-[25px]">EDUCATION & CAREER</h2>
-  //     <ul className="flex flex-col md:w-[50%] max-sm:gap-y-[10px]">
-  //       {careerList.list && careerList.list.length > 0 ? (
-  //         [...careerList.list].reverse().map((career, index) => (
-  //           <li
-  //             key={index}
-  //             className="flex max-sm:flex-col justify-between flex-wrap pb-[5px]"
-  //           >
-  //             <p>{career.title}</p>
-  //             <span className="text-[#888]">{career.period}</span>
-  //           </li>
-  //         ))
-  //       ) : (
-  //         <li>No career information</li>
-  //       )}
-  //     </ul>
-  //   </div>
-  // );
-  // //RicenceComponent
-  // const RicenceComponent = ({ ricenceList }) => (
-  //   <div className="flex flex-wrap justify-between pt-[80px]">
-  //     <h2 className="w-full md:w-[50%] text-[25px]">LICENSES</h2>
-  //     <ul className="w-full md:w-[50%]">
-  //       {ricenceList.list && ricenceList.list.length > 0 ? (
-  //         [...ricenceList.list].reverse().map((ricence, index) => (
-  //           <li key={index} className="flex justify-between flex-wrap pb-[5px]">
-  //             <p>{ricence.title}</p>
-  //             <span className="text-[#888]">{ricence.period}</span>
-  //           </li>
-  //         ))
-  //       ) : (
-  //         <li>No license information</li>
-  //       )}
-  //     </ul>
-  //   </div>
-  // );
-  // //ProjectComponent
-  // const ProjectComponent = ({ projectList }) => (
-  //   <div className="justify-between pt-[80px]">
-  //     <h2 className="w-full md:w-[50%] text-[25px]">PROJECT</h2>
-  //     <ul className="w-full md:w-[50%]">
-  //       {projectList.list && projectList.list.length > 0 ? (
-  //         projectList.listSortedByDate.map((project, index) => (
-  //           <li key={index} className="flex justify-between flex-wrap pb-[5px]">
-  //             <p>{project.name}</p>
-  //             <span className="text-[#888]">
-  //               {project.startPeriod}~{project.endPeriod}
-  //             </span>
-  //           </li>
-  //         ))
-  //       ) : (
-  //         <li>No license information</li>
-  //       )}
-  //     </ul>
-  //   </div>
-  // );
 
+  const contentsInfoSkillsStyle =
+    "leading-[35px] max-w-[33%] text-[35px] font-normal before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:mr-[12px] before:mb-[8px]";
+  const skilldescriptionStyle = "text-[15px] ml-[19px]";
   return (
     <>
       {/* background 영역 */}
@@ -110,54 +54,79 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="h-[6000px] bg-[#f5f5f5fa] border-t-[1px] px-[15px] md:px-[50px] pt-[30px] md:pt-[50px]">
-          <div>
-            {/* <p className="text-[40px]">INFORMATION</p> */}
-            {/* 01 */}
-            {/* <ul className="h-screen flex justify-center">
-              <li className="text-center text-[80px] flex items-center">
-                안녕하세요 :{")"}
-                <br />
-                배움을 게을리하지 않는
-                <br />
-                기획자 민아연입니다
-              </li>
-            </ul> */}
-            {/* 02 */}
-            {/* <ul className="h-screen">
-              <li className="text-center text-[80px]">
-                <div className="w-full box-border h-[500px] bg-slate-400 block"></div>
-              </li>
-              <li>
-                <ul>
-                  <li>직무 : 웹 기획자 & PM</li>
-                  <li>나이 : 1998.09.03</li>
-                  <li>MBTI : ENTP</li>
-                  <li>전공 : 동양화</li>
-                </ul>
-              </li>
-            </ul> */}
-            {/* 03 */}
-            {/* <div className="h-screen">
-              <p className="">
-                12년간 미술을 전공했습니다. 창의적으로 사고하고, 아이디어를
-                시각화하여 표현하는 일에 자신 있습니다.
-              </p>
-              <p className="">
-                중요한 정보, 결정 사항, 일정, 회의 내용 등은 상세하게 기록하는
-                습관을 가지고 있습니다.
-              </p>
-              <p className="">
-                작업의 우선순위를 명확하게 설정한 후 효율적으로 작업을 안분하여
-                낭비되는 시간이 없도록 노력합니다.
-              </p>
-            </div> */}
+        <div className="bg-[#f5f5f5] border-t-[1px] px-[15px] md:px-[50px] ">
+          {/* 01 */}
+          <div className=" md:pt-[100px] h-screen flex flex-col">
+            <div className="flex flex-col gap-[200px]">
+              {/* 01:top */}
+              <ul className="flex justify-between">
+                <li className="text-[60px] flex flex-col text-[#858282] tracking-tighter">
+                  <div>배움을 게을리하지 않는 기획자</div>
+                  <div>
+                    <span className="text-[#222]">민아연</span>입니다.
+                  </div>
+                </li>
+                <li className="w-[180px] h-auto">
+                  <img
+                    src="images/information/profile.png"
+                    alt="프로필 이미지"
+                    className="rounded-full w-full object-cover"
+                  />
+                </li>
+              </ul>
+              {/* 01:bottom */}
+              <div>
+                <div>
+                  <ul className="flex flex-wrap gap-[80px]">
+                    <li className={contentsInfoSkillsStyle}>
+                      Service planning
+                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                        <p className={skilldescriptionStyle}>
+                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          프로젝트 관리용 노션 템플릿 제작
+                        </p>
+                      </div>
+                    </li>
+                    <li className={contentsInfoSkillsStyle}>
+                      Design skill
+                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                        <p className={skilldescriptionStyle}>
+                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          프로젝트 관리용 노션 템플릿 제작
+                        </p>
+                      </div>
+                    </li>
+                    <li className={contentsInfoSkillsStyle}>
+                      Development skill
+                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                        <p className={skilldescriptionStyle}>
+                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
+                        </p>
+                        <p className={skilldescriptionStyle}>
+                          프로젝트 관리용 노션 템플릿 제작
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                {/* 01:bottom:end */}
+              </div>
+            </div>
+            {/* e */}
           </div>
-          {/* <div>
-            <CareerComponent careerList={careerList} />
-            <RicenceComponent ricenceList={ricenceList} />
-            <ProjectComponent projectList={projectList} />
-          </div> */}
         </div>
       </div>
     </>

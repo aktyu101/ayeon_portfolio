@@ -192,10 +192,10 @@ const ResumePopup = () => {
           <motion.div
             initial={{ scale: 0, opacity: 0, y: "-50%", x: "-50%" }}
             animate={{ scale: 1, opacity: 1, y: "-50%", x: "-50%" }}
-            className="fixed top-1/2 left-1/2 bg-white rounded-lg pt-[40px] px-[50px] z-50 text-black border-[1px] box-border overflow-scroll h-full"
+            className="z-[9999] fixed top-1/2 left-1/2 bg-white rounded-lg pt-[40px] px-[50px] text-black border-[1px] box-border overflow-scroll h-full"
             style={{
               maxWidth: "full",
-              width: "calc(100% - 100px)",
+              width: "calc(100% - 200px)",
               height: "100%",
               marginTop: "40px",
               marginBottom: "40px",

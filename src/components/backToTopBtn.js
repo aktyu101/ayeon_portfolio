@@ -13,9 +13,18 @@ export default function BackToTopButton() {
     <>
       <button
         onClick={scrollToTop}
-        className="z-[999] text-[#000 fixed right-[15px] md:right-[50px] bottom-[30px] w-[75px] h-[75px] box-border rounded-full bg-[#352F2F] text-white"
+        className="z-[999] text-[#000 fixed right-[15px] md:right-[50px] bottom-[30px] h-[75px]"
       >
-        TOP
+        <img
+          src="images/information/top_dark.svg"
+          alt="phone"
+          className="w h-auto inline-block mr-[8px]"
+        />
+        <img
+          src="images/information/top_white.svg"
+          alt="phone"
+          className="w h-auto inline-block mr-[8px]"
+        />
       </button>
     </>
   );
