@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className={notoSansKr.className}>
         <ConfigProvider>
-          <div>{children}</div>
+          {children}
           <BackToTopButton />
         </ConfigProvider>
       </body>

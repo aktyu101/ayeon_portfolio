@@ -8,30 +8,23 @@ import { motion } from "framer-motion";
 import RotatingEllipses from "./RotatingEllipses";
 // import { careerList, ricenceList } from "@/constants/informationList";
 // import { projectList } from "@/constants/projectList";
+import MainProjectSwiper from "./main/MainProjectSwiper";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
 
   const contentsInfoSkillsStyle =
-    "leading-[35px] max-w-[33%] text-[35px] font-normal before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:mr-[12px] before:mb-[8px]";
+    "leading-[35px] max-w-[33%] text-[35px] font-normal";
+  const contentInfoSkillsTitle =
+    "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px]";
   const skilldescriptionStyle = "text-[15px] ml-[19px]";
+
   return (
     <>
       {/* background 영역 */}
       {/* 흘러가는 텍스트 효과 적용*/}
-      <div className="fixed z-0 flex items-center justify-center overflow-hidden h-full">
+      <div className="bg-[#f5f5f5] fixed z-0 flex items-center justify-center overflow-hidden h-full">
         <div className="flex flex-wrap w-full">
-          {/* test */}
-          {/* <div className="flex justify-between w-screen pr-[50px]">
-            <RotatingEllipses />
-            <div className="block text-center leading-[60px]">
-              <div className="w-[200px] h-[50px] bg-[#352f2f] rounded-3xl  mb-[10px] text-[#fff]"></div>
-              <div className="w-[300px] h-[50px] bg-[#352f2f] rounded-3xl">
-                dddd
-              </div>
-            </div>
-          </div> */}
-          {/* test : e */}
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: "-100%" }}
@@ -54,9 +47,9 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="bg-[#f5f5f5] border-t-[1px] px-[15px] md:px-[50px] ">
+        <div className="bg-[#f5f5f5] border-t-[1px] px-[15px] md:px-[50px]">
           {/* 01 */}
-          <div className=" md:pt-[100px] h-screen flex flex-col">
+          <div className="md:pt-[100px] flex flex-col xl:h-screen">
             <div className="flex flex-col gap-[200px]">
               {/* 01:top */}
               <ul className="flex justify-between">
@@ -79,7 +72,9 @@ export default function Home() {
                 <div>
                   <ul className="flex flex-wrap gap-[80px]">
                     <li className={contentsInfoSkillsStyle}>
-                      Service planning
+                      <div className={contentInfoSkillsTitle}>
+                        Service planning
+                      </div>
                       <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
                         <p className={skilldescriptionStyle}>
                           데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
@@ -93,7 +88,9 @@ export default function Home() {
                       </div>
                     </li>
                     <li className={contentsInfoSkillsStyle}>
-                      Design skill
+                      <div className={contentInfoSkillsTitle}>
+                        Design skills
+                      </div>
                       <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
                         <p className={skilldescriptionStyle}>
                           데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
@@ -107,7 +104,9 @@ export default function Home() {
                       </div>
                     </li>
                     <li className={contentsInfoSkillsStyle}>
-                      Development skill
+                      <div className={contentInfoSkillsTitle}>
+                        Development skills
+                      </div>
                       <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
                         <p className={skilldescriptionStyle}>
                           데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
@@ -126,6 +125,10 @@ export default function Home() {
               </div>
             </div>
             {/* e */}
+          </div>
+          {/* 02 */}
+          <div className="h-screen">
+            <MainProjectSwiper />
           </div>
         </div>
       </div>
