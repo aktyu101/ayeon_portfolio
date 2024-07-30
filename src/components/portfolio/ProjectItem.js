@@ -9,7 +9,7 @@ export default function ProjectItem({ item }) {
     router.push(`project/${item.id}`);
   };
   return (
-    <li className="w-[406px] bg-white">
+    <li className="w-[406px]">
       <article
         className="flex flex-col gap-y-[22px] cursor-pointer"
         onClick={handleClick}

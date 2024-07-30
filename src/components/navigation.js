@@ -91,7 +91,7 @@ export default function Navigation() {
 
       {/* header */}
       <div
-        className={`w-ful h-[80px] sticky top-0 z-50 flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
+        className={`w-ful h-[80px] sticky top-0 z-[9999] flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
           isScrollingUp ? "transform-none" : "-translate-y-full"
         }`}
       >

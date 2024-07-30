@@ -24,9 +24,10 @@ class ProjectItem {
     startPeriod = null,
     endPeriod = null,
     type = null,
-    description,
+    solution,
     siteUrl = null,
-    mainDisplay = false
+    mainDisplay = false,
+    description = ""
   ) {
     this.id = id;
     this.name = name;
@@ -34,9 +35,10 @@ class ProjectItem {
     this.startPeriod = startPeriod;
     this.endPeriod = endPeriod;
     this.type = type;
-    this.description = description;
+    this.solution = solution;
     this.siteUrl = siteUrl;
     this.mainDisplay = mainDisplay;
+    this.description = description;
   }
 
   get url() {
@@ -56,7 +58,8 @@ export const projectList = new ProjectItemList([
     "2024.06",
     "카페24",
     "PM",
-    "https://seesay.co.kr/"
+    "https://seesay.co.kr/",
+    false
   ),
   new ProjectItem(
     1,
@@ -66,7 +69,8 @@ export const projectList = new ProjectItemList([
     "2024.04",
     "카페24",
     "기획&PM",
-    "https://www.arocell.co.kr/"
+    "https://www.arocell.co.kr/",
+    false
   ),
   new ProjectItem(
     1,
@@ -76,7 +80,8 @@ export const projectList = new ProjectItemList([
     "2023.05",
     "고도몰",
     "필터기능 추가 개발",
-    "https://www.younhyunmall.com/"
+    "https://www.younhyunmall.com/",
+    false
   ),
   new ProjectItem(
     1,
@@ -86,7 +91,8 @@ export const projectList = new ProjectItemList([
     "2024.06",
     "카페24",
     "기획&PM",
-    "https://accdlacshop.cafe24.com/"
+    "https://accdlacshop.cafe24.com/",
+    false
   ),
   new ProjectItem(
     2,
@@ -97,7 +103,8 @@ export const projectList = new ProjectItemList([
     "고도몰",
     "기획&PM",
     "https://bronteshop.co.kr/",
-    true
+    true,
+    "Website Renewal Project"
   ),
   new ProjectItem(
     3,
@@ -107,7 +114,8 @@ export const projectList = new ProjectItemList([
     "2024.05",
     "카페24",
     "PM",
-    "https://ninewishes9.cafe24.com/"
+    "https://ninewishes9.cafe24.com/",
+    false
   ),
   new ProjectItem(
     4,
@@ -117,7 +125,8 @@ export const projectList = new ProjectItemList([
     "2024.04",
     "카페24",
     "PM",
-    "https://gareem.com/"
+    "https://gareem.com/",
+    false
   ),
   new ProjectItem(
     5,
@@ -127,7 +136,8 @@ export const projectList = new ProjectItemList([
     "2024.04",
     "카페24",
     "PM",
-    "https://laprima.co.kr/"
+    "https://laprima.co.kr/",
+    false
   ),
   new ProjectItem(
     6,
@@ -137,7 +147,8 @@ export const projectList = new ProjectItemList([
     "2024.03",
     "카페24",
     "PM",
-    "https://m.monsieurj.co.kr/"
+    "https://m.monsieurj.co.kr/",
+    false
   ),
   new ProjectItem(
     1,
@@ -147,7 +158,8 @@ export const projectList = new ProjectItemList([
     "2024.03",
     "카페24",
     "기획&PM",
-    "https://taenamstore.com/"
+    "https://taenamstore.com/",
+    false
   ),
   new ProjectItem(
     2,
@@ -158,7 +170,8 @@ export const projectList = new ProjectItemList([
     "메이크샵",
     "기획&PM",
     "https://www.goobnemall.com/",
-    true
+    true,
+    "Website Renewal Project"
   ),
   new ProjectItem(
     3,
@@ -168,7 +181,8 @@ export const projectList = new ProjectItemList([
     "2023.11",
     "고도몰",
     "기획&PM",
-    "http://www.wtrophy.com/"
+    "http://www.wtrophy.com/",
+    false
   ),
   new ProjectItem(
     4,
@@ -178,7 +192,8 @@ export const projectList = new ProjectItemList([
     "2023.05",
     "메이크샵",
     "PM",
-    null
+    null,
+    false
   ),
   new ProjectItem(
     5,
@@ -188,7 +203,8 @@ export const projectList = new ProjectItemList([
     "2023.05",
     "고도몰",
     "기획&PM",
-    "alzipmat.com"
+    "alzipmat.com",
+    false
   ),
   new ProjectItem(
     6,
@@ -198,7 +214,8 @@ export const projectList = new ProjectItemList([
     "2023.04",
     "고도몰",
     "PM",
-    "https://www.hankookgallery.com/"
+    "https://www.hankookgallery.com/",
+    false
   ),
   new ProjectItem(
     6,
@@ -208,7 +225,8 @@ export const projectList = new ProjectItemList([
     "2023.02",
     "고도몰",
     "PM",
-    "https://www.ellikbeauty.kr/"
+    "https://www.ellikbeauty.kr/",
+    false
   ),
   new ProjectItem(
     6,
@@ -218,7 +236,8 @@ export const projectList = new ProjectItemList([
     "2022.12",
     "카페24",
     "PM",
-    "https://hohoemis.com/"
+    "https://hohoemis.com/",
+    false
   ),
   new ProjectItem(
     6,
@@ -228,7 +247,8 @@ export const projectList = new ProjectItemList([
     "2022.12",
     "고도몰",
     "기획&PM",
-    "https://www.cellmall.co.kr/"
+    "https://www.cellmall.co.kr/",
+    false
   ),
   new ProjectItem(
     6,
@@ -238,7 +258,8 @@ export const projectList = new ProjectItemList([
     "2022.11",
     "카페24",
     "PM",
-    "https://vivelab.kr/"
+    "https://vivelab.kr/",
+    false
   ),
   new ProjectItem(
     6,
@@ -248,7 +269,8 @@ export const projectList = new ProjectItemList([
     "2022.12",
     "고도몰",
     "기획&PM",
-    null
+    null,
+    false
   ),
   new ProjectItem(
     6,
@@ -259,7 +281,8 @@ export const projectList = new ProjectItemList([
     "카페24",
     "기획&PM",
     "https://www.hisaeng.co.kr/",
-    true
+    true,
+    "Website Renewal Project"
   ),
   new ProjectItem(
     6,
@@ -269,7 +292,8 @@ export const projectList = new ProjectItemList([
     "2022.09",
     "고도몰",
     "PM",
-    "https://www.mynutine.com/"
+    "https://www.mynutine.com/",
+    false
   ),
   new ProjectItem(
     6,
@@ -279,7 +303,8 @@ export const projectList = new ProjectItemList([
     "2022.05",
     "고도몰",
     "기획",
-    "https://www.robertapieri.kr/"
+    "https://www.robertapieri.kr/",
+    false
   ),
   new ProjectItem(
     6,
@@ -289,17 +314,20 @@ export const projectList = new ProjectItemList([
     "2022.04",
     "고도몰",
     "기획",
-    "withhanok.com"
+    "withhanok.com",
+    false
   ),
   new ProjectItem(
     6,
-    "버즈비",
+    "test",
     "hiseang.svg",
     "2024.01",
     "2022.06",
     "고도몰",
     "기획&PM",
-    "buzzbetr4446.godomall.com"
+    "buzzbetr4446.godomall.com",
+    true,
+    "자사 사이트 개편"
   ),
 ]);
 

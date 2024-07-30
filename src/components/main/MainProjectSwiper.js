@@ -1,14 +1,18 @@
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
-import ProjectItem from "../portfolio/ProjectItem";
 //https://swiperjs.com/react#useswiper
 import { useState } from "react";
 //useEffect(() => { // 실행할 로직 }, [의존성 배열])
+import { projectList } from "@/constants/projectList";
+import Image from "next/image";
+import { Pagination } from "swiper/modules";
 
 export default () => {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
+
   const moreBtnStyle =
     "flex items-center gap-[6px] box-border border-solid border-[#352F2F] rounded-full border px-[21px] py-[15px] font-medium";
+
   const handleMouseEnter = () => {
     setTimeout(() => {
       setMoreBtnHover(true);
@@ -23,19 +27,25 @@ export default () => {
     <>
       <div>
         <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={2.9}
+          spaceBetween={40}
+          // centeredSlides={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
           onSlideChange={(swiper) => {
             console.log("isbeginning", swiper.isBeginning);
             console.log("isend", swiper.isEnd);
           }}
         >
           <div slot="container-start">
-            <div className="flex justify-between">
+            <div className="flex justify-between px-[15px] md:px-[50px] mb-[60px]">
               <span className="font-medium text-[#222] text-[60px]">
                 MAIN PROJECT
               </span>
-              <div className="flex gap-[15px] items-center">
+              <div className="flex gap-[11px] items-center">
                 <span
                   className={moreBtnStyle}
                   onMouseEnter={handleMouseEnter}
@@ -56,25 +66,53 @@ export default () => {
                     className="object-cover hover:hidden"
                   />
                 </span>
-                <div className="flex gap-[15px]">
+                <div className="flex gap-[4px]">
                   <SlidePrevButton />
                   <SlideNextButton />
                 </div>
               </div>
             </div>
           </div>
-          <SwiperSlide className="block w-[400px] h-[300px]">
-            <img src="images/main/hiseang.svg" alt="프로필 이미지" />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[300px] bg-slate-400">
-            Slide 2
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[300px] bg-slate-400">
-            Slide 3
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[300px] bg-slate-400">
-            Slide 4
-          </SwiperSlide>
+          {/* project list */}
+          <div className="box-border">
+            {projectList.listSortedByDate
+              .filter((list) => list.mainDisplay)
+              .map((list) => (
+                <SwiperSlide
+                  key={list.name}
+                  className="swiper-slide-custom first:pl-[50px]"
+                >
+                  <li className="">
+                    <article
+                      className="flex flex-col gap-y-[25px] cursor-pointer"
+                      // onClick={() => handleClick(list.id)}
+                    >
+                      <header className="relative w-full h-[300px]">
+                        <Image
+                          className="object-cover w-[100%] rounded-md"
+                          src={list.url}
+                          fill
+                          alt={list.name}
+                        />
+                      </header>
+                      <section className="flex flex-col gap-y-[15px] text-left">
+                        <span className="text-[30px] font-medium leading-[30px]">
+                          {list.name}
+                        </span>
+                        <div className="flex flex-col gap-y-[6px]">
+                          <p className="text-[22px] font-normal leading-[30px]">
+                            {list.description}
+                          </p>
+                          <p className="text-[16px] font-normal leading-[16px]">
+                            {list.period}
+                          </p>
+                        </div>
+                      </section>
+                    </article>
+                  </li>
+                </SwiperSlide>
+              ))}
+          </div>
         </Swiper>
       </div>
     </>
@@ -83,10 +121,32 @@ export default () => {
 
 const SlidePrevButton = () => {
   const swiper = useSwiper();
-  return <button onClick={() => swiper.slidePrev()}>좌</button>;
+  return (
+    <button
+      className="w-[54px] h-[54px] rounded-full flex justify-center items-center hover:bg-[#DDDEDD]"
+      onClick={() => swiper.slidePrev()}
+    >
+      <img
+        src={"images/main/heroicons_arrow-up.svg"}
+        alt="프로필 이미지"
+        className="object-cover"
+      />
+    </button>
+  );
 };
 
 const SlideNextButton = () => {
   const swiper = useSwiper();
-  return <button onClick={() => swiper.slideNext()}>우</button>;
+  return (
+    <button
+      className="w-[54px] h-[54px] rounded-full flex justify-center items-center hover:bg-[#DDDEDD]"
+      onClick={() => swiper.slideNext()}
+    >
+      <img
+        src={"images/main/heroicons_arrow-up.svg"}
+        alt="프로필 이미지"
+        className="object-cover rotate-180"
+      />
+    </button>
+  );
 };

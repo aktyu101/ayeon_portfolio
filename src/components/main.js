@@ -1,13 +1,8 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import { useContext, useRef } from "react";
 import { ConfigContext } from "@/app/config-provider";
-// import Navigation from "./navigation";
 import { motion } from "framer-motion";
-// import { useEffect } from "react";
-import RotatingEllipses from "./RotatingEllipses";
-// import { careerList, ricenceList } from "@/constants/informationList";
-// import { projectList } from "@/constants/projectList";
 import MainProjectSwiper from "./main/MainProjectSwiper";
 
 export default function Home() {
@@ -47,9 +42,9 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="bg-[#f5f5f5] border-t-[1px] px-[15px] md:px-[50px]">
+        <div className="bg-[#f5f5f5] border-t-[1px]">
           {/* 01 */}
-          <div className="md:pt-[100px] flex flex-col xl:h-screen">
+          <div className="md:pt-[100px] flex flex-col xl:h-screen px-[15px] md:px-[50px]">
             <div className="flex flex-col gap-[200px]">
               {/* 01:top */}
               <ul className="flex justify-between">
@@ -127,6 +122,8 @@ export default function Home() {
           <div className="h-screen">
             <MainProjectSwiper />
           </div>
+          {/* 03 */}
+          <div className="h-screen bg-[#352f2f]"></div>
         </div>
       </div>
     </>

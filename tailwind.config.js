@@ -86,5 +86,15 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"), // 기존 플러그인
+    function ({ addComponents }) {
+      addComponents({
+        ".swiper-slide-custom": {
+          width: "calc((100% - 30px * 2.9) / 2.9)",
+          boxSizing: "border-box",
+        },
+      });
+    },
+  ],
 };
