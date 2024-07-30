@@ -89,33 +89,30 @@ export default function Home() {
                     </li>
                     <li className={contentsInfoSkillsStyle}>
                       <div className={contentInfoSkillsTitle}>
-                        Design skills
+                        Development skills
                       </div>
                       <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
                         <p className={skilldescriptionStyle}>
-                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                          javascript & react 언어 공부
                         </p>
                         <p className={skilldescriptionStyle}>
-                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
+                          웹디자인 기능사 자격증 취득
                         </p>
                         <p className={skilldescriptionStyle}>
-                          프로젝트 관리용 노션 템플릿 제작
+                          반응형 웹디자인 & 웹퍼블리셔 디지털 실무 양성과정 수료
                         </p>
                       </div>
                     </li>
                     <li className={contentsInfoSkillsStyle}>
                       <div className={contentInfoSkillsTitle}>
-                        Development skills
+                        Design skills
                       </div>
                       <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
                         <p className={skilldescriptionStyle}>
-                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                          GTQ 그래픽 기술자격 1급 자격증 취득
                         </p>
                         <p className={skilldescriptionStyle}>
                           피그마 툴을 활용한 와이어프레임, 프로토타입 제작
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          프로젝트 관리용 노션 템플릿 제작
                         </p>
                       </div>
                     </li>

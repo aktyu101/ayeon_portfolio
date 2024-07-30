@@ -40,7 +40,7 @@ class ProjectItem {
   }
 
   get url() {
-    return `images/portfolio/${this.imageUrl}`;
+    return `images/main/${this.imageUrl}`;
   }
   get period() {
     return `${this.startPeriod}~${this.endPeriod}`;
@@ -51,7 +51,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "시세이가구",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.03",
     "2024.06",
     "카페24",
@@ -61,7 +61,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     1,
     "아로셀",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.03",
     "2024.04",
     "카페24",
@@ -71,7 +71,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     1,
     "윤현몰",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.04",
     "2023.05",
     "고도몰",
@@ -81,7 +81,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     1,
     "국립아시아문화전당재단",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.04",
     "2024.06",
     "카페24",
@@ -91,7 +91,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     2,
     "브론테",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.02",
     "2024.06",
     "고도몰",
@@ -102,7 +102,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     3,
     "나인위시스 2차",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.04",
     "2024.05",
     "카페24",
@@ -112,7 +112,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     4,
     "가림",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.02",
     "2024.04",
     "카페24",
@@ -122,7 +122,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     5,
     "라프리마몰",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.03",
     "2024.04",
     "카페24",
@@ -132,7 +132,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "무슈제이",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.01",
     "2024.03",
     "카페24",
@@ -142,7 +142,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     1,
     "밀크바오밥",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.01",
     "2024.03",
     "카페24",
@@ -152,7 +152,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     2,
     "굽네몰",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.05",
     "2023.11",
     "메이크샵",
@@ -163,7 +163,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     3,
     "월드트로피",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.04",
     "2023.11",
     "고도몰",
@@ -173,7 +173,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     4,
     "나인위시스",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.03",
     "2023.05",
     "메이크샵",
@@ -183,7 +183,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     5,
     "알집매트",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.02",
     "2023.05",
     "고도몰",
@@ -193,7 +193,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "한국갤러리",
-    "portfolio01.png",
+    "hiseang.svg",
     "2023.02",
     "2023.04",
     "고도몰",
@@ -203,7 +203,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "엘리케이파크",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.12",
     "2023.02",
     "고도몰",
@@ -213,7 +213,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "호호에미",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.10",
     "2022.12",
     "카페24",
@@ -223,7 +223,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "셀티브코리아",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.09",
     "2022.12",
     "고도몰",
@@ -233,7 +233,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "바이브랩",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.09",
     "2022.11",
     "카페24",
@@ -243,7 +243,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "비비드로우",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.09",
     "2022.12",
     "고도몰",
@@ -253,7 +253,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "하이생",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.08",
     "2022.12",
     "카페24",
@@ -264,7 +264,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "뉴틴몰",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.08",
     "2022.09",
     "고도몰",
@@ -274,7 +274,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "로베르타피에리",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.04",
     "2022.05",
     "고도몰",
@@ -284,7 +284,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "위드한옥",
-    "portfolio01.png",
+    "hiseang.svg",
     "2022.04",
     "2022.04",
     "고도몰",
@@ -294,7 +294,7 @@ export const projectList = new ProjectItemList([
   new ProjectItem(
     6,
     "버즈비",
-    "portfolio01.png",
+    "hiseang.svg",
     "2024.01",
     "2022.06",
     "고도몰",
