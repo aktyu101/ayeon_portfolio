@@ -10,6 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    buildCache: true, // 빌드 캐시 설정 활성화
+  },
 };
 
 export default nextConfig;
