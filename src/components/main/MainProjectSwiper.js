@@ -9,7 +9,7 @@ import { Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default () => {
+export default function MainProjectSwiper() {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -107,8 +107,9 @@ export default () => {
                         <Image
                           className="object-cover w-[100%] rounded-md"
                           src={list.url}
-                          fill
                           alt={list.name}
+                          width={650}
+                          height={450}
                         />
                       </header>
                       <section className="flex flex-col gap-y-[15px] text-left">
@@ -133,7 +134,7 @@ export default () => {
       </div>
     </>
   );
-};
+}
 
 const SlidePrevButton = ({ isBeginning }) => {
   const swiper = useSwiper();
@@ -146,7 +147,7 @@ const SlidePrevButton = ({ isBeginning }) => {
       disabled={isBeginning}
     >
       {/* heroicons_arrow-up_disable.svg */}
-      <image
+      <Image
         src={
           isBeginning
             ? "images/main/heroicons_arrow-up_disable.svg"
@@ -154,6 +155,8 @@ const SlidePrevButton = ({ isBeginning }) => {
         }
         alt="프로필 이미지"
         className="object-cover"
+        width={20}
+        height={20}
       />
     </button>
   );
