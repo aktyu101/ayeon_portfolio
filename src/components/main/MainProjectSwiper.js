@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 //https://swiperjs.com/react#useswiper
 import { useState } from "react";
-//useEffect(() => { // 실행할 로직 }, [의존성 배열])
 import { projectList } from "@/constants/projectList";
 import { Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
@@ -147,7 +146,7 @@ const SlidePrevButton = ({ isBeginning }) => {
       disabled={isBeginning}
     >
       {/* heroicons_arrow-up_disable.svg */}
-      <img
+      <image
         src={
           isBeginning
             ? "images/main/heroicons_arrow-up_disable.svg"
@@ -169,8 +168,10 @@ const SlideNextButton = ({ isEnd }) => {
       }`}
       onClick={() => swiper.slideNext()}
       disabled={isEnd}
+      width={20}
+      height={20}
     >
-      <img
+      <Image
         src={
           isEnd
             ? "images/main/heroicons_arrow-up_disable.svg"
@@ -178,6 +179,8 @@ const SlideNextButton = ({ isEnd }) => {
         }
         alt="프로필 이미지"
         className="object-cover rotate-180"
+        width={20}
+        height={20}
       />
     </button>
   );

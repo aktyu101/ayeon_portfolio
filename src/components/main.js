@@ -56,10 +56,12 @@ export default function Home() {
                   </div>
                 </li>
                 <li className="w-[180px] h-auto">
-                  <img
+                  <Image
                     src="images/information/profile.png"
                     alt="프로필 이미지"
                     className="rounded-full w-full object-cover"
+                    width={180}
+                    height={180}
                   />
                 </li>
               </ul>
