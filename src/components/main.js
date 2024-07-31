@@ -45,7 +45,7 @@ export default function Home() {
         <div className="bg-[#f5f5f5] border-t-[1px]">
           {/* 01 */}
           <div className="md:pt-[100px] flex flex-col xl:h-screen px-[15px] md:px-[50px]">
-            <div className="flex flex-col gap-[200px]">
+            <div className="flex flex-col gap-[150px]">
               {/* 01:top */}
               <ul className="flex justify-between">
                 <li className="text-[60px] flex flex-col text-[#858282] tracking-tighter">

@@ -1,3 +1,5 @@
+"use client";
+
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 //https://swiperjs.com/react#useswiper
@@ -6,9 +8,14 @@ import { useState } from "react";
 import { projectList } from "@/constants/projectList";
 import Image from "next/image";
 import { Pagination } from "swiper/modules";
+import { useRouter } from "next/navigation";
 
 export default () => {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const router = useRouter();
 
   const moreBtnStyle =
     "flex items-center gap-[6px] box-border border-solid border-[#352F2F] rounded-full border px-[21px] py-[15px] font-medium";
@@ -23,11 +30,15 @@ export default () => {
     setMoreBtnHover(false);
   };
 
+  const handleSlideClick = (id) => {
+    router.push(`/project/${id}`);
+  };
+
   return (
     <>
       <div>
         <Swiper
-          slidesPerView={2.9}
+          slidesPerView={3}
           spaceBetween={40}
           // centeredSlides={true}
           pagination={{
@@ -35,7 +46,13 @@ export default () => {
           }}
           modules={[Pagination]}
           className="mySwiper"
+          onSwiper={(swiper) => {
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
           onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
             console.log("isbeginning", swiper.isBeginning);
             console.log("isend", swiper.isEnd);
           }}
@@ -46,7 +63,8 @@ export default () => {
                 MAIN PROJECT
               </span>
               <div className="flex gap-[11px] items-center">
-                <span
+                <a
+                  href="/project"
                   className={moreBtnStyle}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -62,13 +80,13 @@ export default () => {
                         ? "images/main/plus_white.svg"
                         : "images/main/plus.svg"
                     }
-                    alt="프로필 이미지"
+                    alt="+"
                     className="object-cover hover:hidden"
                   />
-                </span>
+                </a>
                 <div className="flex gap-[4px]">
-                  <SlidePrevButton />
-                  <SlideNextButton />
+                  <SlidePrevButton isBeginning={isBeginning} />
+                  <SlideNextButton isEnd={isEnd} />
                 </div>
               </div>
             </div>
@@ -78,14 +96,11 @@ export default () => {
             {projectList.listSortedByDate
               .filter((list) => list.mainDisplay)
               .map((list) => (
-                <SwiperSlide
-                  key={list.name}
-                  className="swiper-slide-custom first:pl-[50px]"
-                >
-                  <li className="">
+                <SwiperSlide className="swiper-slide-custom first:ml-[50px]">
+                  <li key={list.name}>
                     <article
                       className="flex flex-col gap-y-[25px] cursor-pointer"
-                      // onClick={() => handleClick(list.id)}
+                      onClick={() => handleSlideClick(list.id)}
                     >
                       <header className="relative w-full h-[300px]">
                         <Image
@@ -119,15 +134,23 @@ export default () => {
   );
 };
 
-const SlidePrevButton = () => {
+const SlidePrevButton = ({ isBeginning }) => {
   const swiper = useSwiper();
   return (
     <button
-      className="w-[54px] h-[54px] rounded-full flex justify-center items-center hover:bg-[#DDDEDD]"
+      className={`w-[54px] h-[54px] rounded-full flex justify-center items-center border border-solid border-[#DDDEDD] ${
+        isBeginning ? "" : "hover:bg-[#DDDEDD]"
+      }`}
       onClick={() => swiper.slidePrev()}
+      disabled={isBeginning}
     >
+      {/* heroicons_arrow-up_disable.svg */}
       <img
-        src={"images/main/heroicons_arrow-up.svg"}
+        src={
+          isBeginning
+            ? "images/main/heroicons_arrow-up_disable.svg"
+            : "images/main/heroicons_arrow-up.svg"
+        }
         alt="프로필 이미지"
         className="object-cover"
       />
@@ -135,15 +158,22 @@ const SlidePrevButton = () => {
   );
 };
 
-const SlideNextButton = () => {
+const SlideNextButton = ({ isEnd }) => {
   const swiper = useSwiper();
   return (
     <button
-      className="w-[54px] h-[54px] rounded-full flex justify-center items-center hover:bg-[#DDDEDD]"
+      className={`w-[54px] h-[54px] rounded-full flex justify-center items-center border border-solid border-[#DDDEDD] ${
+        isEnd ? "" : "hover:bg-[#DDDEDD]"
+      }`}
       onClick={() => swiper.slideNext()}
+      disabled={isEnd}
     >
       <img
-        src={"images/main/heroicons_arrow-up.svg"}
+        src={
+          isEnd
+            ? "images/main/heroicons_arrow-up_disable.svg"
+            : "images/main/heroicons_arrow-up.svg"
+        }
         alt="프로필 이미지"
         className="object-cover rotate-180"
       />
