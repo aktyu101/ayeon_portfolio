@@ -6,9 +6,9 @@ import "swiper/css";
 import { useState } from "react";
 //useEffect(() => { // 실행할 로직 }, [의존성 배열])
 import { projectList } from "@/constants/projectList";
-import Image from "next/image";
 import { Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default () => {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
@@ -74,7 +74,7 @@ export default () => {
                   }}
                 >
                   <p>More Project</p>
-                  <img
+                  <Image
                     src={
                       moreBtnHover
                         ? "images/main/plus_white.svg"
@@ -82,6 +82,8 @@ export default () => {
                     }
                     alt="+"
                     className="object-cover hover:hidden"
+                    width={11}
+                    height={11}
                   />
                 </a>
                 <div className="flex gap-[4px]">

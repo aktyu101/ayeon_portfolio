@@ -4,6 +4,7 @@ import { useContext, useRef } from "react";
 import { ConfigContext } from "@/app/config-provider";
 import { motion } from "framer-motion";
 import MainProjectSwiper from "./main/MainProjectSwiper";
+import Image from "next/image";
 
 export default function Home() {
   const { prefix } = useContext(ConfigContext);
@@ -42,9 +43,9 @@ export default function Home() {
       {/* contents 영역 */}
       <div className="relative z-10">
         <div className="w-full h-screen" />
-        <div className="bg-[#f5f5f5] border-t-[1px]">
+        <div className="bg-[#f5f5f5] border-t-[1px] border-[#DDDEDD]">
           {/* 01 */}
-          <div className="md:pt-[100px] flex flex-col xl:h-screen px-[15px] md:px-[50px]">
+          <div className="md:py-[10%] flex flex-col px-[15px] md:px-[50px]">
             <div className="flex flex-col gap-[150px]">
               {/* 01:top */}
               <ul className="flex justify-between">
@@ -119,11 +120,11 @@ export default function Home() {
             {/* e */}
           </div>
           {/* 02 */}
-          <div className="h-screen">
+          <div className="w-full border-t-[1px] border-[#DDDEDD] md:pt-[10%] md:pb-[10%]">
             <MainProjectSwiper />
           </div>
           {/* 03 */}
-          <div className="h-screen bg-[#352f2f]"></div>
+          <div className={`bg-[#352f2f] h-screen ${"test"}`}></div>
         </div>
       </div>
     </>
