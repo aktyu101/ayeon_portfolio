@@ -8,6 +8,7 @@ import {
 } from "@/constants/informationList";
 import { projectList } from "@/constants/projectList";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 const ResumePopup = () => {
   const [resumeIsOpen, setResumeIsOpen] = useState(false);
@@ -165,7 +166,7 @@ const ResumePopup = () => {
               {/* 타이틀 */}
               <div className="w-[80%] flex gap-[15px] text-[16px] items-center">
                 <p>
-                  {project.name} · {project.description}
+                  {project.name} · {project.role}
                 </p>
               </div>
             </li>
@@ -225,18 +226,22 @@ const ResumePopup = () => {
                       </div>
                       <ul>
                         <li className="text-[18px]">
-                          <img
+                          <Image
                             src="images/information/phone.png"
                             alt="phone"
                             className="w-[24px] h-auto inline-block mr-[8px]"
+                            width={24}
+                            height={24}
                           />
                           010-5238-1429
                         </li>
                         <li className="text-[18px]">
-                          <img
+                          <Image
                             src="images/information/mail.png"
                             alt="mail"
                             className="w-[24px] h-auto inline-block mr-[8px]"
+                            width={24}
+                            height={24}
                           />
                           aktyu101@gmail.com
                         </li>
@@ -245,10 +250,12 @@ const ResumePopup = () => {
                     {/* 오른쪽 */}
 
                     <div className="max-w-[200px] rounded-full box-border h-[200px] w-[200px] block">
-                      <img
+                      <Image
                         src="images/information/profile.png"
                         alt="프로필 이미지"
                         className="rounded-full w-full h-full object-cover"
+                        width={180}
+                        height={180}
                       />
                     </div>
                   </li>
@@ -260,66 +267,82 @@ const ResumePopup = () => {
                     <span className="text-[18px]">직무능력</span>
                     <ul className="flex gap-[8px]">
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/figma.svg"
                           alt="figma"
                           className={skillImageStyle}
+                          width={15}
+                          height={23}
                         />
                         Figma
                       </li>
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/notion.svg"
                           alt="notion"
                           className={skillImageStyle}
+                          width={21}
+                          height={20}
                         />
                         Notion
                       </li>
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/excel.svg"
                           alt="excel"
                           className={skillImageStyle}
+                          width={20}
+                          height={26}
                         />
                         Excel
                       </li>
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/ppt.svg"
                           alt="ppt"
                           className={skillImageStyle}
+                          width={21}
+                          height={20}
                         />
                         Power Point
                       </li>
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/word.svg"
                           alt="word"
                           className={skillImageStyle}
+                          width={22}
+                          height={20}
                         />
                         Word
                       </li>
                       <li className={MainSkillsStyle}>
-                        <img
+                        <Image
                           src="images/information/xd.svg"
                           alt="xd"
                           className={skillImageStyle}
+                          width={22}
+                          height={20}
                         />
                         XD
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/ps.svg"
                           alt="ps"
                           className={skillImageStyle}
+                          width={22}
+                          height={20}
                         />
                         Photoshop
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/ai.svg"
                           alt="ai"
                           className={skillImageStyle}
+                          width={22}
+                          height={20}
                         />
                         Illustrator
                       </li>
@@ -330,66 +353,82 @@ const ResumePopup = () => {
                     <span className="text-[18px]">기술스택</span>
                     <ul className="flex gap-[8px]">
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/html.svg"
                           alt="html"
                           className={skillImageStyle}
+                          width={17}
+                          height={25}
                         />
                         HTML
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/css.svg"
                           alt="css"
                           className={skillImageStyle}
+                          width={18}
+                          height={25}
                         />
                         CSS
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/js.svg"
                           alt="js"
                           className={skillImageStyle}
+                          width={17}
+                          height={21}
                         />
                         Javascript
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/nodejs.svg"
                           alt="nodejs"
                           className={skillImageStyle}
+                          width={23}
+                          height={23}
                         />
                         Node.js
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/react.svg"
                           alt="react"
                           className={skillImageStyle}
+                          width={23}
+                          height={21}
                         />
                         React
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/sass.svg"
                           alt="sass"
                           className={skillImageStyle}
+                          width={23}
+                          height={23}
                         />
                         Sass
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/next.svg"
                           alt="next"
                           className={skillImageStyle}
+                          width={23}
+                          height={23}
                         />
                         Next.js
                       </li>
                       <li className={skillsStyle}>
-                        <img
+                        <Image
                           src="images/information/sql.svg"
                           alt="sql"
                           className={skillImageStyle}
+                          width={18}
+                          height={22}
                         />
                         SQL
                       </li>

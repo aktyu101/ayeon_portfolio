@@ -24,7 +24,7 @@ class ProjectItem {
     startPeriod = null,
     endPeriod = null,
     type = null,
-    solution,
+    role,
     siteUrl = null,
     mainDisplay = false,
     description = ""
@@ -35,7 +35,7 @@ class ProjectItem {
     this.startPeriod = startPeriod;
     this.endPeriod = endPeriod;
     this.type = type;
-    this.solution = solution;
+    this.role = role;
     this.siteUrl = siteUrl;
     this.mainDisplay = mainDisplay;
     this.description = description;

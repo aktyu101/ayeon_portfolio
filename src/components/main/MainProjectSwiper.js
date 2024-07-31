@@ -97,7 +97,10 @@ export default function MainProjectSwiper() {
             {projectList.listSortedByDate
               .filter((list) => list.mainDisplay)
               .map((list) => (
-                <SwiperSlide className="swiper-slide-custom first:ml-[50px]">
+                <SwiperSlide
+                  key={list.name}
+                  className="swiper-slide-custom first:ml-[50px]"
+                >
                   <li key={list.name}>
                     <article
                       className="flex flex-col gap-y-[25px] cursor-pointer"
