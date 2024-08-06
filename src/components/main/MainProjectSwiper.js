@@ -8,6 +8,7 @@ import { projectList } from "@/constants/projectList";
 import { Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import AnimatedText from "../motion/AnimatedText";
 
 export default function MainProjectSwiper() {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
@@ -57,40 +58,42 @@ export default function MainProjectSwiper() {
           }}
         >
           <div slot="container-start">
-            <div className="flex justify-between px-[15px] md:px-[50px] mb-[60px]">
-              <span className="font-medium text-[#222] text-[60px]">
-                MAIN PROJECT
-              </span>
-              <div className="flex gap-[11px] items-center">
-                <a
-                  href="/project"
-                  className={moreBtnStyle}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  style={{
-                    color: moreBtnHover ? "#fff" : "#352f2f",
-                    background: moreBtnHover ? "#352f2f" : "#f5f5f5",
-                  }}
-                >
-                  <p>More Project</p>
-                  <Image
-                    src={
-                      moreBtnHover
-                        ? "images/main/plus_white.svg"
-                        : "images/main/plus.svg"
-                    }
-                    alt="+"
-                    className="object-cover hover:hidden"
-                    width={11}
-                    height={11}
-                  />
-                </a>
-                <div className="flex gap-[4px]">
-                  <SlidePrevButton isBeginning={isBeginning} />
-                  <SlideNextButton isEnd={isEnd} />
+            <AnimatedText duration={1} delay={0.2}>
+              <div className="flex justify-between px-[15px] md:px-[50px] mb-[60px]">
+                <span className="font-medium text-[#222] text-[60px]">
+                  MAIN PROJECT
+                </span>
+                <div className="flex gap-[11px] items-center">
+                  <a
+                    href="/project"
+                    className={moreBtnStyle}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                      color: moreBtnHover ? "#fff" : "#352f2f",
+                      background: moreBtnHover ? "#352f2f" : "#f5f5f5",
+                    }}
+                  >
+                    <p>More Project</p>
+                    <Image
+                      src={
+                        moreBtnHover
+                          ? "images/main/plus_white.svg"
+                          : "images/main/plus.svg"
+                      }
+                      alt="+"
+                      className="object-cover hover:hidden"
+                      width={11}
+                      height={11}
+                    />
+                  </a>
+                  <div className="flex gap-[4px]">
+                    <SlidePrevButton isBeginning={isBeginning} />
+                    <SlideNextButton isEnd={isEnd} />
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedText>
           </div>
           {/* project list */}
           <div className="box-border">
@@ -174,8 +177,6 @@ const SlideNextButton = ({ isEnd }) => {
       }`}
       onClick={() => swiper.slideNext()}
       disabled={isEnd}
-      width={20}
-      height={20}
     >
       <Image
         src={

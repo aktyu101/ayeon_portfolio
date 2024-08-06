@@ -1,19 +1,58 @@
 "use client";
+//install framer-motion
+//install react-intersection-observer
 // import Image from "next/image";
-import { useContext, useRef } from "react";
+
+import { useContext, useEffect, useRef, useState, useCallback } from "react";
 import { ConfigContext } from "@/app/config-provider";
 import { motion } from "framer-motion";
 import MainProjectSwiper from "./main/MainProjectSwiper";
 import Image from "next/image";
+import CircularScrollText from "./main/RotaningText";
+import AnimatedText from "./motion/AnimatedText";
+import Services from "./main/Services";
 
 export default function Home() {
-  const { prefix } = useContext(ConfigContext);
+  const { setDarkBgState } = useContext(ConfigContext);
+  const [isInDarkBg, setIsInDarkBg] = useState(false);
+  const darkBgRef = useRef(null);
 
   const contentsInfoSkillsStyle =
     "leading-[35px] max-w-[33%] text-[35px] font-normal";
   const contentInfoSkillsTitle =
-    "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px]";
+    "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px] block";
   const skilldescriptionStyle = "text-[15px] ml-[19px]";
+
+  // useCallback을 사용하여 handleIntersection 함수 메모이제이션
+  const handleIntersection = useCallback(
+    ([entry]) => {
+      const isIntersecting = entry.isIntersecting;
+      console.log(`darkbg observer check : ${isIntersecting}`); // observer 확인
+      setIsInDarkBg(isIntersecting); // 상태 업데이트
+      if (setDarkBgState) {
+        setDarkBgState(isIntersecting); // ConfigContext에 상태 전달
+      }
+    },
+    [setDarkBgState] // 의존성 배열에 setDarkBgState 추가
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    });
+
+    if (darkBgRef.current) {
+      observer.observe(darkBgRef.current);
+    }
+
+    return () => {
+      if (darkBgRef.current) {
+        observer.unobserve(darkBgRef.current);
+      }
+    };
+  }, [handleIntersection]); // 의존성 배열에 handleIntersection 추가
 
   return (
     <>
@@ -49,17 +88,34 @@ export default function Home() {
             <div className="flex flex-col gap-[150px]">
               {/* 01:top */}
               <ul className="flex justify-between">
-                <li className="text-[60px] flex flex-col text-[#858282] tracking-tighter">
-                  <div>배움을 게을리하지 않는 기획자</div>
-                  <div>
+                <li className="text-[60px] flex flex-col text-[#858282] tracking-tighter font-bold">
+                  <AnimatedText duration={0.6} delay={0.2}>
+                    배움을 게을리하지 않는 기획자
+                  </AnimatedText>
+                  <AnimatedText duration={0.6} delay={0.4}>
                     <span className="text-[#222]">민아연</span>입니다.
-                  </div>
+                  </AnimatedText>
                 </li>
-                <li className="w-[180px] h-auto">
+                <li className="h-auto flex justify-between gap-x-[20px] items-center">
+                  <div className="block w-[90px] h-[2px] bg-[#352F2F]"></div>
+                  {/* <motion.div
+                    initial={{
+                      width: "40px",
+                      heigth: "0px",
+                    }}
+                    animate={{
+                      width: "80px",
+                      heigth: "2px",
+                    }}
+                    style={{
+                      backgroundColor: "#352F2F",
+                      display: "block",
+                    }}
+                  ></motion.div> */}
                   <Image
                     src="images/information/profile.png"
                     alt="프로필 이미지"
-                    className="rounded-full w-full object-cover"
+                    className="rounded-full object-cover"
                     width={180}
                     height={180}
                   />
@@ -68,51 +124,59 @@ export default function Home() {
               {/* 01:bottom */}
               <div>
                 <div>
-                  <ul className="flex flex-wrap gap-[80px]">
+                  <ul className="flex flex-wrap gap-[80px] text-[35px]">
                     <li className={contentsInfoSkillsStyle}>
-                      <div className={contentInfoSkillsTitle}>
-                        Service planning
-                      </div>
-                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
-                        <p className={skilldescriptionStyle}>
-                          데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          프로젝트 관리용 노션 템플릿 제작
-                        </p>
-                      </div>
+                      <AnimatedText duration={0.6} delay={0.6}>
+                        <div className={contentInfoSkillsTitle}>
+                          Service planning
+                        </div>
+                        <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                          <p className={skilldescriptionStyle}>
+                            -데이터베이스 관련 지식 확립을 위한 SQLD 자격증 취득
+                          </p>
+                          <p className={skilldescriptionStyle}>
+                            -피그마 툴을 활용한 와이어프레임, 프로토타입 제작
+                          </p>
+                          <p className={skilldescriptionStyle}>
+                            -프로젝트 관리용 노션 템플릿 제작
+                          </p>
+                        </div>
+                      </AnimatedText>
+                    </li>
+
+                    <li className={contentsInfoSkillsStyle}>
+                      <AnimatedText duration={0.6} delay={0.8}>
+                        <div className={contentInfoSkillsTitle}>
+                          Development skills
+                        </div>
+                        <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                          <p className={skilldescriptionStyle}>
+                            -javascript & react 언어 공부
+                          </p>
+                          <p className={skilldescriptionStyle}>
+                            -웹디자인 기능사 자격증 취득
+                          </p>
+                          <p className={skilldescriptionStyle}>
+                            -반응형 웹디자인 & 웹퍼블리셔 디지털 실무 양성과정
+                            수료
+                          </p>
+                        </div>
+                      </AnimatedText>
                     </li>
                     <li className={contentsInfoSkillsStyle}>
-                      <div className={contentInfoSkillsTitle}>
-                        Development skills
-                      </div>
-                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
-                        <p className={skilldescriptionStyle}>
-                          javascript & react 언어 공부
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          웹디자인 기능사 자격증 취득
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          반응형 웹디자인 & 웹퍼블리셔 디지털 실무 양성과정 수료
-                        </p>
-                      </div>
-                    </li>
-                    <li className={contentsInfoSkillsStyle}>
-                      <div className={contentInfoSkillsTitle}>
-                        Design skills
-                      </div>
-                      <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
-                        <p className={skilldescriptionStyle}>
-                          GTQ 그래픽 기술자격 1급 자격증 취득
-                        </p>
-                        <p className={skilldescriptionStyle}>
-                          피그마 툴을 활용한 와이어프레임, 프로토타입 제작
-                        </p>
-                      </div>
+                      <AnimatedText duration={0.6} delay={1}>
+                        <div className={contentInfoSkillsTitle}>
+                          Design skills
+                        </div>
+                        <div className="flex flex-col gap-y-[0px] tracking-tight mt-[35px]">
+                          <p className={skilldescriptionStyle}>
+                            -GTQ 그래픽 기술자격 1급 자격증 취득
+                          </p>
+                          <p className={skilldescriptionStyle}>
+                            -포토샵, 일러스트를 활용한 이미지 편집 및 추출 가능
+                          </p>
+                        </div>
+                      </AnimatedText>
                     </li>
                   </ul>
                 </div>
@@ -126,7 +190,25 @@ export default function Home() {
             <MainProjectSwiper />
           </div>
           {/* 03 */}
-          <div className={`bg-[#352f2f] h-screen ${"test"}`}></div>
+          <motion.div
+            className="h-screen"
+            initial={{ backgroundColor: "#f5f5f5" }}
+            animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
+            transition={{ duration: 1.5 }}
+          >
+            <CircularScrollText />
+          </motion.div>
+          {/* 04 */}
+          <motion.div
+            className=""
+            ref={darkBgRef}
+            initial={{ backgroundColor: "#f5f5f5" }}
+            animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
+            transition={{ duration: 1.5 }}
+          >
+            <Services />
+          </motion.div>
+          <div className="size-full"></div>
         </div>
       </div>
     </>
@@ -141,19 +223,3 @@ export default function Home() {
     );
   }
 }
-//strength, skills 추가
-//프로젝트 기여도 명시,
-// <Image
-//               src={`${prefix}/vercel.svg`}
-//               alt="Vercel Logo"
-//               className="dark:invert"
-//               width={100}
-//               height={24}
-//               priority
-//             />
-
-//skill
-//포트폴리오 3개 브론테, 하이생, 굽네몰, 비비드로우, 셀티브코리아, 월드트로피, 위드한옥
-//브론테, 하이생, 굽네몰
-
-//이력서에도 있는 항목은 뒤로

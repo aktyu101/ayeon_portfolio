@@ -30,26 +30,34 @@ export const information = new RouteItem(
 //   "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4"
 // );
 
-export const portfolio = new RouteItem("PROJECT", "/project", [
-  new RouteItem(
-    "Develop Project",
-    "/project",
-    projectList.listSortedByDate.map(
-      ({ id, name }, index) =>
-        new RouteItem(`${index + 1}` + `. ${name}`, `/project/${id}`)
-    )
-  ),
-]);
+export const portfolio = new RouteItem(
+  "PROJECT",
+  "/project"
+  // [
+  //   new RouteItem(
+  //     "Develop Project",
+  //     "/project",
+  //     projectList.listSortedByDate.map(
+  //       ({ id, name }, index) =>
+  //         new RouteItem(`${index + 1}` + `. ${name}`, `/project/${id}`)
+  //     )
+  //   ),
+  // ]
+);
 
-export const study = new RouteItem("STUDY", "/study", [
-  new RouteItem(
-    "study",
-    "/sutdy/project",
-    studyList.listSortedByDate.map(
-      ({ id, name }, index) =>
-        new RouteItem(`${index + 1}` + `. ${name}`, `/study/project/${id}`)
-    )
-  ),
-]);
+export const study = new RouteItem(
+  "STUDY",
+  "/study"
+  // [
+  //   new RouteItem(
+  //     "study",
+  //     "/sutdy/project",
+  //     studyList.listSortedByDate.map(
+  //       ({ id, name }, index) =>
+  //         new RouteItem(`${index + 1}` + `. ${name}`, `/study/project/${id}`)
+  //     )
+  //   ),
+  // ]
+);
 
-export const routes = [portfolio, study, information];
+export const routes = [portfolio, study];

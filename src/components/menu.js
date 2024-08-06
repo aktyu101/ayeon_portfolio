@@ -7,6 +7,18 @@ import ResumePopup from "./ResumePopup";
 
 export default function Menu({ routes }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+  const [hoverMenu, setHoverMenu] = useState(false);
+
+  const handleMouseEnter = () => {
+    setTimeout(() => {
+      setHoverMenu(true);
+    }, 50);
+  };
+  const handleMouseLeave = () => {
+    setTimeout(() => {
+      setHoverMenu(false);
+    }, 50);
+  };
 
   const handleToggleSubmenu = (index) => {
     setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -17,10 +29,14 @@ export default function Menu({ routes }) {
   };
 
   const oneDepthStyle = twMerge(
-    "border-b-[1px] pb-[10px] mb-[15px] box-border flex justify-between items-center"
+    "box-border flex justify-between items-center gap-y-[35px]"
   );
   const oneDepthTextStyle = twMerge(
-    "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer"
+    `${
+      hoverMenu
+        ? "text-[60px] font-medium text=[#fff]"
+        : "text-[38px] font-normal text-[#ffffff8a]"
+    } cursor-pointer`
   );
   // 노션 접속 불가 처리
   const handleLinkClick = (event) => {
@@ -37,13 +53,18 @@ export default function Menu({ routes }) {
   };
 
   return (
-    <ul className="flex flex-col w-[100%]">
+    <ul className="flex flex-col w-[100%] gap-[30px] items-center">
+      <li className={oneDepthStyle}>
+        <a className={oneDepthTextStyle}>
+          <ResumePopup />
+        </a>
+      </li>
       {routes.map((route, index) => (
         <li key={index}>
           <div className={oneDepthStyle}>
             <MenuLink route={route} />
             {/* toggle */}
-            {route.children && (
+            {/* {route.children && (
               <Image
                 className={`cursor-pointer ${
                   openSubmenuIndex === index ? "rotate-0" : "rotate-180"
@@ -54,10 +75,10 @@ export default function Menu({ routes }) {
                 height={10}
                 onClick={() => handleMenuClick(index)}
               />
-            )}
+            )} */}
           </div>
           {route.children && openSubmenuIndex === index && (
-            <ScrollArea className="flex flex-col max-h-[200px] overflow-y-auto">
+            <ScrollArea className="flex flex-col">
               {route.children.map((route, index) => (
                 <div key={index}>
                   {/* <MenuLink depth={2} route={route} /> */}
@@ -82,12 +103,6 @@ export default function Menu({ routes }) {
           NOTION
         </a>
       </li>
-      <li className={oneDepthStyle}>
-        <a className={oneDepthTextStyle} href="#">
-          <ResumePopup />
-          {/* onClick={() => setIsOpenNav(false)} */}
-        </a>
-      </li>
     </ul>
   );
 }
@@ -96,7 +111,7 @@ function MenuLink({ depth = 1, route }) {
   const styleMap = new Map([
     [
       1,
-      "text-[22px] font-medium text-white hover:text-[#ffffff8a] cursor-pointer",
+      "text-[38px] font-medium text-white text-[#ffffff8a] hover:text-[#fff] cursor-pointer leading-[38px] hover:text-[60px] font-normal hover:font-bold",
     ],
     // `[&:nth-child(odd)]:bg-gray-400`
     [

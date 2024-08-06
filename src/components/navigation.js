@@ -30,9 +30,6 @@ export default function Navigation() {
     "hover:text-[#352f2f] hover:border-[#352f2f] hover:font-medium"
   );
 
-  //1depth 카테고리 링크 받아오기
-  console.log("test", routes[0].name, routes[0].link);
-
   useEffect(() => {
     setIsOpenNav(false);
   }, [pathname]);
@@ -65,33 +62,20 @@ export default function Navigation() {
         transition={{ ease: "easeOut", duration: 1 }}
         className={wrapperStyles}
       >
-        <div className="flex flex-col absolute top-0 left-0 w-full items-center">
-          <div className="flex justify-end mb-[30px]">
+        <div className="flex flex-col absolute top-0 left-0 w-full items-center justify-between h-screen">
+          <div className="flex mt-[30px]">
             <CloseBtn onClick={() => setIsOpenNav(false)} />
           </div>
-          <ScrollArea className="h-[600px] w-[600px]">
-            <Menu routes={routes} />
-          </ScrollArea>
-        </div>
-        <div className="text-center text-[#fff] absolute bottom-[80px] left-0 w-full">
-          COPYRIGHT AYEON MIN {dayjs().year()} ALL RIGHTS RESERVED.
-        </div>
-        {/* flex:1 로 공간 젤 많이주고 flex 먹이고 align-items : flex-end */}
-        <div className="flex gap-x-[4px] fixed bottom-[30px]">
-          <button
-            className={
-              "border-[#fff] border-2 w-[54px] h-[54px] text-[#fff] bg-[#352f2f] text-center leading-[53px] border-solid " +
-              hoverStyle
-            }
-          >
-            down
-          </button>
+          <Menu routes={routes} />
+          <div className="text-center text-[#ffffff8a] w-full mb-[30px]">
+            COPYRIGHT AYEON MIN {dayjs().year()} ALL RIGHTS RESERVED.
+          </div>
         </div>
       </motion.div>
 
       {/* header */}
       <div
-        className={`w-ful h-[80px] sticky top-0 z-[9999] flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
+        className={`w-ful h-[80px] sticky top-0 z-[999] flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
           isScrollingUp ? "transform-none" : "-translate-y-full"
         }`}
       >
@@ -111,7 +95,7 @@ export default function Navigation() {
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => setHoveredIndex(null)}
             >
-              <ResumePopup className="relative" />
+              <ResumePopup />
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: hoveredIndex === "resume" ? "100%" : 0 }}

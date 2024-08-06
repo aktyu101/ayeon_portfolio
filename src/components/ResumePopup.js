@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import {
@@ -12,14 +12,21 @@ import Image from "next/image";
 
 const ResumePopup = () => {
   const [resumeIsOpen, setResumeIsOpen] = useState(false);
+  const projectRef = useRef(null);
 
   const resumeTogglePopup = () => {
     setResumeIsOpen(!resumeIsOpen);
   };
 
+  const scrollToProjectSection = () => {
+    if (projectRef.current) {
+      projectRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   function Line({ reverse = false }) {
     const lineStyles = twMerge(
-      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-[22px] bg-[#333]",
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-[22px] bg-[#333] ",
       reverse ? "-rotate-45" : "rotate-45"
     );
     return <div className={lineStyles} />;
@@ -65,7 +72,10 @@ const ResumePopup = () => {
               <div className="w-[80%] flex gap-[15px] text-[16px]">
                 <p>{career.title}</p>
                 {career.id === 4 && (
-                  <span className="underline text-[#888] text-[15px]">
+                  <span
+                    className="underline text-[#888] text-[15px]"
+                    onClick={scrollToProjectSection}
+                  >
                     진행 프로젝트 보러가기
                   </span>
                 )}
@@ -140,8 +150,8 @@ const ResumePopup = () => {
     </div>
   );
   //ProjectComponent
-  const ProjectComponent = ({ projectList }) => (
-    <div className="flex flex-wrap justify-between mb-[150px]">
+  const ProjectComponent = forwardRef(({ projectList }, ref) => (
+    <div ref={ref} className="flex flex-wrap justify-between mb-[150px]">
       <div className="w-full text-[25px] border-b-[1px] border-[#222] pb-[18px] flex justify-between items-center">
         <div className="flex items-center gap-[20px]">
           <span>진행 프로젝트</span>
@@ -176,7 +186,7 @@ const ResumePopup = () => {
         )}
       </ul>
     </div>
-  );
+  ));
 
   return (
     <div className="">
@@ -186,7 +196,7 @@ const ResumePopup = () => {
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="z-[9999] fixed size-full top-0 left-0"
+            className="z-[999999] fixed size-full top-0 left-0"
           >
             {/* 딤 처리 */}
             <div
@@ -482,7 +492,10 @@ const ResumePopup = () => {
                   <CareerComponent careerList={careerList} />
                   <EducationComponent educationList={educationList} />
                   <RicenceComponent ricenceList={ricenceList} />
-                  <ProjectComponent projectList={projectList} />
+                  <ProjectComponent
+                    projectList={projectList}
+                    ref={projectRef}
+                  />
                   {/* 프로젝트 더보러가기 버튼 추가*/}
                 </div>
               </div>
