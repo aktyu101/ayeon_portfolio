@@ -193,6 +193,7 @@ const ResumePopup = () => {
       </ul>
     </div>
   ));
+  ProjectComponent.displayName = "ProjectComponent";
 
   return (
     <div className="">
