@@ -23,17 +23,16 @@ export default function Home() {
     "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px] block";
   const skilldescriptionStyle = "text-[15px] ml-[19px]";
 
-  // useCallback을 사용하여 handleIntersection 함수 메모이제이션
   const handleIntersection = useCallback(
     ([entry]) => {
       const isIntersecting = entry.isIntersecting;
       console.log(`darkbg observer check : ${isIntersecting}`); // observer 확인
-      setIsInDarkBg(isIntersecting); // 상태 업데이트
+      setIsInDarkBg(isIntersecting);
       if (setDarkBgState) {
         setDarkBgState(isIntersecting); // ConfigContext에 상태 전달
       }
     },
-    [setDarkBgState] // 의존성 배열에 setDarkBgState 추가
+    [setDarkBgState] // 의존성 배열 : setDarkBgState
   );
 
   useEffect(() => {
@@ -43,16 +42,18 @@ export default function Home() {
       threshold: 0,
     });
 
-    if (darkBgRef.current) {
-      observer.observe(darkBgRef.current);
+    const currentRef = darkBgRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (darkBgRef.current) {
-        observer.unobserve(darkBgRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [handleIntersection]); // 의존성 배열에 handleIntersection 추가
+  }, [handleIntersection]); // 의존성 배열 : handleIntersection
 
   return (
     <>

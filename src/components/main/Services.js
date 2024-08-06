@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const servicesData = [
   {
@@ -45,11 +46,13 @@ const ServiceItem = ({ service, isHovered, onMouseEnter, onMouseLeave }) => {
     >
       <motion.div className="flex-shrink-0" style={{ flex: "0 0 40%" }}>
         {(isHovered || service.isDefault) && (
-          <img
+          <Image
             src={service.imageUrl}
             alt={service.title}
-            className="h-auto w-[500px] absolute left-[50px]"
+            className="absolute left-[50px]"
             style={{ top: service.ImageTop }}
+            width={500}
+            height={400}
           />
         )}
       </motion.div>

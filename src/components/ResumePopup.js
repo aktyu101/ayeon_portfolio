@@ -88,6 +88,8 @@ const ResumePopup = () => {
       </ul>
     </div>
   );
+  CareerComponent.displayName = "CareerComponent";
+
   //educationComponent
   const EducationComponent = ({ educationList }) => (
     <div className="flex flex-wrap justify-between">
@@ -121,6 +123,8 @@ const ResumePopup = () => {
       </ul>
     </div>
   );
+  EducationComponent.displayName = "EducationComponent";
+
   //RicenceComponent
   const RicenceComponent = ({ ricenceList }) => (
     <div className="flex flex-wrap justify-between">
@@ -149,9 +153,11 @@ const ResumePopup = () => {
       </ul>
     </div>
   );
+  RicenceComponent.displayName = "RicenceComponent";
+
   //ProjectComponent
   const ProjectComponent = forwardRef(({ projectList }, ref) => (
-    <div ref={ref} className="flex flex-wrap justify-between mb-[150px]">
+    <div ref={ref} className="flex flex-wrap justify-between mb-[50px]">
       <div className="w-full text-[25px] border-b-[1px] border-[#222] pb-[18px] flex justify-between items-center">
         <div className="flex items-center gap-[20px]">
           <span>진행 프로젝트</span>
