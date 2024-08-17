@@ -1,11 +1,19 @@
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
 
 export default function CloseBtn({ onClick: handleClick }) {
   return (
-    <button className="relative w-[30px] h-[30px]" onClick={handleClick}>
-      <Line />
-      <Line reverse />
-    </button>
+    <>
+      <motion.div
+        whileHover={{ transform: "rotate(180deg)" }}
+        animate={{ duration: "2" }}
+      >
+        <button className="relative w-[30px] h-[30px]" onClick={handleClick}>
+          <Line />
+          <Line reverse />
+        </button>
+      </motion.div>
+    </>
   );
 }
 

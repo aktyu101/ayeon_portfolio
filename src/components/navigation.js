@@ -10,7 +10,7 @@ import Menu from "./menu";
 import { routes } from "../constants/route";
 import { motion } from "framer-motion";
 import ContactPopup from "./ContactPopup";
-import { ScrollArea } from "@/components/ui/scroll-area";
+// import { ScrollArea } from "@/components/ui/scroll-area";
 import dayjs from "dayjs";
 import ResumePopup from "./ResumePopup";
 
@@ -75,7 +75,7 @@ export default function Navigation() {
 
       {/* header */}
       <div
-        className={`w-ful h-[80px] sticky top-0 z-[999] flex items-center hover:bg-[#352f2f0a] hover:delay-150 transition-transform duration-300 ${
+        className={`w-ful h-[80px] sticky top-0 z-[99999] flex items-center hover:bg-[#f5f5f5] hover:delay-150 transition-transform duration-300 bg-[#f5f5f5e6] ${
           isScrollingUp ? "transform-none" : "-translate-y-full"
         }`}
       >

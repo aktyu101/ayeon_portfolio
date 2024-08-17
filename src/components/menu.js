@@ -4,10 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
 import ResumePopup from "./ResumePopup";
+import { motion } from "framer-motion";
 
 export default function Menu({ routes }) {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
   const [hoverMenu, setHoverMenu] = useState(false);
+
+  const menuData = [
+    { name: <ResumePopup />, link: "#" },
+    { name: "PROJECT", link: "/project" },
+    { name: "STUDY", link: "/study" },
+    { name: "NOTION", link: "#" },
+  ];
 
   const handleMouseEnter = () => {
     setTimeout(() => {
@@ -54,55 +62,18 @@ export default function Menu({ routes }) {
 
   return (
     <ul className="flex flex-col w-[100%] gap-[30px] items-center">
-      <li className={oneDepthStyle}>
-        <a className={oneDepthTextStyle}>
-          <ResumePopup />
-        </a>
-      </li>
-      {routes.map((route, index) => (
-        <li key={index}>
-          <div className={oneDepthStyle}>
-            <MenuLink route={route} />
-            {/* toggle */}
-            {/* {route.children && (
-              <Image
-                className={`cursor-pointer ${
-                  openSubmenuIndex === index ? "rotate-0" : "rotate-180"
-                }`}
-                src="images/toggle.png"
-                alt="toggleBtn"
-                width={20}
-                height={10}
-                onClick={() => handleMenuClick(index)}
-              />
-            )} */}
-          </div>
-          {route.children && openSubmenuIndex === index && (
-            <ScrollArea className="flex flex-col">
-              {route.children.map((route, index) => (
-                <div key={index}>
-                  {/* <MenuLink depth={2} route={route} /> */}
-                  {route.children && (
-                    //&& openSubmenuIndex === index &&
-                    <div className="pb-[10px]">
-                      {route.children.map((route, index) => (
-                        <div key={index}>
-                          <MenuLink depth={3} route={route} />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </ScrollArea>
-          )}
+      {menuData.map((menu, index) => (
+        <li className={oneDepthStyle} key={index}>
+          <motion.a
+            whileHover={{ scale: 1.5, color: "#fff" }}
+            className={oneDepthTextStyle}
+            href={menu.link}
+            onClick={index === 3 ? handleLinkClick : undefined}
+          >
+            {menu.name}
+          </motion.a>
         </li>
       ))}
-      <li className={oneDepthStyle}>
-        <a className={oneDepthTextStyle} onClick={handleLinkClick} href="#">
-          NOTION
-        </a>
-      </li>
     </ul>
   );
 }
@@ -136,3 +107,43 @@ function MenuLink({ depth = 1, route }) {
     </>
   );
 }
+
+// {routes.map((route, index) => (
+//   <li key={index}>
+//     <div className={oneDepthStyle}>
+//       <MenuLink route={route} />
+//       toggle
+//       {route.children && (
+//         <Image
+//           className={`cursor-pointer ${
+//             openSubmenuIndex === index ? "rotate-0" : "rotate-180"
+//           }`}
+//           src="images/toggle.png"
+//           alt="toggleBtn"
+//           width={20}
+//           height={10}
+//           onClick={() => handleMenuClick(index)}
+//         />
+//       )}
+//     </div>
+//     {route.children && openSubmenuIndex === index && (
+//       <ScrollArea className="flex flex-col">
+//         {route.children.map((route, index) => (
+//           <div key={index}>
+//             {/* <MenuLink depth={2} route={route} /> */}
+//             {route.children && (
+//               //&& openSubmenuIndex === index &&
+//               <div className="pb-[10px]">
+//                 {route.children.map((route, index) => (
+//                   <div key={index}>
+//                     <MenuLink depth={3} route={route} />
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//       </ScrollArea>
+//     )}
+//   </li>
+// ))}

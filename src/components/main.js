@@ -12,11 +12,16 @@ import CircularScrollText from "./main/RotaningText";
 import AnimatedText from "./motion/AnimatedText";
 import Services from "./main/Services";
 import ContactPopup from "./ContactPopup";
+import { useThemeStore } from "@/store";
+
+//framer motion intersecton observer
 
 export default function Home() {
   const { setDarkBgState } = useContext(ConfigContext);
   const [isInDarkBg, setIsInDarkBg] = useState(false);
   const darkBgRef = useRef(null);
+  const updateThemeDark = useThemeStore((state) => state.updateThemeDark);
+  const updateThemeLight = useThemeStore((state) => state.updateThemeLight);
 
   const contentsInfoSkillsStyle =
     "leading-[35px] max-w-[33%] text-[35px] font-normal";
@@ -24,9 +29,11 @@ export default function Home() {
     "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px] block";
   const skilldescriptionStyle = "text-[15px] ml-[19px]";
 
+  //bg
   const handleIntersection = useCallback(
     ([entry]) => {
       const isIntersecting = entry.isIntersecting;
+      (isIntersecting ? updateThemeDark : updateThemeLight)();
       console.log(`darkbg observer check : ${isIntersecting}`); // observer 확인
       setIsInDarkBg(isIntersecting);
       if (setDarkBgState) {
@@ -91,7 +98,7 @@ export default function Home() {
               {/* 01:top */}
               <ul className="flex justify-between">
                 <li className="text-[60px] flex flex-col text-[#858282] tracking-tighter font-bold">
-                  <AnimatedText duration={0.6} delay={0.2}>
+                  <AnimatedText duration={0.6} delay={0.2} y={90}>
                     배움을 게을리하지 않는 기획자
                   </AnimatedText>
                   <AnimatedText duration={0.6} delay={0.4}>
@@ -218,10 +225,23 @@ export default function Home() {
             animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
             transition={{ duration: 1.5 }}
           >
-            <ContactPopup className="mx-auto" />
+            <div className="text-[80px] text-white flex flex-col items-center">
+              <ul className="flex justify-between w-full">
+                <li>testtesttttt</li>
+                <li>tes</li>
+                <li>tttt?</li>
+              </ul>
+              <ul className="flex justify-between w-full">
+                <li>testtesttttt</li>
+                <li>tes</li>
+                <li>tttt?</li>
+              </ul>
+            </div>
+            {/* <ContactPopup className="mx-auto" /> */}
           </motion.div>
         </div>
       </div>
+      <div className="stackSkills"></div>
     </>
     //반복되는 레이아웃은 컴포넌트 만들고 내용은 배열에 담아 맵으로 돌리기
   );

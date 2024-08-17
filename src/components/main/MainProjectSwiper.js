@@ -38,7 +38,9 @@ export default function MainProjectSwiper() {
     <>
       <div>
         <Swiper
-          slidesPerView={3}
+          slidesOffsetBefore={50}
+          slidesOffsetAfter={50}
+          slidesPerView={2.5}
           spaceBetween={40}
           // centeredSlides={true}
           pagination={{
@@ -58,7 +60,7 @@ export default function MainProjectSwiper() {
           }}
         >
           <div slot="container-start">
-            <AnimatedText duration={1} delay={0.2}>
+            <AnimatedText duration={0.5} delay={0.2} y={30}>
               <div className="flex justify-between px-[15px] md:px-[50px] mb-[60px]">
                 <span className="font-medium text-[#222] text-[60px]">
                   MAIN PROJECT
@@ -82,7 +84,7 @@ export default function MainProjectSwiper() {
                           : "images/main/plus.svg"
                       }
                       alt="+"
-                      className="object-cover hover:hidden"
+                      className="object-cover"
                       width={11}
                       height={11}
                     />
@@ -100,39 +102,34 @@ export default function MainProjectSwiper() {
             {projectList.listSortedByDate
               .filter((list) => list.mainDisplay)
               .map((list) => (
-                <SwiperSlide
-                  key={list.name}
-                  className="swiper-slide-custom first:ml-[50px]"
-                >
-                  <li key={list.name}>
-                    <article
-                      className="flex flex-col gap-y-[25px] cursor-pointer"
-                      onClick={() => handleSlideClick(list.id)}
-                    >
-                      <header className="relative w-full h-auto">
-                        <Image
-                          className="object-cover w-[100%] rounded-md"
-                          src={list.url}
-                          alt={list.name}
-                          width={650}
-                          height={450}
-                        />
-                      </header>
-                      <section className="flex flex-col gap-y-[15px] text-left">
-                        <span className="text-[30px] font-medium leading-[30px]">
-                          {list.name}
-                        </span>
-                        <div className="flex flex-col gap-y-[6px]">
-                          <p className="text-[22px] font-normal leading-[30px]">
-                            {list.description}
-                          </p>
-                          <p className="text-[16px] font-normal leading-[16px]">
-                            {list.period}
-                          </p>
-                        </div>
-                      </section>
-                    </article>
-                  </li>
+                <SwiperSlide key={list.name} className="swiper-slide-custom">
+                  <article
+                    className="flex flex-col gap-y-[25px] cursor-pointer"
+                    onClick={() => handleSlideClick(list.id)}
+                  >
+                    <header className="relative w-full h-auto">
+                      <Image
+                        className="object-cover w-[100%] rounded-md"
+                        src={list.url}
+                        alt={list.name}
+                        width={650}
+                        height={450}
+                      />
+                    </header>
+                    <section className="flex flex-col gap-y-[15px] text-left">
+                      <span className="text-[30px] font-medium leading-[30px]">
+                        {list.name}
+                      </span>
+                      <div className="flex flex-col gap-y-[6px]">
+                        <p className="text-[22px] font-normal leading-[30px]">
+                          {list.description}
+                        </p>
+                        <p className="text-[16px] font-normal leading-[16px]">
+                          {list.period}
+                        </p>
+                      </div>
+                    </section>
+                  </article>
                 </SwiperSlide>
               ))}
           </div>
