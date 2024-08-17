@@ -109,7 +109,7 @@ export default function MainProjectSwiper() {
                       className="flex flex-col gap-y-[25px] cursor-pointer"
                       onClick={() => handleSlideClick(list.id)}
                     >
-                      <header className="relative w-full h-[300px]">
+                      <header className="relative w-full h-auto">
                         <Image
                           className="object-cover w-[100%] rounded-md"
                           src={list.url}

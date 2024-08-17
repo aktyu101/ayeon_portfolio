@@ -35,7 +35,6 @@ const servicesData = [
   },
 ];
 
-//레이아웃
 const ServiceItem = ({ service, isHovered, onMouseEnter, onMouseLeave }) => {
   return (
     <motion.div

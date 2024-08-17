@@ -11,6 +11,7 @@ import Image from "next/image";
 import CircularScrollText from "./main/RotaningText";
 import AnimatedText from "./motion/AnimatedText";
 import Services from "./main/Services";
+import ContactPopup from "./ContactPopup";
 
 export default function Home() {
   const { setDarkBgState } = useContext(ConfigContext);
@@ -209,7 +210,16 @@ export default function Home() {
           >
             <Services />
           </motion.div>
-          <div className="size-full"></div>
+          {/* 05 */}
+          <motion.div
+            className="w-full h-screen"
+            ref={darkBgRef}
+            initial={{ backgroundColor: "#f5f5f5" }}
+            animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
+            transition={{ duration: 1.5 }}
+          >
+            <ContactPopup className="mx-auto" />
+          </motion.div>
         </div>
       </div>
     </>

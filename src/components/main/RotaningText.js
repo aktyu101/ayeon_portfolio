@@ -74,7 +74,7 @@ const CircularScrollText = () => {
               }}
               animate={{ rotate: scrollY * 0.1 }}
             >
-              <p style={{ margin: 0, textAlign: "center" }}>SCROLLING TEXT</p>
+              <p style={{ margin: 0, textAlign: "center" }}>TEST</p>
             </motion.div>
           </div>
         </motion.div>
