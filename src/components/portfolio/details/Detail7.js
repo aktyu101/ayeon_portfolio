@@ -8,5 +8,5 @@ export default function Detail1() {
 }
 
 const Contents = () => {
-  return <>1</>;
+  return <>7</>;
 };

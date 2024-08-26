@@ -51,7 +51,7 @@ class ProjectItem {
 
 export const projectList = new ProjectItemList([
   new ProjectItem(
-    6,
+    1,
     "시세이가구",
     "hiseang.svg",
     "2024.03",
@@ -62,7 +62,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    1,
+    2,
     "아로셀",
     "hiseang.svg",
     "2024.03",
@@ -73,7 +73,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    1,
+    3,
     "윤현몰",
     "hiseang.svg",
     "2023.04",
@@ -84,7 +84,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    1,
+    4,
     "국립아시아문화전당재단",
     "hiseang.svg",
     "2024.04",
@@ -95,7 +95,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    2,
+    5,
     "브론테",
     "hiseang.svg",
     "2023.02",
@@ -107,7 +107,7 @@ export const projectList = new ProjectItemList([
     "Website Renewal Project"
   ),
   new ProjectItem(
-    3,
+    6,
     "나인위시스 2차",
     "hiseang.svg",
     "2024.04",
@@ -118,7 +118,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    4,
+    7,
     "가림",
     "hiseang.svg",
     "2024.02",
@@ -129,7 +129,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    5,
+    8,
     "라프리마몰",
     "hiseang.svg",
     "2024.03",
@@ -140,7 +140,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    9,
     "무슈제이",
     "hiseang.svg",
     "2024.01",
@@ -151,7 +151,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    1,
+    10,
     "밀크바오밥",
     "hiseang.svg",
     "2024.01",
@@ -162,7 +162,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    2,
+    11,
     "굽네몰",
     "hiseang.svg",
     "2023.05",
@@ -174,7 +174,7 @@ export const projectList = new ProjectItemList([
     "Website Renewal Project"
   ),
   new ProjectItem(
-    3,
+    12,
     "월드트로피",
     "hiseang.svg",
     "2023.04",
@@ -185,7 +185,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    4,
+    13,
     "나인위시스",
     "hiseang.svg",
     "2023.03",
@@ -196,7 +196,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    5,
+    14,
     "알집매트",
     "hiseang.svg",
     "2023.02",
@@ -207,7 +207,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    15,
     "한국갤러리",
     "hiseang.svg",
     "2023.02",
@@ -218,7 +218,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    16,
     "엘리케이파크",
     "hiseang.svg",
     "2022.12",
@@ -229,7 +229,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    17,
     "호호에미",
     "hiseang.svg",
     "2022.10",
@@ -240,7 +240,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    18,
     "셀티브코리아",
     "hiseang.svg",
     "2022.09",
@@ -251,7 +251,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    19,
     "바이브랩",
     "hiseang.svg",
     "2022.09",
@@ -262,7 +262,7 @@ export const projectList = new ProjectItemList([
     false
   ),
   new ProjectItem(
-    6,
+    20,
     "비비드로우",
     "hiseang.svg",
     "2022.09",

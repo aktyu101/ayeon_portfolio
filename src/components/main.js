@@ -22,6 +22,7 @@ export default function Home() {
   const darkBgRef = useRef(null);
   const updateThemeDark = useThemeStore((state) => state.updateThemeDark);
   const updateThemeLight = useThemeStore((state) => state.updateThemeLight);
+  const updateThemeNone = useThemeStore((state) => state.updateThemeNone);
 
   const contentsInfoSkillsStyle =
     "leading-[35px] max-w-[33%] text-[35px] font-normal";
@@ -29,7 +30,6 @@ export default function Home() {
     "flex items-center gap-x-[12px] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[red] before:content-[''] before:inline-block before:translate-y-[4px] block";
   const skilldescriptionStyle = "text-[15px] ml-[19px]";
 
-  //bg
   const handleIntersection = useCallback(
     ([entry]) => {
       const isIntersecting = entry.isIntersecting;
@@ -225,18 +225,18 @@ export default function Home() {
             animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
             transition={{ duration: 1.5 }}
           >
-            <div className="text-[80px] text-white flex flex-col items-center">
+            {/* <div className="text-[80px] text-white flex flex-col items-center">
               <ul className="flex justify-between w-full">
-                <li>testtesttttt</li>
-                <li>tes</li>
-                <li>tttt?</li>
+                <li>If you want</li>
+                <li>to know</li>
+                <li>more about me?</li>
               </ul>
               <ul className="flex justify-between w-full">
-                <li>testtesttttt</li>
-                <li>tes</li>
-                <li>tttt?</li>
+                <li>Please</li>
+                <li>contact me</li>
+                <li>here</li>
               </ul>
-            </div>
+            </div> */}
             {/* <ContactPopup className="mx-auto" /> */}
           </motion.div>
         </div>
