@@ -4,7 +4,7 @@ import "react-notion-x/src/styles.css";
 
 export default function ReactNotion() {
   const [recordMap, setRecordMap] = useState({});
-  const notionPageId = "213bfe694dc546b0b87e8620b9904f0b";
+  const notionPageId = "a194e4669d5049109851b1864792291e";
 
   useEffect(() => {
     fetch(`https://notion-api.splitbee.io/v1/page/${notionPageId}`)

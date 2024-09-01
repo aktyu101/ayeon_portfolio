@@ -54,15 +54,15 @@ export const studyList = new StudyItemList([
     "SQL",
     "PART1 ~ PART5"
   ),
-  // new StudyItem(
-  //   2,
-  //   "study02",
-  //   "portfolio01.png",
-  //   "2024.01.01",
-  //   "2024.04.05",
-  //   "JAVASCRIPT",
-  //   "des"
-  // ),
+  new StudyItem(
+    2,
+    "study02",
+    "portfolio01.png",
+    "2024.01.01",
+    "2024.04.05",
+    "JAVASCRIPT",
+    "des"
+  ),
   // new StudyItem(
   //   3,
   //   "study03",

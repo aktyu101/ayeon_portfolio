@@ -1,6 +1,6 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
-
+//커서 팝업 딤 헤더 탑버튼
 const CustomCursor = () => {
   return (
     <div
@@ -10,7 +10,7 @@ const CustomCursor = () => {
         left: 0,
         width: "100vw",
         height: "100vh",
-        zIndex: 9999999999999999,
+        zIndex: 9999,
         pointerEvents: "none",
       }}
     >
