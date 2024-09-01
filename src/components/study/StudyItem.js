@@ -10,7 +10,7 @@ export default function StudyItem({ item }) {
   };
 
   return (
-    <li className="w-[406px] bg-white">
+    <li className="w-[406px]">
       <article
         className="flex flex-col gap-y-[22px] cursor-pointer"
         onClick={handleClick}
@@ -19,11 +19,11 @@ export default function StudyItem({ item }) {
           <Image className="" src={item.url} fill alt={item.name} />
         </header>
         <section className="flex flex-col gap-y-[15px] text-center">
+          {" "}
           <div>
-            <p className="text-[22px] pb-[5px]">{item.name}</p>
-            <p className="text-zinc-600">{item.description}</p>
+            <p className="">{item.name}</p>
           </div>
-          <p className="text-zinc-600">{item.period}</p>
+          <p className="">{item.period}</p>
         </section>
       </article>
     </li>

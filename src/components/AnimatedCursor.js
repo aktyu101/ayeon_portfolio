@@ -3,7 +3,17 @@ import AnimatedCursor from "react-animated-cursor";
 
 const CustomCursor = () => {
   return (
-    <div className="relative z-[99999999999]">
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 9999999999999999,
+        pointerEvents: "none",
+      }}
+    >
       <AnimatedCursor
         color="217,217,217"
         innerSize={20}

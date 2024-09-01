@@ -200,12 +200,12 @@ export default function Home() {
           </div>
           {/* 03 */}
           <motion.div
-            className="h-screen"
+            className="h-[150px]"
             initial={{ backgroundColor: "#f5f5f5" }}
             animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
             transition={{ duration: 1.5 }}
           >
-            <CircularScrollText />
+            {/* <CircularScrollText /> */}
           </motion.div>
           {/* 04 */}
           <motion.div
@@ -219,7 +219,7 @@ export default function Home() {
           </motion.div>
           {/* 05 */}
           <motion.div
-            className="w-full h-screen"
+            className="w-full h-[150px]"
             ref={darkBgRef}
             initial={{ backgroundColor: "#f5f5f5" }}
             animate={{ backgroundColor: isInDarkBg ? "#352f2f" : "#f5f5f5" }}
