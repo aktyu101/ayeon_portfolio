@@ -14,9 +14,7 @@ export default function Breadcrumbs() {
   const segments = pathname.split("/").filter((path) => path);
   console.log("segments", segments);
   const visibleSegments = segments.slice(0, 2);
-
-  // console.log("pathnameArray", pathnameArray);
-
+  console.log("segments", segments);
   return (
     <>
       <div className="size-full flex justify-end text-[#666] pt-[20px]">

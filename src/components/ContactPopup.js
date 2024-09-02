@@ -27,14 +27,14 @@ const ContactPopup = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.35 }}
-              className="fixed top-0 left-0 size-full z-[999999999999] bg-black "
+              className="fixed top-0 left-0 size-full z-[40] bg-black "
               onClick={togglePopup}
             ></motion.div>
             {/* 팝업 */}
             <motion.div
               initial={{ scale: 0, opacity: 0, y: "-50%", x: "-50%" }}
               animate={{ scale: 1, opacity: 1, y: "-50%", x: "-50%" }}
-              className="z-[9999999999999] fixed top-1/2 left-1/2 bg-white rounded-lg p-4 text-black border-[1px]"
+              className="z-[40] fixed top-1/2 left-1/2 bg-white rounded-lg p-4 text-black border-[1px]"
               style={{
                 maxWidth: "400px",
                 width: "80vw",

@@ -8,7 +8,7 @@ export function generateStaticParams() {
 }
 export default function ProjectByIdPage({ params }) {
   const { id } = params;
-  return <DetailById id={id} />;
+  return <DetailById id={id}>dd</DetailById>;
 }
 
 //0414

@@ -203,7 +203,7 @@ const ResumePopup = () => {
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="z-[999] fixed size-full top-0 left-0"
+            className="z-[40] fixed size-full top-0 left-0"
           >
             {/* 딤 처리 */}
             <div
