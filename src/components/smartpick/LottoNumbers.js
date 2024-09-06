@@ -13,7 +13,7 @@ const LottoPicker = () => {
   const [latestDraw, setLatestDraw] = useState(1136);
   const [remainingTime, setRemainingTime] = useState("");
   //선택안함 버튼 컬러
-  const [isClearButtonActive, setisClearButtonActive] = useState(true);
+  const [isClearButtonActive, setIsClearButtonActive] = useState(true);
 
   //포함 제외 필터링한 나머지 숫자
   useEffect(() => {
@@ -36,11 +36,13 @@ const LottoPicker = () => {
         excludedNumbers,
         includeChecked,
         excludeChecked,
+        isClearButtonActive,
       } = JSON.parse(savedState);
       setSelectedNumbers(new Set(selectedNumbers));
       setExcludedNumbers(new Set(excludedNumbers));
       setIncludeChecked(includeChecked);
       setExcludeChecked(excludeChecked);
+      setIsClearButtonActive(isClearButtonActive);
     }
   }, []);
 
@@ -53,9 +55,16 @@ const LottoPicker = () => {
         excludedNumbers: Array.from(excludedNumbers),
         includeChecked,
         excludeChecked,
+        isClearButtonActive,
       })
     );
-  }, [selectedNumbers, excludedNumbers, includeChecked, excludeChecked]);
+  }, [
+    selectedNumbers,
+    excludedNumbers,
+    includeChecked,
+    excludeChecked,
+    isClearButtonActive,
+  ]);
 
   useEffect(() => {
     // 추첨까지 남은 시간
@@ -106,7 +115,7 @@ const LottoPicker = () => {
   }, []);
 
   const handleClick = (number) => {
-    setisClearButtonActive(false);
+    setIsClearButtonActive(false);
     if (includeChecked) {
       // 포함 체크박스가 활성화된 경우
       setSelectedNumbers((prev) => {
@@ -168,7 +177,7 @@ const LottoPicker = () => {
       if (confirmClear) {
         setSelectedNumbers(new Set());
         setExcludedNumbers(new Set());
-        setisClearButtonActive(true);
+        setIsClearButtonActive(true);
       }
     }
   };
