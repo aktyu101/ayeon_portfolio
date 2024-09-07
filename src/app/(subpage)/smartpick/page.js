@@ -5,8 +5,7 @@ export default function smartPick() {
   return (
     <>
       <LottoPicker />
-      <div>test</div>
-      <LottoChecker></LottoChecker>
+      {/* <LottoChecker></LottoChecker> */}
     </>
   );
 }

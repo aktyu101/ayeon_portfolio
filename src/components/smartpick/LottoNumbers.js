@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import PageController from "./PageController";
+import RemainingTime from "./RemainingTime";
 
 const LottoPicker = () => {
   const [selectedNumbers, setSelectedNumbers] = useState(new Set());
@@ -9,11 +11,10 @@ const LottoPicker = () => {
 
   const [includeChecked, setIncludeChecked] = useState(true);
   const [excludeChecked, setExcludeChecked] = useState(false);
-  //!회차 정보 업데이트 해야함
-  const [latestDraw, setLatestDraw] = useState(1136);
-  const [remainingTime, setRemainingTime] = useState("");
+
   //선택안함 버튼 컬러
   const [isClearButtonActive, setIsClearButtonActive] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
 
   //포함 제외 필터링한 나머지 숫자
   useEffect(() => {
@@ -28,7 +29,7 @@ const LottoPicker = () => {
   }, [selectedNumbers, excludedNumbers]);
 
   useEffect(() => {
-    // 컴포넌트가 마운트될 때 로컬 스토리지에서 상태를 불러옵니다.
+    // 컴포넌트가 마운트될 때 로컬 스토리지에서 상태를 불러옴
     const savedState = localStorage.getItem("lottoState");
     if (savedState) {
       const {
@@ -47,7 +48,7 @@ const LottoPicker = () => {
   }, []);
 
   useEffect(() => {
-    // 상태가 변경될 때 로컬 스토리지에 상태를 저장합니다.
+    // 상태가 변경될 때 로컬 스토리지에 상태를 저장함
     localStorage.setItem(
       "lottoState",
       JSON.stringify({
@@ -66,56 +67,9 @@ const LottoPicker = () => {
     isClearButtonActive,
   ]);
 
-  useEffect(() => {
-    // 추첨까지 남은 시간
-    const calculateRemainingTime = () => {
-      const now = new Date();
-      const nextDraw = getNextDrawTime();
-
-      const timeDifference = nextDraw - now;
-      // test 필요
-      if (timeDifference <= 300000) {
-        setRemainingTime("추첨 진행 중");
-        return;
-      }
-
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-      const formatTimeUnit = (unit) => unit.toString().padStart(2, "0");
-
-      setRemainingTime(
-        `${days}일 ${formatTimeUnit(hours)}:${formatTimeUnit(
-          minutes
-        )}:${formatTimeUnit(seconds)}`
-      );
-    };
-    //다음 추첨일 계산
-    const getNextDrawTime = () => {
-      const now = new Date();
-      const nextSaturday = new Date(now);
-      nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
-      nextSaturday.setHours(20, 35, 0, 0);
-
-      if (now > nextSaturday) {
-        nextSaturday.setDate(nextSaturday.getDate() + 7);
-      }
-
-      return nextSaturday;
-    };
-
-    const intervalId = setInterval(calculateRemainingTime, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
-
   const handleClick = (number) => {
     setIsClearButtonActive(false);
+
     if (includeChecked) {
       // 포함 체크박스가 활성화된 경우
       setSelectedNumbers((prev) => {
@@ -173,13 +127,23 @@ const LottoPicker = () => {
 
   const handleClearSelection = () => {
     if (isClearButtonActive == false) {
-      const confirmClear = window.confirm("초기화 하시겠습니까?");
+      const confirmClear = window.confirm(
+        "선택 번호가 해제됩니다. 초기화 하시겠습니까?"
+      );
       if (confirmClear) {
         setSelectedNumbers(new Set());
         setExcludedNumbers(new Set());
         setIsClearButtonActive(true);
       }
     }
+  };
+  //다음 페이지
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+  //이전 페이지
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
   };
 
   const renderNumbers = () => {
@@ -212,99 +176,150 @@ const LottoPicker = () => {
   };
 
   return (
-    <div className="flex justify-center flex-col items-center bg-[#fff] pb-[100px]">
-      {/* 남은시간: 컴포넌트로 제작하여 모든 페이지에서 볼 수 있도록 수정 할 것! */}
-      <div className="w-[400px] h-[44px] bg-[#F5F9FE] leading-[44px] box-border px-[20px] mt-[60px] mb-[35px] flex justify-between rounded-md">
-        <span className="text-[18px] text-[#3687F7] font-bold">
-          {latestDraw}회
-        </span>
-        <span>
-          <span className="text-[14px] text-[#777] mr-[8px]">
-            추첨까지 남은 시간
-          </span>
-          <span className="text-[#FD1E00] text-[18px] font-bold">
-            {remainingTime}
-          </span>
-        </span>
-      </div>
-      <h2 className="text-[#1D1C1C] text-[18px] font-medium">
-        포함 번호와 제외 번호를 선택해 주세요
-      </h2>
-      <div className="pt-[25px] w-[302px]">
-        {/* 숫자 컨테이너*/}
-        <div className="w-[302px] grid grid-cols-7">
-          {renderNumbers()}
-          <div
-            onClick={handleClearSelection}
-            className={`w-[173px] h-[44px] text-[${
-              isClearButtonActive ? "#fff" : "#000"
-            }] border-[#F4F4F5] border leading-[44px] text-center bg-[${
-              isClearButtonActive ? "#3687F7" : "#fff"
-            }]`}
-          >
-            선택안함{"(자동)"}
-          </div>
-        </div>
+    <div className="bg-white h-screen">
+      <RemainingTime />
+      {currentPage === 1 ? (
+        <div className="flex justify-center flex-col items-center pb-[100px]">
+          <h2 className="text-[#1D1C1C] text-[18px] font-medium">
+            포함 번호와 제외 번호를 선택해 주세요
+          </h2>
+          <div className="pt-[25px] w-[302px]">
+            {/* 숫자 컨테이너*/}
+            <div className="w-[302px] grid grid-cols-7">
+              {renderNumbers()}
+              <div
+                onClick={handleClearSelection}
+                className={`w-[173px] h-[44px] text-[${
+                  isClearButtonActive ? "#fff" : "#000"
+                }] border-[#F4F4F5] border leading-[44px] text-center bg-[${
+                  isClearButtonActive ? "#3687F7" : "#fff"
+                }]`}
+              >
+                선택안함{"(자동)"}
+              </div>
+            </div>
 
-        <div className="mb-[30px] mt-[12px]">
-          {/* 포함버튼 */}
-          <label className="inline-flex items-center mr-4">
-            <input
-              type="checkbox"
-              checked={includeChecked}
-              onChange={handleIncludeChange}
-              className="form-checkbox"
-            />
-            <span className="ml-2 text-[14px] font-medium">포함</span>
-          </label>
-          {/* 제외버튼 */}
-          <label className="inline-flex items-center">
-            <input
-              type="checkbox"
-              checked={excludeChecked}
-              onChange={handleExcludeChange}
-              className="form-checkbox"
-            />
-            <span className="ml-2 text-[14px] font-medium">제외</span>
-          </label>
-        </div>
-        <div
-          onClick={handleClearSelection}
-          className="w-[105px] h-[32px] flex gap-[4px] box-border bg-[#F4F4F5] justify-center leading-[32px] m-auto rounded-md hover:bg-[#f4f4f5ad]"
-        >
-          <span>초기화</span>
-          <Image
-            src="images/smartpick/reset.svg"
-            alt="초기화 아이콘"
-            className="object-corver"
-            width={14}
-            height={14}
-          />
-        </div>
-        <div className="my-[20px]">
-          <div>
-            추첨 번호:{" "}
-            <span className="text-[blue]">
-              {Array.from(selectedNumbers).join(" ")}
-            </span>
+            <div className="mb-[30px] mt-[12px]">
+              {/* 포함버튼 */}
+              <label className="inline-flex items-center mr-4">
+                <input
+                  type="checkbox"
+                  checked={includeChecked}
+                  onChange={handleIncludeChange}
+                  className="form-checkbox"
+                />
+                <span className="ml-2 text-[14px] font-medium">포함</span>
+              </label>
+              {/* 제외버튼 */}
+              <label className="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  checked={excludeChecked}
+                  onChange={handleExcludeChange}
+                  className="form-checkbox"
+                />
+                <span className="ml-2 text-[14px] font-medium">제외</span>
+              </label>
+            </div>
+            <div
+              onClick={handleClearSelection}
+              className="w-[105px] h-[32px] flex gap-[4px] box-border bg-[#F4F4F5] justify-center leading-[32px] m-auto rounded-md hover:bg-[#f4f4f5ad]"
+            >
+              <span>초기화</span>
+              <Image
+                src="images/smartpick/reset.svg"
+                alt="초기화 아이콘"
+                className="object-corver"
+                width={14}
+                height={14}
+              />
+            </div>
+            <div className="my-[20px]">
+              <div>
+                추첨 번호:{" "}
+                <span className="text-[blue]">
+                  {Array.from(selectedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>
+                제외 번호:{" "}
+                <span className="text-[red]">
+                  {Array.from(excludedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div>
+            </div>
           </div>
-          <div>
-            제외 번호:{" "}
-            <span className="text-[red]">
-              {Array.from(excludedNumbers).join(" ")}
-            </span>
+          <div className="w-[400px] box-border border-[1px] border-[#E7E7E7] rounded-md p-[15px]">
+            <p className="text-[14px] text-[#777] leading-[20px]">
+              * 전체 자동을 원하실 경우 선택안함을 눌러주세요.
+            </p>
+            <p className="text-[14px] text-[#777] leading-[20px]">
+              * 포함 번호는 5개까지, 제외 번호는 38개까지 선택 가능합니다.
+            </p>
           </div>
-          <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div>
         </div>
-      </div>
-      <div className="w-[400px] box-border border-[1px] border-[#E7E7E7] rounded-md p-[15px]">
-        <p className="text-[14px] text-[#777] leading-[20px]">
-          * 전체 자동을 원하실 경우 선택안함을 눌러주세요.
-        </p>
-        <p className="text-[14px] text-[#777] leading-[20px]">
-          * 포함 번호는 5개까지, 제외 번호는 38개까지 선택 가능합니다.
-        </p>
-      </div>
+      ) : currentPage === 2 ? (
+        <div className="flex justify-center flex-col items-center pb-[100px]">
+          <h2 className="text-[#1D1C1C] text-[18px] font-medium">
+            결과에서 제외할 경우의 수를 선택해 주세요.
+          </h2>
+          <div className="pt-[25px] w-[302px]">
+            <div className="my-[20px]">
+              <div>
+                추첨 번호:{" "}
+                <span className="text-[blue]">
+                  {Array.from(selectedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>
+                제외 번호:{" "}
+                <span className="text-[red]">
+                  {Array.from(excludedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="flex justify-center flex-col items-center pb-[100px]">
+          <h2 className="text-[#1D1C1C] text-[18px] font-medium">
+            적용 수량을 선택해 주세요.
+          </h2>
+          <div className="pt-[25px] w-[302px]">
+            <div className="my-[20px]">
+              <div>
+                추첨 번호:{" "}
+                <span className="text-[blue]">
+                  {Array.from(selectedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>
+                제외 번호:{" "}
+                <span className="text-[red]">
+                  {Array.from(excludedNumbers).join(" ")}
+                </span>
+              </div>
+              <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div>
+            </div>
+          </div>
+          <div className="w-[400px] box-border border-[1px] border-[#E7E7E7] rounded-md p-[15px]">
+            <p className="text-[14px] text-[#777] leading-[20px]">
+              * 재추첨 시 결과 리스트에 추첨 번호가 추가됩니다.
+            </p>
+            <p className="text-[14px] text-[#777] leading-[20px]">
+              * 선택 게임수보다 경우의 수가 적은 경우 최대 경우의 수 까지만
+              노출됩니다.
+            </p>
+          </div>
+        </div>
+      )}
+      <PageController
+        onPrevPage={handlePrevPage}
+        onNextPage={handleNextPage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };
