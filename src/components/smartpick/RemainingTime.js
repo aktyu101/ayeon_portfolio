@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
 export default function RemainingTime() {
+  //!회차 정보 업데이트 해야함
+  const [latestDraw, setLatestDraw] = useState(1137);
+  const [remainingTime, setRemainingTime] = useState("");
+
   useEffect(() => {
     // 추첨까지 남은 시간
     const calculateRemainingTime = () => {
@@ -38,10 +42,11 @@ export default function RemainingTime() {
       const nextSaturday = new Date(now);
       nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
       nextSaturday.setHours(20, 35, 0, 0);
-
+      console.log("현재날짜");
       if (now > nextSaturday) {
         nextSaturday.setDate(nextSaturday.getDate() + 7);
       }
+      setLatestDraw(latestDraw + 1);
 
       return nextSaturday;
     };
@@ -49,9 +54,6 @@ export default function RemainingTime() {
     const intervalId = setInterval(calculateRemainingTime, 1000);
     return () => clearInterval(intervalId);
   }, []);
-  //!회차 정보 업데이트 해야함
-  const [latestDraw, setLatestDraw] = useState(1136);
-  const [remainingTime, setRemainingTime] = useState("");
 
   return (
     <div className="w-full flex justify-center">

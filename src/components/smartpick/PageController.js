@@ -4,7 +4,7 @@ const PageController = ({ onPrevPage, onNextPage, currentPage }) => {
   const btnStyle = `w-[148px] h-[50px] border-[#3687F7] border-[1px] text-[18px] font-medium rounded-md text-center hover:text-white hover:bg-[#3687F7] duration-200 absolute bottom-[32px]`;
   const progressWidth =
     currentPage === 1 ? "33.333%" : currentPage === 2 ? "66.666%" : "100%";
-  console.log("현재 페이지 번호", currentPage);
+  //   console.log("현재 페이지 번호", currentPage);
 
   return (
     <div

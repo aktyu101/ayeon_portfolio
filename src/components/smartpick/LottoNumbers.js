@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import PageController from "./PageController";
 import RemainingTime from "./RemainingTime";
+import Select from "react-select";
+import SelectLottoOption from "./SelectLottoOption";
 
 const LottoPicker = () => {
   const [selectedNumbers, setSelectedNumbers] = useState(new Set());
@@ -105,11 +107,25 @@ const LottoPicker = () => {
             alert("제외 번호는 최대 38개까지 선택 가능합니다.");
           }
         }
-        console.log("neeSet", newSet);
+        // console.log("neeSet", newSet);
         return newSet;
       });
     }
   };
+
+  //3p select option
+  const amountOptions = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+    { value: "5", label: "5" },
+    { value: "6", label: "6" },
+    { value: "7", label: "7" },
+    { value: "8", label: "8" },
+    { value: "9", label: "9" },
+    { value: "10", label: "10" },
+  ];
 
   const handleIncludeChange = (event) => {
     setIncludeChecked(event.target.checked);
@@ -266,7 +282,8 @@ const LottoPicker = () => {
           </h2>
           <div className="pt-[25px] w-[302px]">
             <div className="my-[20px]">
-              <div>
+              <SelectLottoOption />
+              {/* <div>
                 추첨 번호:{" "}
                 <span className="text-[blue]">
                   {Array.from(selectedNumbers).join(" ")}
@@ -278,7 +295,7 @@ const LottoPicker = () => {
                   {Array.from(excludedNumbers).join(" ")}
                 </span>
               </div>
-              <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div>
+              <div>나머지 번호 : {Array.from(restNumbers).join(" ")}</div> */}
             </div>
           </div>
         </div>
@@ -287,6 +304,12 @@ const LottoPicker = () => {
           <h2 className="text-[#1D1C1C] text-[18px] font-medium">
             적용 수량을 선택해 주세요.
           </h2>
+          <div className="w-[400px] h-[500px] bg-[#ddd]">
+            <Select
+              className="w-[80px] h-[40px] border-solid border-[#3687F7] rounded-md"
+              options={amountOptions}
+            />
+          </div>
           <div className="pt-[25px] w-[302px]">
             <div className="my-[20px]">
               <div>
