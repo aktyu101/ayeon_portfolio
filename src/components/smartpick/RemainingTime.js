@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function RemainingTime() {
   //!회차 정보 업데이트 해야함
-  const [latestDraw, setLatestDraw] = useState(1137);
+  const [latestDraw, setLatestDraw] = useState(1136);
   const [remainingTime, setRemainingTime] = useState("");
 
   useEffect(() => {
@@ -40,9 +40,8 @@ export default function RemainingTime() {
     const getNextDrawTime = () => {
       const now = new Date();
       const nextSaturday = new Date(now);
-      nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
+      9 + nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
       nextSaturday.setHours(20, 35, 0, 0);
-      console.log("현재날짜");
       if (now > nextSaturday) {
         nextSaturday.setDate(nextSaturday.getDate() + 7);
       }
@@ -50,7 +49,6 @@ export default function RemainingTime() {
 
       return nextSaturday;
     };
-
     const intervalId = setInterval(calculateRemainingTime, 1000);
     return () => clearInterval(intervalId);
   }, []);
