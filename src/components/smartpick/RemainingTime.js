@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
 
 export default function RemainingTime() {
-  //!회차 정보 업데이트 해야함
-  const [latestDraw, setLatestDraw] = useState(1136);
+  const baseDate = new Date(2024, 8, 21); // 2024년 9월 21일 (월은 0부터 시작)
+  const [latestDraw, setLatestDraw] = useState(1138);
   const [remainingTime, setRemainingTime] = useState("");
 
   useEffect(() => {
-    // 추첨까지 남은 시간
+    // 회차 정보 업데이트
+    const calculateDrawNumber = () => {
+      const now = new Date();
+      const daysDifference = Math.floor(
+        (now - baseDate) / (1000 * 60 * 60 * 24)
+      );
+      const weeksPassed = Math.floor(daysDifference / 7);
+      setLatestDraw(latestDraw + weeksPassed + 1);
+    };
+
+    // 추첨까지 남은 시간 계산
     const calculateRemainingTime = () => {
       const now = new Date();
       const nextDraw = getNextDrawTime();
 
       const timeDifference = nextDraw - now;
-      // test 필요
       if (timeDifference <= 300000) {
         setRemainingTime("추첨 진행 중");
         return;
@@ -36,20 +45,25 @@ export default function RemainingTime() {
       );
     };
 
-    //다음 추첨일 계산
+    // 다음 추첨일 계산
     const getNextDrawTime = () => {
       const now = new Date();
       const nextSaturday = new Date(now);
-      9 + nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
+      nextSaturday.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7)); // 다음 토요일
       nextSaturday.setHours(20, 35, 0, 0);
       if (now > nextSaturday) {
         nextSaturday.setDate(nextSaturday.getDate() + 7);
       }
-      setLatestDraw(latestDraw + 1);
-
       return nextSaturday;
     };
-    const intervalId = setInterval(calculateRemainingTime, 1000);
+
+    // 초기 회차 업데이트
+    calculateDrawNumber();
+    const intervalId = setInterval(() => {
+      calculateDrawNumber();
+      calculateRemainingTime();
+    }, 1000);
+
     return () => clearInterval(intervalId);
   }, []);
 

@@ -14,8 +14,13 @@ export default function ProjectItem({ item }) {
         className="flex flex-col gap-y-[22px] cursor-pointer"
         onClick={handleClick}
       >
-        <header className="relative w-[406px] h-[280px]">
-          <Image className="" src={item.url} fill alt={item.name} />
+        <header className="relative w-[406px] h-[200px]">
+          <Image
+            className="object-cover rounded-sm"
+            src={item.url}
+            fill
+            alt={item.name}
+          />
         </header>
         <section className="flex flex-col gap-y-[15px] text-center">
           <span>{item.name}</span>
