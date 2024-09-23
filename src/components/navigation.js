@@ -24,7 +24,7 @@ export default function Navigation() {
 
   // 경로별 배경색 처리
   const wrapperStyles = twMerge(
-    "absolute z-50 block fixed t-0 p-[20px] box-border w-full h-screen bg-[#352f2f] text-white h-screen z-[999999] flex justify-center"
+    "absolute z-50 block fixed t-0 p-[20px] box-border w-full h-screen bg-[#352f2f] text-white h-screen z-[40] flex justify-center"
   );
   const hoverStyle = twMerge(
     "hover:text-[#352f2f] hover:border-[#352f2f] hover:font-medium"

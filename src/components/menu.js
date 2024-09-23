@@ -47,18 +47,18 @@ export default function Menu({ routes }) {
     } cursor-pointer`
   );
   // 노션 접속 불가 처리
-  const handleLinkClick = (event) => {
-    event.preventDefault(); // 기본 동작 방지
-    const password = prompt("비밀번호를 입력하세요:");
-    if (password === "0903") {
-      window.open(
-        "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4",
-        "_blank"
-      );
-    } else {
-      alert("비밀번호가 일치하지 않습니다.");
-    }
-  };
+  // const handleLinkClick = (event) => {
+  //   event.preventDefault(); // 기본 동작 방지
+  //   const password = prompt("비밀번호를 입력하세요:");
+  //   if (password === "0903") {
+  //     window.open(
+  //       "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=4",
+  //       "_blank"
+  //     );
+  //   } else {
+  //     alert("비밀번호가 일치하지 않습니다.");
+  //   }
+  // };
 
   return (
     <ul className="flex flex-col w-[100%] gap-[30px] items-center">
@@ -68,7 +68,7 @@ export default function Menu({ routes }) {
             whileHover={{ scale: 1.5, color: "#fff" }}
             className={oneDepthTextStyle}
             href={menu.link}
-            onClick={index === 3 ? handleLinkClick : undefined}
+            // onClick={index === 3 ? handleLinkClick : undefined}
           >
             {menu.name}
           </motion.a>
