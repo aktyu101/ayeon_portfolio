@@ -9,6 +9,7 @@ import { Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import AnimatedText from "../motion/AnimatedText";
+import { BrowserRouter } from "react-router-dom";
 
 export default function MainProjectSwiper() {
   const [moreBtnHover, setMoreBtnHover] = useState(false);
@@ -67,7 +68,11 @@ export default function MainProjectSwiper() {
                 </span>
                 <div className="flex gap-[11px] items-center">
                   <a
-                    href="/project"
+                    href={
+                      process.env.NODE_ENV === "production"
+                        ? "/ayeon_portfolio/project"
+                        : "/project"
+                    }
                     className={moreBtnStyle}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
