@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function RemainingTime() {
   const baseDate = new Date(2024, 8, 21); // 2024년 9월 21일 (월은 0부터 시작)
-  const [latestDraw, setLatestDraw] = useState(1138);
+  const [latestDraw, setLatestDraw] = useState(1137);
   const [remainingTime, setRemainingTime] = useState("");
 
   useEffect(() => {

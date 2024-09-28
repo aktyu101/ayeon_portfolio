@@ -14,7 +14,10 @@ export default function Menu({ routes }) {
     { name: <ResumePopup />, link: "#" },
     { name: "PROJECT", link: "/project" },
     { name: "STUDY", link: "/study" },
-    { name: "NOTION", link: "#" },
+    {
+      name: "NOTION",
+      link: "https://iced-harrier-d67.notion.site/170c4b0fd5d4428d83090945d7faf62a?pvs=74",
+    },
   ];
 
   const handleMouseEnter = () => {
@@ -69,6 +72,8 @@ export default function Menu({ routes }) {
             className={oneDepthTextStyle}
             href={menu.link}
             // onClick={index === 3 ? handleLinkClick : undefined}
+            target={index === 3 ? "_blank" : "_self"}
+            rel={index === 3 ? "noopener noreferrer" : undefined}
           >
             {menu.name}
           </motion.a>
