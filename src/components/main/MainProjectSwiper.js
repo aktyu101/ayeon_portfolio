@@ -61,7 +61,7 @@ export default function MainProjectSwiper() {
           }}
         >
           <div slot="container-start">
-            <AnimatedText duration={0.5} delay={0.2} y={30}>
+            <AnimatedText duration={0.4} delay={0.2} y={30}>
               <div className="flex justify-between px-[15px] md:px-[50px] mb-[60px]">
                 <span className="font-medium text-[#222] text-[60px]">
                   MAIN PROJECT
